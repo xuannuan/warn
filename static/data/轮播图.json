@@ -1,0 +1,894 @@
+{
+  "dataType": "search",
+  "appCode": "xhsGoodsSearch",
+  "version": "1.0",
+  "retcode": "0000",
+  "hasNext": true,
+  "page": "1",
+  "data": [{
+    "paid_price": "99",
+    "spu_name": "狮子王卫衣·2020春秋新款加绒宽松bf慵懒风女装连帽套头学院风",
+    "link": "xhsdiscover://webview/www.xiaohongshu.com/goods/5dc64867a09141661cd442d1?isRN=true&rnName=fantasy-goods-detail-rn&rnPath=goods/5dc64867a09141661cd442d1&xhs_g_s=0001&country=%E4%B8%AD%E5%9B%BD&is_self_managing=false&max_height=1000&new_arriving=false&sale_price=99.0&has_video=false&self_pre_cs=true&first_height=1000&item_trade_mode=2&max_width=750&listing_image=https%3A%2F%2Fqimg.xiaohongshu.com%2F2981b9f04ce39edd0acadc67cab6266a448d79c8%3FitemId%3D5dc64867a09141661cd442d1%26imageView2%2F1%2Fw%2F320%2Fh%2F427%2Fq%2F90.jpg%257Cwatermark%2F1%2Fimage%2FaHR0cDovL3FpbWctMTI1MTUyNDMxOS5waWNzaC5teXFjbG91ZC5jb20vNzJmMTQ0MmEwMWI0NGVhN2JlMjI2NjI4OGFhMDU3YjYzNTliNzdkMD93YXRlcm1hcmsvMi9keC8xNjEvZHkvMTIvZ3Jhdml0eS9zb3V0aHdlc3QvZm9udC9VR2x1WjBaaGJtZGlaQzUwZEdZPS9mb250c2l6ZS8xNi9maWxsL0kwWkdSa1pHUmc9PS90ZXh0L011YWNpRGJtbDZVZ01Uam5ncm5udTVQbW5aOD0%3D%2Fdx%2F0%2Fdy%2F0%2Fgravity%2Fsouthwest&feature=%E6%AF%AB%E6%97%A0%E6%9D%9F%E7%BC%9A%E6%85%B5%E6%87%92%E6%97%B6%E9%AB%A6&has_color_variant=true&prefetch-image=https%3A%2F%2Fqimg.xiaohongshu.com%2F2981b9f04ce39edd0acadc67cab6266a448d79c8%3FitemId%3D5dc64867a09141661cd442d1%26imageView2%2F2%2Fw%2F800%2Fq%2F90.jpg&name=%E7%8B%AE%E5%AD%90%E7%8E%8B%E5%8D%AB%E8%A1%A3%C2%B72020%E6%98%A5%E7%A7%8B%E6%96%B0%E6%AC%BE%E5%8A%A0%E7%BB%92%E5%AE%BD%E6%9D%BEbf%E6%85%B5%E6%87%92%E9%A3%8E%E5%A5%B3%E8%A3%85%E8%BF%9E%E5%B8%BD%E5%A5%97%E5%A4%B4%E5%AD%A6%E9%99%A2%E9%A3%8E++%E9%BB%91%E8%89%B2+%E5%9D%87%E7%A0%81&seller_type=0&first_width=750&origin_price=218.0&naviHidden=yes",
+    "source": 1,
+    "title": "中国·毫无束缚慵懒时髦",
+    "type": "goods",
+    "h_image_info": {
+      "width": 320,
+      "url": "https://qimg.xiaohongshu.com/2981b9f04ce39edd0acadc67cab6266a448d79c8?itemId=5dc64867a09141661cd442d1&imageView2/1/w/320/h/427/q/90.jpg%7Cwatermark/1/image/aHR0cDovL3FpbWctMTI1MTUyNDMxOS5waWNzaC5teXFjbG91ZC5jb20vNzJmMTQ0MmEwMWI0NGVhN2JlMjI2NjI4OGFhMDU3YjYzNTliNzdkMD93YXRlcm1hcmsvMi9keC8xNjEvZHkvMTIvZ3Jhdml0eS9zb3V0aHdlc3QvZm9udC9VR2x1WjBaaGJtZGlaQzUwZEdZPS9mb250c2l6ZS8xNi9maWxsL0kwWkdSa1pHUmc9PS90ZXh0L011YWNpRGJtbDZVZ01Uam5ncm5udTVQbW5aOD0=/dx/0/dy/0/gravity/southwest",
+      "height": 427
+    },
+    "vendor_info": {
+      "icon": "http://qimg.xiaohongshu.com/seller/0b637f1064107fbf1918956342b25530",
+      "link": "https://www.xiaohongshu.com/vendor/5b0cbaa71254511484a86315?naviHidden=yes",
+      "name": "HiDou旗舰店"
+    },
+    "transparent_image": "https://qimg.xiaohongshu.com/3129e0173992e17b4e0773a781a38a07c1308d06?itemId=5dc64867a09141661cd442d1&imageView2/1/w/320/h/320/q/90.png",
+    "vendor_icon": "http://qimg.xiaohongshu.com/seller/0b637f1064107fbf1918956342b25530",
+    "id": "5dc64867a09141661cd442d1",
+    "vendor_link": "https://www.xiaohongshu.com/vendor/5b0cbaa71254511484a86315?naviHidden=yes",
+    "category_ids": ["5a310dde3f7d1712823b9869", "5a310dde3f7d1712823b986a", "5a310dde3f7d1712823b9878"],
+    "spu_id": "5dc64866d0d59e749c8b2b66",
+    "seller_id": "5b0cbaa71254511484a86315",
+    "image": "https://qimg.xiaohongshu.com/2981b9f04ce39edd0acadc67cab6266a448d79c8?itemId=5dc64867a09141661cd442d1&imageView2/1/w/320/h/427/q/90.jpg%7Cwatermark/1/image/aHR0cDovL3FpbWctMTI1MTUyNDMxOS5waWNzaC5teXFjbG91ZC5jb20vNzJmMTQ0MmEwMWI0NGVhN2JlMjI2NjI4OGFhMDU3YjYzNTliNzdkMD93YXRlcm1hcmsvMi9keC8xNjEvZHkvMTIvZ3Jhdml0eS9zb3V0aHdlc3QvZm9udC9VR2x1WjBaaGJtZGlaQzUwZEdZPS9mb250c2l6ZS8xNi9maWxsL0kwWkdSa1pHUmc9PS90ZXh0L011YWNpRGJtbDZVZ01Uam5ncm5udTVQbW5aOD0=/dx/0/dy/0/gravity/southwest",
+    "promotion_type": 11,
+    "stock_status": 1,
+    "item_price": [{
+      "price": 99.0,
+      "index": 1,
+      "type": "sale_price"
+    }, {
+      "price": 218.0,
+      "index": 2,
+      "type": "origin_price"
+    }],
+    "vendor_name": "HiDou旗舰店",
+    "fav_info": {
+      "fav_count": 0,
+      "show_fav": false
+    },
+    "tags": [{
+      "name": "限时购",
+      "index": 1,
+      "type": 1
+    }],
+    "spl_id": "5dc64867a09141661cd442cb",
+    "desc": "HiDou 狮子王卫衣·2020春秋新款加绒宽松bf慵懒风女装连帽套头学院风 黑色",
+    "spv_id": "5dc64867a09141661cd442cc"
+  }, {
+    "image": "https://qimg.xiaohongshu.com/642ab4de08f3f0f2d8935b8248ae10fcbfd2a7be?itemId=5db140645305650b0e41592b&imageView2/1/w/320/h/320/q/90.jpg",
+    "stock_status": 1,
+    "spu_name": "蚀骨旗袍年轻款中国风民族少女复古倒袖胖mm大码女装改良版连衣裙",
+    "item_price": [{
+      "price": 189.0,
+      "index": 1,
+      "type": "sale_price"
+    }],
+    "link": "xhsdiscover://webview/www.xiaohongshu.com/goods/5db140645305650b0e41592b?isRN=true&rnName=fantasy-goods-detail-rn&rnPath=goods/5db140645305650b0e41592b&xhs_g_s=0001&country=%E4%B8%AD%E5%9B%BD&is_self_managing=false&max_height=800&new_arriving=false&sale_price=189.0&has_video=false&self_pre_cs=false&first_height=800&item_trade_mode=2&max_width=800&listing_image=https%3A%2F%2Fqimg.xiaohongshu.com%2F642ab4de08f3f0f2d8935b8248ae10fcbfd2a7be%3FitemId%3D5db140645305650b0e41592b%26imageView2%2F1%2Fw%2F320%2Fh%2F320%2Fq%2F90.jpg&feature=%E6%94%B9%E8%89%AF%E6%97%97%E8%A2%8D%E8%BF%9E%E8%A1%A3%E8%A3%99&has_color_variant=true&prefetch-image=https%3A%2F%2Fqimg.xiaohongshu.com%2F642ab4de08f3f0f2d8935b8248ae10fcbfd2a7be%3FitemId%3D5db140645305650b0e41592b%26imageView2%2F2%2Fw%2F800%2Fq%2F90.jpg&name=%E8%9A%80%E9%AA%A8%E6%97%97%E8%A2%8D%E5%B9%B4%E8%BD%BB%E6%AC%BE%E4%B8%AD%E5%9B%BD%E9%A3%8E%E6%B0%91%E6%97%8F%E5%B0%91%E5%A5%B3%E5%A4%8D%E5%8F%A4%E5%80%92%E8%A2%96%E8%83%96mm%E5%A4%A7%E7%A0%81%E5%A5%B3%E8%A3%85%E6%94%B9%E8%89%AF%E7%89%88%E8%BF%9E%E8%A1%A3%E8%A3%99++%E8%8A%B1%E8%89%B2+S&seller_type=1&first_width=800&origin_price=null&naviHidden=yes",
+    "vendor_name": "jk&js品牌店",
+    "source": 1,
+    "title": "中国·改良旗袍连衣裙",
+    "type": "goods",
+    "h_image_info": {
+      "width": 320,
+      "url": "https://qimg.xiaohongshu.com/642ab4de08f3f0f2d8935b8248ae10fcbfd2a7be?itemId=5db140645305650b0e41592b&imageView2/1/w/320/h/320/q/90.jpg",
+      "height": 320
+    },
+    "vendor_info": {
+      "icon": "https://qimg.xiaohongshu.com/ba8a32f0-bd85-11e9-b7ba-0bd7bfc098f2-huvaf6/QQ%E5%9B%BE%E7%89%8720190813124724.jpg?e=1565772139&token=edMBpdzSWI2pH13onoAIcpYw7pSU2tplRrPTySQO:p9MqaCRkaiiLL5l5Wd2fNU7_4Bc=",
+      "link": "https://www.xiaohongshu.com/vendor/5d5e02338f5bdf0001b6cbd8?naviHidden=yes",
+      "name": "jk&js品牌店"
+    },
+    "fav_info": {
+      "fav_count": 0,
+      "show_fav": false
+    },
+    "tags": [],
+    "spl_id": "5db140635305650b0e415925",
+    "transparent_image": "https://qimg.xiaohongshu.com/fe1ce6542d098a008a0d09aedcf0c7961af01050?itemId=5db140645305650b0e41592b&imageView2/1/w/320/h/320/q/90.png",
+    "vendor_icon": "https://qimg.xiaohongshu.com/ba8a32f0-bd85-11e9-b7ba-0bd7bfc098f2-huvaf6/QQ%E5%9B%BE%E7%89%8720190813124724.jpg?e=1565772139&token=edMBpdzSWI2pH13onoAIcpYw7pSU2tplRrPTySQO:p9MqaCRkaiiLL5l5Wd2fNU7_4Bc=",
+    "id": "5db140645305650b0e41592b",
+    "vendor_link": "https://www.xiaohongshu.com/vendor/5d5e02338f5bdf0001b6cbd8?naviHidden=yes",
+    "category_ids": ["5a310dde3f7d1712823b9869", "5a310dde3f7d1712823b986a", "5a310dde3f7d1712823b9884"],
+    "spu_id": "5db14062ffa8d5002b7193c1",
+    "seller_id": "5d5e02338f5bdf0001b6cbd8",
+    "desc": "jk&js 蚀骨旗袍年轻款中国风民族少女复古倒袖胖mm大码女装改良版连衣裙 花色",
+    "spv_id": "5db140635305650b0e415926"
+  }, {
+    "image": "https://qimg.xiaohongshu.com/30881fc114d40242b272d19241935f8df7595dd0?itemId=5e1ec882a0914122579c03c3&imageView2/1/w/320/h/427/q/90.jpg%7Cwatermark/1/image/aHR0cDovL3FpbWctMTI1MTUyNDMxOS5waWNzaC5teXFjbG91ZC5jb20vYmNjYmVmNjQ1NjM0ZTA1NWM3MDA4M2QyMjA3ZWM5MjdkOWM3MjE2NQ==/gravity/southwest/dx/0/dy/0",
+    "promotion_type": 4,
+    "stock_status": 1,
+    "spu_name": "2020春季新款韩版女装休闲宽松长袖西服上衣格子西装外套文艺穿搭",
+    "item_price": [{
+      "price": 205.2,
+      "index": 1,
+      "type": "sale_price"
+    }, {
+      "price": 912.0,
+      "index": 2,
+      "type": "origin_price"
+    }],
+    "link": "xhsdiscover://webview/www.xiaohongshu.com/goods/5e1ec882a0914122579c03c3?isRN=true&rnName=fantasy-goods-detail-rn&rnPath=goods/5e1ec882a0914122579c03c3&xhs_g_s=0001&country=%E4%B8%AD%E5%9B%BD&is_self_managing=false&max_height=1000&new_arriving=true&sale_price=205.2&has_video=false&self_pre_cs=true&first_height=1000&item_trade_mode=2&max_width=750&listing_image=https%3A%2F%2Fqimg.xiaohongshu.com%2F30881fc114d40242b272d19241935f8df7595dd0%3FitemId%3D5e1ec882a0914122579c03c3%26imageView2%2F1%2Fw%2F320%2Fh%2F427%2Fq%2F90.jpg%257Cwatermark%2F1%2Fimage%2FaHR0cDovL3FpbWctMTI1MTUyNDMxOS5waWNzaC5teXFjbG91ZC5jb20vYmNjYmVmNjQ1NjM0ZTA1NWM3MDA4M2QyMjA3ZWM5MjdkOWM3MjE2NQ%3D%3D%2Fgravity%2Fsouthwest%2Fdx%2F0%2Fdy%2F0&feature=%E8%BD%BB%E7%86%9F%E9%A3%8E%E9%85%B7%E5%A5%B3%E5%AD%A9%E8%A5%BF%E8%A3%85&has_color_variant=true&prefetch-image=https%3A%2F%2Fqimg.xiaohongshu.com%2F30881fc114d40242b272d19241935f8df7595dd0%3FitemId%3D5e1ec882a0914122579c03c3%26imageView2%2F2%2Fw%2F800%2Fq%2F90.jpg%3F%257Cwatermark%2F1%2Fimage%2FaHR0cDovL3FpbWctMTI1MTUyNDMxOS5waWNzaC5teXFjbG91ZC5jb20vNGRhYTFjOGI4MzNjMDZmZTQxMTUxMjk4MDA4MGE1YTQ5YTYwZmMyMCU3Q2ltYWdlVmlldzIvMi93Lzc1MC9xLzkw%2Fgravity%2Fsouthwest%2Fdx%2F0%2Fdy%2F0&name=2020%E6%98%A5%E5%AD%A3%E6%96%B0%E6%AC%BE%E9%9F%A9%E7%89%88%E5%A5%B3%E8%A3%85%E4%BC%91%E9%97%B2%E5%AE%BD%E6%9D%BE%E9%95%BF%E8%A2%96%E8%A5%BF%E6%9C%8D%E4%B8%8A%E8%A1%A3%E6%A0%BC%E5%AD%90%E8%A5%BF%E8%A3%85%E5%A4%96%E5%A5%97%E6%96%87%E8%89%BA%E7%A9%BF%E6%90%AD++%E6%A0%BC%E7%BA%B9+M&seller_type=0&first_width=750&origin_price=912.0&naviHidden=yes",
+    "vendor_name": "KUOSE阔色旗舰店",
+    "source": 1,
+    "title": "中国·轻熟风酷女孩西装",
+    "type": "goods",
+    "h_image_info": {
+      "width": 320,
+      "url": "https://qimg.xiaohongshu.com/30881fc114d40242b272d19241935f8df7595dd0?itemId=5e1ec882a0914122579c03c3&imageView2/1/w/320/h/427/q/90.jpg",
+      "height": 427
+    },
+    "vendor_info": {
+      "icon": "http://qimg.xiaohongshu.com/seller/0b6dd6575d559f3762a24dc0935061a3",
+      "link": "https://www.xiaohongshu.com/vendor/5b21104303da487381b41ccc?naviHidden=yes",
+      "name": "KUOSE阔色旗舰店"
+    },
+    "fav_info": {
+      "fav_count": 0,
+      "show_fav": false
+    },
+    "tags": [{
+      "name": "立减10",
+      "index": 1,
+      "type": 1
+    }],
+    "spl_id": "5e1ec869530565695bca031a",
+    "transparent_image": "https://qimg.xiaohongshu.com/809f6822fe49b3ecf8b010a801837cbd3dd3d46b?itemId=5e1ec882a0914122579c03c3&imageView2/1/w/320/h/320/q/90.png",
+    "vendor_icon": "http://qimg.xiaohongshu.com/seller/0b6dd6575d559f3762a24dc0935061a3",
+    "id": "5e1ec882a0914122579c03c3",
+    "vendor_link": "https://www.xiaohongshu.com/vendor/5b21104303da487381b41ccc?naviHidden=yes",
+    "category_ids": ["5a310dde3f7d1712823b9869", "5a310dde3f7d1712823b986a", "5a310dde3f7d1712823b987a"],
+    "spu_id": "5e1ec8680dee7e0029af5402",
+    "seller_id": "5b21104303da487381b41ccc",
+    "desc": "KUOSE阔色 2020春季新款韩版女装休闲宽松长袖西服上衣格子西装外套文艺穿搭 格纹",
+    "spv_id": "5e1ec881a0914122579c03bf"
+  }, {
+    "image": "https://qimg.xiaohongshu.com/197f72ab4bf6dd3b4b9155e773ebf997ad19130e?itemId=5d2da22aa0914107b6475d44&imageView2/1/w/320/h/427/q/90.jpg%7Cwatermark/1/image/aHR0cDovL3FpbWctMTI1MTUyNDMxOS5waWNzaC5teXFjbG91ZC5jb20vYmNjYmVmNjQ1NjM0ZTA1NWM3MDA4M2QyMjA3ZWM5MjdkOWM3MjE2NQ==/gravity/southwest/dx/0/dy/0",
+    "promotion_type": 4,
+    "stock_status": 1,
+    "spu_name": "秋冬新品新款品牌副线质感气质女装典雅山茶提花休闲衬衫",
+    "item_price": [{
+      "price": 125.0,
+      "index": 1,
+      "type": "sale_price"
+    }],
+    "link": "xhsdiscover://webview/www.xiaohongshu.com/goods/5d2da22aa0914107b6475d44?isRN=true&rnName=fantasy-goods-detail-rn&rnPath=goods/5d2da22aa0914107b6475d44&xhs_g_s=0001&country=%E4%B8%AD%E5%9B%BD&is_self_managing=false&max_height=1000&new_arriving=false&sale_price=125.0&has_video=false&self_pre_cs=true&first_height=1000&item_trade_mode=2&max_width=750&listing_image=https%3A%2F%2Fqimg.xiaohongshu.com%2F197f72ab4bf6dd3b4b9155e773ebf997ad19130e%3FitemId%3D5d2da22aa0914107b6475d44%26imageView2%2F1%2Fw%2F320%2Fh%2F427%2Fq%2F90.jpg%257Cwatermark%2F1%2Fimage%2FaHR0cDovL3FpbWctMTI1MTUyNDMxOS5waWNzaC5teXFjbG91ZC5jb20vYmNjYmVmNjQ1NjM0ZTA1NWM3MDA4M2QyMjA3ZWM5MjdkOWM3MjE2NQ%3D%3D%2Fgravity%2Fsouthwest%2Fdx%2F0%2Fdy%2F0&feature=%E6%B8%85%E6%96%B0%E5%85%B8%E9%9B%85%E7%B2%BE%E8%87%B4%E8%88%92%E9%80%82&has_color_variant=true&prefetch-image=https%3A%2F%2Fqimg.xiaohongshu.com%2F197f72ab4bf6dd3b4b9155e773ebf997ad19130e%3FitemId%3D5d2da22aa0914107b6475d44%26imageView2%2F2%2Fw%2F800%2Fq%2F90.jpg%3F%257Cwatermark%2F1%2Fimage%2FaHR0cDovL3FpbWctMTI1MTUyNDMxOS5waWNzaC5teXFjbG91ZC5jb20vNGRhYTFjOGI4MzNjMDZmZTQxMTUxMjk4MDA4MGE1YTQ5YTYwZmMyMCU3Q2ltYWdlVmlldzIvMi93Lzc1MC9xLzkw%2Fgravity%2Fsouthwest%2Fdx%2F0%2Fdy%2F0&name=%E7%A7%8B%E5%86%AC%E6%96%B0%E5%93%81%E6%96%B0%E6%AC%BE%E5%93%81%E7%89%8C%E5%89%AF%E7%BA%BF%E8%B4%A8%E6%84%9F%E6%B0%94%E8%B4%A8%E5%A5%B3%E8%A3%85%E5%85%B8%E9%9B%85%E5%B1%B1%E8%8C%B6%E6%8F%90%E8%8A%B1%E4%BC%91%E9%97%B2%E8%A1%AC%E8%A1%AB++%E5%AB%A9%E6%99%B6%E9%BB%84+L&seller_type=0&first_width=750&origin_price=499.0&naviHidden=yes",
+    "vendor_name": "JEMO DRESSING旗舰店",
+    "member_price": 134.0,
+    "source": 1,
+    "title": "中国·清新典雅精致舒适",
+    "type": "goods",
+    "h_image_info": {
+      "width": 320,
+      "url": "https://qimg.xiaohongshu.com/197f72ab4bf6dd3b4b9155e773ebf997ad19130e?itemId=5d2da22aa0914107b6475d44&imageView2/1/w/320/h/427/q/90.jpg",
+      "height": 427
+    },
+    "vendor_info": {
+      "icon": "http://qimg.xiaohongshu.com/seller/945b60f57b9f2a660d26b55a120eefd1",
+      "link": "https://www.xiaohongshu.com/vendor/57fb3bcd343107624e3ce85c?naviHidden=yes",
+      "name": "JEMO DRESSING旗舰店"
+    },
+    "fav_info": {
+      "fav_count": 0,
+      "show_fav": false
+    },
+    "tags": [{
+      "name": "立减10",
+      "index": 1,
+      "type": 1
+    }],
+    "spl_id": "5d2da228a0914107b6475d34",
+    "vendor_icon": "http://qimg.xiaohongshu.com/seller/945b60f57b9f2a660d26b55a120eefd1",
+    "id": "5d2da22aa0914107b6475d44",
+    "vendor_link": "https://www.xiaohongshu.com/vendor/57fb3bcd343107624e3ce85c?naviHidden=yes",
+    "category_ids": ["5a310dde3f7d1712823b9869", "5a310dde3f7d1712823b986a", "5a310dde3f7d1712823b986b"],
+    "spu_id": "5d2da224ff45cf67c33d50a8",
+    "seller_id": "57fb3bcd343107624e3ce85c",
+    "desc": "芥末JEMO DRESSING 秋冬新品新款品牌副线质感气质女装典雅山茶提花休闲衬衫 嫩晶黄",
+    "spv_id": "5d2da22aa0914107b6475d40"
+  }, {
+    "image": "https://qimg.xiaohongshu.com/7199ae82b31f7f8c9c9413f47279393a8c444991?itemId=5d886897a091414bd2f04530&imageView2/1/w/320/h/427/q/90.jpg%7Cwatermark/1/image/aHR0cDovL3FpbWctMTI1MTUyNDMxOS5waWNzaC5teXFjbG91ZC5jb20vYmNjYmVmNjQ1NjM0ZTA1NWM3MDA4M2QyMjA3ZWM5MjdkOWM3MjE2NQ==/gravity/southwest/dx/0/dy/0",
+    "promotion_type": 4,
+    "stock_status": 1,
+    "spu_name": "撞色清新学院风卫衣·2020春秋季新款ins潮宽松韩版bf女装慵懒风",
+    "item_price": [{
+      "price": 108.0,
+      "index": 1,
+      "type": "sale_price"
+    }, {
+      "price": 218.0,
+      "index": 2,
+      "type": "origin_price"
+    }],
+    "link": "xhsdiscover://webview/www.xiaohongshu.com/goods/5d886897a091414bd2f04530?isRN=true&rnName=fantasy-goods-detail-rn&rnPath=goods/5d886897a091414bd2f04530&xhs_g_s=0001&country=%E4%B8%AD%E5%9B%BD&is_self_managing=false&max_height=1000&new_arriving=false&sale_price=108.0&has_video=false&self_pre_cs=true&first_height=1000&item_trade_mode=2&max_width=750&listing_image=https%3A%2F%2Fqimg.xiaohongshu.com%2F7199ae82b31f7f8c9c9413f47279393a8c444991%3FitemId%3D5d886897a091414bd2f04530%26imageView2%2F1%2Fw%2F320%2Fh%2F427%2Fq%2F90.jpg%257Cwatermark%2F1%2Fimage%2FaHR0cDovL3FpbWctMTI1MTUyNDMxOS5waWNzaC5teXFjbG91ZC5jb20vYmNjYmVmNjQ1NjM0ZTA1NWM3MDA4M2QyMjA3ZWM5MjdkOWM3MjE2NQ%3D%3D%2Fgravity%2Fsouthwest%2Fdx%2F0%2Fdy%2F0&feature=%E9%81%AE%E8%82%89%E6%98%BE%E7%98%A6%E4%B8%8D%E6%8C%91%E4%BA%BA&has_color_variant=true&prefetch-image=https%3A%2F%2Fqimg.xiaohongshu.com%2F7199ae82b31f7f8c9c9413f47279393a8c444991%3FitemId%3D5d886897a091414bd2f04530%26imageView2%2F2%2Fw%2F800%2Fq%2F90.jpg%3F%257Cwatermark%2F1%2Fimage%2FaHR0cDovL3FpbWctMTI1MTUyNDMxOS5waWNzaC5teXFjbG91ZC5jb20vNGRhYTFjOGI4MzNjMDZmZTQxMTUxMjk4MDA4MGE1YTQ5YTYwZmMyMCU3Q2ltYWdlVmlldzIvMi93Lzc1MC9xLzkw%2Fgravity%2Fsouthwest%2Fdx%2F0%2Fdy%2F0&name=%E6%92%9E%E8%89%B2%E6%B8%85%E6%96%B0%E5%AD%A6%E9%99%A2%E9%A3%8E%E5%8D%AB%E8%A1%A3%C2%B72020%E6%98%A5%E7%A7%8B%E5%AD%A3%E6%96%B0%E6%AC%BEins%E6%BD%AE%E5%AE%BD%E6%9D%BE%E9%9F%A9%E7%89%88bf%E5%A5%B3%E8%A3%85%E6%85%B5%E6%87%92%E9%A3%8E++%E5%A6%82%E5%9B%BE%E8%89%B2+%E5%9D%87%E7%A0%81&seller_type=0&first_width=750&origin_price=218.0&naviHidden=yes",
+    "vendor_name": "HiDou旗舰店",
+    "source": 1,
+    "title": "中国·遮肉显瘦不挑人",
+    "type": "goods",
+    "h_image_info": {
+      "width": 320,
+      "url": "https://qimg.xiaohongshu.com/7199ae82b31f7f8c9c9413f47279393a8c444991?itemId=5d886897a091414bd2f04530&imageView2/1/w/320/h/427/q/90.jpg",
+      "height": 427
+    },
+    "vendor_info": {
+      "icon": "http://qimg.xiaohongshu.com/seller/0b637f1064107fbf1918956342b25530",
+      "link": "https://www.xiaohongshu.com/vendor/5b0cbaa71254511484a86315?naviHidden=yes",
+      "name": "HiDou旗舰店"
+    },
+    "fav_info": {
+      "fav_count": 0,
+      "show_fav": false
+    },
+    "tags": [{
+      "name": "30元券",
+      "index": 1,
+      "type": 1
+    }],
+    "spl_id": "5d886896a091414bd2f0452a",
+    "transparent_image": "https://qimg.xiaohongshu.com/66d3994a40229fffc6eeab516105d9c6fcc3a2bd?itemId=5d886897a091414bd2f04530&imageView2/1/w/320/h/320/q/90.png",
+    "vendor_icon": "http://qimg.xiaohongshu.com/seller/0b637f1064107fbf1918956342b25530",
+    "id": "5d886897a091414bd2f04530",
+    "vendor_link": "https://www.xiaohongshu.com/vendor/5b0cbaa71254511484a86315?naviHidden=yes",
+    "category_ids": ["5a310dde3f7d1712823b9869", "5a310dde3f7d1712823b986a", "5a310dde3f7d1712823b9878"],
+    "spu_id": "5d886895f5a79b002b1e5d4b",
+    "seller_id": "5b0cbaa71254511484a86315",
+    "desc": "HiDou 撞色清新学院风卫衣·2020春秋季新款ins潮宽松韩版bf女装慵懒风 如图色",
+    "spv_id": "5d886896a091414bd2f0452b"
+  }, {
+    "image": "https://qimg.xiaohongshu.com/e1487350b3bb17db0c1dc9e8790bbdddc041ea51?itemId=5dbd131053056535488f5734&imageView2/1/w/320/h/320/q/90.jpg",
+    "stock_status": 1,
+    "spu_name": "冬季旗袍秋冬改良汉服女中国风冬装中式女装加厚保暖羊毛呢连衣裙",
+    "item_price": [{
+      "price": 279.0,
+      "index": 1,
+      "type": "sale_price"
+    }],
+    "link": "xhsdiscover://webview/www.xiaohongshu.com/goods/5dbd131053056535488f5734?isRN=true&rnName=fantasy-goods-detail-rn&rnPath=goods/5dbd131053056535488f5734&xhs_g_s=0001&country=%E4%B8%AD%E5%9B%BD&is_self_managing=false&max_height=800&new_arriving=false&sale_price=279.0&has_video=false&self_pre_cs=false&first_height=800&item_trade_mode=2&max_width=800&listing_image=https%3A%2F%2Fqimg.xiaohongshu.com%2Fe1487350b3bb17db0c1dc9e8790bbdddc041ea51%3FitemId%3D5dbd131053056535488f5734%26imageView2%2F1%2Fw%2F320%2Fh%2F320%2Fq%2F90.jpg&feature=49.5%25%E7%BE%8A%E6%AF%9B&has_color_variant=true&prefetch-image=https%3A%2F%2Fqimg.xiaohongshu.com%2Fe1487350b3bb17db0c1dc9e8790bbdddc041ea51%3FitemId%3D5dbd131053056535488f5734%26imageView2%2F2%2Fw%2F800%2Fq%2F90.jpg&name=%E5%86%AC%E5%AD%A3%E6%97%97%E8%A2%8D%E7%A7%8B%E5%86%AC%E6%94%B9%E8%89%AF%E6%B1%89%E6%9C%8D%E5%A5%B3%E4%B8%AD%E5%9B%BD%E9%A3%8E%E5%86%AC%E8%A3%85%E4%B8%AD%E5%BC%8F%E5%A5%B3%E8%A3%85%E5%8A%A0%E5%8E%9A%E4%BF%9D%E6%9A%96%E7%BE%8A%E6%AF%9B%E5%91%A2%E8%BF%9E%E8%A1%A3%E8%A3%99++%E7%99%BD%E8%89%B2+S&seller_type=1&first_width=800&origin_price=null&naviHidden=yes",
+    "vendor_name": "jk&js品牌店",
+    "source": 1,
+    "title": "中国·49.5%羊毛",
+    "type": "goods",
+    "h_image_info": {
+      "width": 320,
+      "url": "https://qimg.xiaohongshu.com/e1487350b3bb17db0c1dc9e8790bbdddc041ea51?itemId=5dbd131053056535488f5734&imageView2/1/w/320/h/320/q/90.jpg",
+      "height": 320
+    },
+    "vendor_info": {
+      "icon": "https://qimg.xiaohongshu.com/ba8a32f0-bd85-11e9-b7ba-0bd7bfc098f2-huvaf6/QQ%E5%9B%BE%E7%89%8720190813124724.jpg?e=1565772139&token=edMBpdzSWI2pH13onoAIcpYw7pSU2tplRrPTySQO:p9MqaCRkaiiLL5l5Wd2fNU7_4Bc=",
+      "link": "https://www.xiaohongshu.com/vendor/5d5e02338f5bdf0001b6cbd8?naviHidden=yes",
+      "name": "jk&js品牌店"
+    },
+    "fav_info": {
+      "fav_count": 0,
+      "show_fav": false
+    },
+    "tags": [],
+    "spl_id": "5dbd131053056535488f572e",
+    "vendor_icon": "https://qimg.xiaohongshu.com/ba8a32f0-bd85-11e9-b7ba-0bd7bfc098f2-huvaf6/QQ%E5%9B%BE%E7%89%8720190813124724.jpg?e=1565772139&token=edMBpdzSWI2pH13onoAIcpYw7pSU2tplRrPTySQO:p9MqaCRkaiiLL5l5Wd2fNU7_4Bc=",
+    "id": "5dbd131053056535488f5734",
+    "vendor_link": "https://www.xiaohongshu.com/vendor/5d5e02338f5bdf0001b6cbd8?naviHidden=yes",
+    "category_ids": ["5a310dde3f7d1712823b9869", "5a310dde3f7d1712823b986a", "5a310dde3f7d1712823b9884"],
+    "spu_id": "5dbd130e53e69e1c72ebea70",
+    "seller_id": "5d5e02338f5bdf0001b6cbd8",
+    "desc": "jk&js 冬季旗袍秋冬改良汉服女中国风冬装中式女装加厚保暖羊毛呢连衣裙 白色",
+    "spv_id": "5dbd131053056535488f572f"
+  }, {
+    "image": "https://qimg.xiaohongshu.com/13b91363bdae0ef5fd6042fded3d367f38002339?itemId=5e192c6c0cf9a140875c4853&imageView2/1/w/320/h/427/q/90.jpg",
+    "promotion_type": 4,
+    "stock_status": 1,
+    "spu_name": "胖mm高腰丝绒长裤2020年新款大码女装春季洋气减龄直筒裤",
+    "item_price": [{
+      "price": 118.0,
+      "index": 1,
+      "type": "sale_price"
+    }, {
+      "price": 236.0,
+      "index": 2,
+      "type": "origin_price"
+    }],
+    "link": "xhsdiscover://webview/www.xiaohongshu.com/goods/5e192c6c0cf9a140875c4853?isRN=true&rnName=fantasy-goods-detail-rn&rnPath=goods/5e192c6c0cf9a140875c4853&xhs_g_s=0001&country=%E4%B8%AD%E5%9B%BD&is_self_managing=false&max_height=1000&new_arriving=true&sale_price=118.0&has_video=false&self_pre_cs=true&first_height=1000&item_trade_mode=2&max_width=750&listing_image=https%3A%2F%2Fqimg.xiaohongshu.com%2F13b91363bdae0ef5fd6042fded3d367f38002339%3FitemId%3D5e192c6c0cf9a140875c4853%26imageView2%2F1%2Fw%2F320%2Fh%2F427%2Fq%2F90.jpg&feature=16%E5%8F%B7%E7%89%B9%E4%BB%B7118&has_color_variant=true&prefetch-image=https%3A%2F%2Fqimg.xiaohongshu.com%2F13b91363bdae0ef5fd6042fded3d367f38002339%3FitemId%3D5e192c6c0cf9a140875c4853%26imageView2%2F2%2Fw%2F800%2Fq%2F90.jpg&name=%E8%83%96mm%E9%AB%98%E8%85%B0%E4%B8%9D%E7%BB%92%E9%95%BF%E8%A3%A42020%E5%B9%B4%E6%96%B0%E6%AC%BE%E5%A4%A7%E7%A0%81%E5%A5%B3%E8%A3%85%E6%98%A5%E5%AD%A3%E6%B4%8B%E6%B0%94%E5%87%8F%E9%BE%84%E7%9B%B4%E7%AD%92%E8%A3%A4++%E5%92%96%E8%89%B2+2XL&seller_type=1&first_width=750&origin_price=236.0&naviHidden=yes",
+    "vendor_name": "夏大大品牌店",
+    "source": 1,
+    "title": "中国·16号特价118",
+    "type": "goods",
+    "h_image_info": {
+      "width": 320,
+      "url": "https://qimg.xiaohongshu.com/13b91363bdae0ef5fd6042fded3d367f38002339?itemId=5e192c6c0cf9a140875c4853&imageView2/1/w/320/h/427/q/90.jpg",
+      "height": 427
+    },
+    "vendor_info": {
+      "icon": "http://qimg.xiaohongshu.com/c6eddfe7-ffa7-447c-b49e-a6ff84efbe78?e=1561702463&token=edMBpdzSWI2pH13onoAIcpYw7pSU2tplRrPTySQO:SNljAV5i95sArc1piiLcZWl8uq0=",
+      "link": "https://www.xiaohongshu.com/vendor/5d1c12b37d8b380001d84b57?naviHidden=yes",
+      "name": "夏大大品牌店"
+    },
+    "fav_info": {
+      "fav_count": 0,
+      "show_fav": false
+    },
+    "tags": [],
+    "spl_id": "5e192c6b0cf9a140875c4848",
+    "transparent_image": "https://qimg.xiaohongshu.com/1720bd993b07fb9ebffda630a7247e762b15330b?itemId=5e192c6c0cf9a140875c4853&imageView2/1/w/320/h/320/q/90.png",
+    "vendor_icon": "http://qimg.xiaohongshu.com/c6eddfe7-ffa7-447c-b49e-a6ff84efbe78?e=1561702463&token=edMBpdzSWI2pH13onoAIcpYw7pSU2tplRrPTySQO:SNljAV5i95sArc1piiLcZWl8uq0=",
+    "id": "5e192c6c0cf9a140875c4853",
+    "vendor_link": "https://www.xiaohongshu.com/vendor/5d1c12b37d8b380001d84b57?naviHidden=yes",
+    "category_ids": ["5a310dde3f7d1712823b9869", "5a310dde3f7d1712823b986a", "5a310dde3f7d1712823b9879"],
+    "spu_id": "5e192c6633f04f003a75d609",
+    "seller_id": "5d1c12b37d8b380001d84b57",
+    "desc": "夏大大 胖mm高腰丝绒长裤2020年新款大码女装春季洋气减龄直筒裤 咖色",
+    "spv_id": "5e192c6c0cf9a140875c484f"
+  }, {
+    "image": "https://qimg.xiaohongshu.com/278ff19248923ab5df2dc44417771cf5538d6cf4?itemId=5de9041f53056574357a8f46&imageView2/1/w/320/h/427/q/90.jpg%7Cwatermark/1/image/aHR0cDovL3FpbWctMTI1MTUyNDMxOS5waWNzaC5teXFjbG91ZC5jb20vYmNjYmVmNjQ1NjM0ZTA1NWM3MDA4M2QyMjA3ZWM5MjdkOWM3MjE2NQ==/gravity/southwest/dx/0/dy/0",
+    "promotion_type": 4,
+    "stock_status": 1,
+    "spu_name": "2019新款女装秋装中长款毛衣裙过膝修身打底蕾丝连衣裙韩版针织冬",
+    "item_price": [{
+      "price": 98.0,
+      "index": 1,
+      "type": "sale_price"
+    }, {
+      "price": 99.0,
+      "index": 2,
+      "type": "origin_price"
+    }],
+    "link": "xhsdiscover://webview/www.xiaohongshu.com/goods/5de9041f53056574357a8f46?isRN=true&rnName=fantasy-goods-detail-rn&rnPath=goods/5de9041f53056574357a8f46&xhs_g_s=0001&country=%E4%B8%AD%E5%9B%BD&is_self_managing=false&max_height=1000&new_arriving=false&sale_price=98.0&has_video=false&self_pre_cs=true&first_height=1000&item_trade_mode=2&max_width=750&listing_image=https%3A%2F%2Fqimg.xiaohongshu.com%2F278ff19248923ab5df2dc44417771cf5538d6cf4%3FitemId%3D5de9041f53056574357a8f46%26imageView2%2F1%2Fw%2F320%2Fh%2F427%2Fq%2F90.jpg%257Cwatermark%2F1%2Fimage%2FaHR0cDovL3FpbWctMTI1MTUyNDMxOS5waWNzaC5teXFjbG91ZC5jb20vYmNjYmVmNjQ1NjM0ZTA1NWM3MDA4M2QyMjA3ZWM5MjdkOWM3MjE2NQ%3D%3D%2Fgravity%2Fsouthwest%2Fdx%2F0%2Fdy%2F0&feature=%E6%89%93%E5%BA%95%E8%95%BE%E4%B8%9D%E8%BF%9E%E8%A1%A3%E8%A3%99&has_color_variant=true&prefetch-image=https%3A%2F%2Fqimg.xiaohongshu.com%2F278ff19248923ab5df2dc44417771cf5538d6cf4%3FitemId%3D5de9041f53056574357a8f46%26imageView2%2F2%2Fw%2F800%2Fq%2F90.jpg%3F%257Cwatermark%2F1%2Fimage%2FaHR0cDovL3FpbWctMTI1MTUyNDMxOS5waWNzaC5teXFjbG91ZC5jb20vNGRhYTFjOGI4MzNjMDZmZTQxMTUxMjk4MDA4MGE1YTQ5YTYwZmMyMCU3Q2ltYWdlVmlldzIvMi93Lzc1MC9xLzkw%2Fgravity%2Fsouthwest%2Fdx%2F0%2Fdy%2F0&name=2019%E6%96%B0%E6%AC%BE%E5%A5%B3%E8%A3%85%E7%A7%8B%E8%A3%85%E4%B8%AD%E9%95%BF%E6%AC%BE%E6%AF%9B%E8%A1%A3%E8%A3%99%E8%BF%87%E8%86%9D%E4%BF%AE%E8%BA%AB%E6%89%93%E5%BA%95%E8%95%BE%E4%B8%9D%E8%BF%9E%E8%A1%A3%E8%A3%99%E9%9F%A9%E7%89%88%E9%92%88%E7%BB%87%E5%86%AC++%E6%9D%8F%E8%89%B2+%E5%9D%87%E7%A0%81&seller_type=1&first_width=750&origin_price=99.0&naviHidden=yes",
+    "vendor_name": "裂素品牌店",
+    "source": 1,
+    "title": "打底蕾丝连衣裙",
+    "type": "goods",
+    "h_image_info": {
+      "width": 320,
+      "url": "https://qimg.xiaohongshu.com/278ff19248923ab5df2dc44417771cf5538d6cf4?itemId=5de9041f53056574357a8f46&imageView2/1/w/320/h/427/q/90.jpg",
+      "height": 427
+    },
+    "vendor_info": {
+      "icon": "https://qimg.xiaohongshu.com/51e66292c89d8550310f0d936d43f9a70dff10e8",
+      "link": "https://www.xiaohongshu.com/vendor/5ddcd8808afb1f0001ebd830?naviHidden=yes",
+      "name": "裂素品牌店"
+    },
+    "fav_info": {
+      "fav_count": 0,
+      "show_fav": false
+    },
+    "tags": [{
+      "name": "10元券",
+      "index": 1,
+      "type": 1
+    }],
+    "spl_id": "5de9041e53056574357a8f40",
+    "transparent_image": "https://qimg.xiaohongshu.com/b589d13cf07a5d6f61587b93bb29bee752eddefc?itemId=5de9041f53056574357a8f46&imageView2/1/w/320/h/320/q/90.png",
+    "vendor_icon": "https://qimg.xiaohongshu.com/51e66292c89d8550310f0d936d43f9a70dff10e8",
+    "id": "5de9041f53056574357a8f46",
+    "vendor_link": "https://www.xiaohongshu.com/vendor/5ddcd8808afb1f0001ebd830?naviHidden=yes",
+    "category_ids": ["5a310dde3f7d1712823b9869", "5a310dde3f7d1712823b986a", "5a310dde3f7d1712823b9884"],
+    "spu_id": "5de9041c579a6d003a802b4b",
+    "seller_id": "5ddcd8808afb1f0001ebd830",
+    "desc": "LIESU裂素 2019新款女装秋装中长款毛衣裙过膝修身打底蕾丝连衣裙韩版针织冬 杏色",
+    "spv_id": "5de9041f53056574357a8f41"
+  }, {
+    "image": "https://qimg.xiaohongshu.com/b4fd375ca4fa908859bb690c1074ff6eee023fd4?itemId=5e0b0c2d0cf9a15e85704c38&imageView2/1/w/320/h/427/q/90.jpg",
+    "stock_status": 1,
+    "spu_name": "港风复古休闲工装牛仔连衣裤潮春秋新款宽松百搭女装连体裤chic",
+    "item_price": [{
+      "price": 159.0,
+      "index": 1,
+      "type": "sale_price"
+    }],
+    "link": "xhsdiscover://webview/www.xiaohongshu.com/goods/5e0b0c2d0cf9a15e85704c38?isRN=true&rnName=fantasy-goods-detail-rn&rnPath=goods/5e0b0c2d0cf9a15e85704c38&xhs_g_s=0001&country=%E4%B8%AD%E5%9B%BD&is_self_managing=false&max_height=1000&new_arriving=false&sale_price=159.0&has_video=false&self_pre_cs=false&first_height=1000&item_trade_mode=2&max_width=750&listing_image=https%3A%2F%2Fqimg.xiaohongshu.com%2Fb4fd375ca4fa908859bb690c1074ff6eee023fd4%3FitemId%3D5e0b0c2d0cf9a15e85704c38%26imageView2%2F1%2Fw%2F320%2Fh%2F427%2Fq%2F90.jpg&feature=%E6%B0%94%E8%B4%A8%E7%AE%80%E7%BA%A6%E4%BF%AE%E8%BA%AB%E6%98%BE%E7%98%A6&has_color_variant=true&prefetch-image=https%3A%2F%2Fqimg.xiaohongshu.com%2Fb4fd375ca4fa908859bb690c1074ff6eee023fd4%3FitemId%3D5e0b0c2d0cf9a15e85704c38%26imageView2%2F2%2Fw%2F800%2Fq%2F90.jpg&name=%E6%B8%AF%E9%A3%8E%E5%A4%8D%E5%8F%A4%E4%BC%91%E9%97%B2%E5%B7%A5%E8%A3%85%E7%89%9B%E4%BB%94%E8%BF%9E%E8%A1%A3%E8%A3%A4%E6%BD%AE%E6%98%A5%E7%A7%8B%E6%96%B0%E6%AC%BE%E5%AE%BD%E6%9D%BE%E7%99%BE%E6%90%AD%E5%A5%B3%E8%A3%85%E8%BF%9E%E4%BD%93%E8%A3%A4chic++%E8%93%9D%E8%89%B2+L&seller_type=1&first_width=750&origin_price=null&naviHidden=yes",
+    "vendor_name": "暧色鹿品牌店",
+    "source": 1,
+    "title": "气质简约修身显瘦",
+    "type": "goods",
+    "h_image_info": {
+      "width": 320,
+      "url": "https://qimg.xiaohongshu.com/b4fd375ca4fa908859bb690c1074ff6eee023fd4?itemId=5e0b0c2d0cf9a15e85704c38&imageView2/1/w/320/h/427/q/90.jpg",
+      "height": 427
+    },
+    "vendor_info": {
+      "icon": "http://qimg.xiaohongshu.com/seller/f8ba2bcf1ee57d0ed4374c184ee0936f",
+      "link": "https://www.xiaohongshu.com/vendor/5df335e02bed43000117d919?naviHidden=yes",
+      "name": "暧色鹿品牌店"
+    },
+    "fav_info": {
+      "fav_count": 0,
+      "show_fav": false
+    },
+    "tags": [{
+      "name": "10元券",
+      "index": 1,
+      "type": 1
+    }],
+    "spl_id": "5e0b0c2b0cf9a15e85704c28",
+    "vendor_icon": "http://qimg.xiaohongshu.com/seller/f8ba2bcf1ee57d0ed4374c184ee0936f",
+    "id": "5e0b0c2d0cf9a15e85704c38",
+    "vendor_link": "https://www.xiaohongshu.com/vendor/5df335e02bed43000117d919?naviHidden=yes",
+    "category_ids": ["5a310dde3f7d1712823b9869", "5a310dde3f7d1712823b986a", "5a310dde3f7d1712823b9881"],
+    "spu_id": "5e0b0c2adf2f77002c7e5a95",
+    "seller_id": "5df335e02bed43000117d919",
+    "desc": "暧色鹿 港风复古休闲工装牛仔连衣裤潮春秋新款宽松百搭女装连体裤chic 蓝色",
+    "spv_id": "5e0b0c2c0cf9a15e85704c34"
+  }, {
+    "image": "https://qimg.xiaohongshu.com/d427c38082677b51f1f2c7488ed1b80cce1fbf9c?itemId=5d5f425053056536d63ad77e&imageView2/1/w/320/h/427/q/90.jpg%7Cwatermark/1/image/aHR0cDovL3FpbWctMTI1MTUyNDMxOS5waWNzaC5teXFjbG91ZC5jb20vYmNjYmVmNjQ1NjM0ZTA1NWM3MDA4M2QyMjA3ZWM5MjdkOWM3MjE2NQ==/gravity/southwest/dx/0/dy/0",
+    "promotion_type": 4,
+    "stock_status": 1,
+    "spu_name": "休闲粗花呢格子外套·2020春秋新款复古港味女装宽松百搭上衣",
+    "item_price": [{
+      "price": 198.0,
+      "index": 1,
+      "type": "sale_price"
+    }, {
+      "price": 398.0,
+      "index": 2,
+      "type": "origin_price"
+    }],
+    "link": "xhsdiscover://webview/www.xiaohongshu.com/goods/5d5f425053056536d63ad77e?isRN=true&rnName=fantasy-goods-detail-rn&rnPath=goods/5d5f425053056536d63ad77e&xhs_g_s=0001&country=%E4%B8%AD%E5%9B%BD&is_self_managing=false&max_height=1000&new_arriving=false&sale_price=198.0&has_video=false&self_pre_cs=true&first_height=1000&item_trade_mode=2&max_width=750&listing_image=https%3A%2F%2Fqimg.xiaohongshu.com%2Fd427c38082677b51f1f2c7488ed1b80cce1fbf9c%3FitemId%3D5d5f425053056536d63ad77e%26imageView2%2F1%2Fw%2F320%2Fh%2F427%2Fq%2F90.jpg%257Cwatermark%2F1%2Fimage%2FaHR0cDovL3FpbWctMTI1MTUyNDMxOS5waWNzaC5teXFjbG91ZC5jb20vYmNjYmVmNjQ1NjM0ZTA1NWM3MDA4M2QyMjA3ZWM5MjdkOWM3MjE2NQ%3D%3D%2Fgravity%2Fsouthwest%2Fdx%2F0%2Fdy%2F0&feature=%E5%A4%A7%E6%B0%94%E9%87%91%E4%B8%9D%E7%BA%B1%E7%BA%BF%E7%BC%96%E5%88%B6&has_color_variant=true&prefetch-image=https%3A%2F%2Fqimg.xiaohongshu.com%2Fd427c38082677b51f1f2c7488ed1b80cce1fbf9c%3FitemId%3D5d5f425053056536d63ad77e%26imageView2%2F2%2Fw%2F800%2Fq%2F90.jpg%3F%257Cwatermark%2F1%2Fimage%2FaHR0cDovL3FpbWctMTI1MTUyNDMxOS5waWNzaC5teXFjbG91ZC5jb20vNGRhYTFjOGI4MzNjMDZmZTQxMTUxMjk4MDA4MGE1YTQ5YTYwZmMyMCU3Q2ltYWdlVmlldzIvMi93Lzc1MC9xLzkw%2Fgravity%2Fsouthwest%2Fdx%2F0%2Fdy%2F0&name=%E4%BC%91%E9%97%B2%E7%B2%97%E8%8A%B1%E5%91%A2%E6%A0%BC%E5%AD%90%E5%A4%96%E5%A5%97%C2%B72020%E6%98%A5%E7%A7%8B%E6%96%B0%E6%AC%BE%E5%A4%8D%E5%8F%A4%E6%B8%AF%E5%91%B3%E5%A5%B3%E8%A3%85%E5%AE%BD%E6%9D%BE%E7%99%BE%E6%90%AD%E4%B8%8A%E8%A1%A3++%E8%93%9D%E8%89%B2+L&seller_type=0&first_width=750&origin_price=398.0&naviHidden=yes",
+    "vendor_name": "HiDou旗舰店",
+    "source": 1,
+    "title": "中国·大气金丝纱线编制",
+    "type": "goods",
+    "h_image_info": {
+      "width": 320,
+      "url": "https://qimg.xiaohongshu.com/d427c38082677b51f1f2c7488ed1b80cce1fbf9c?itemId=5d5f425053056536d63ad77e&imageView2/1/w/320/h/427/q/90.jpg",
+      "height": 427
+    },
+    "vendor_info": {
+      "icon": "http://qimg.xiaohongshu.com/seller/0b637f1064107fbf1918956342b25530",
+      "link": "https://www.xiaohongshu.com/vendor/5b0cbaa71254511484a86315?naviHidden=yes",
+      "name": "HiDou旗舰店"
+    },
+    "fav_info": {
+      "fav_count": 0,
+      "show_fav": false
+    },
+    "tags": [{
+      "name": "30元券",
+      "index": 1,
+      "type": 1
+    }],
+    "spl_id": "5d5f424e53056536d63ad76e",
+    "transparent_image": "https://qimg.xiaohongshu.com/dd3c47fc189dfe704a271442b5fd5286068ab8eb?itemId=5d5f425053056536d63ad77e&imageView2/1/w/320/h/320/q/90.png",
+    "vendor_icon": "http://qimg.xiaohongshu.com/seller/0b637f1064107fbf1918956342b25530",
+    "id": "5d5f425053056536d63ad77e",
+    "vendor_link": "https://www.xiaohongshu.com/vendor/5b0cbaa71254511484a86315?naviHidden=yes",
+    "category_ids": ["5a310dde3f7d1712823b9869", "5a310dde3f7d1712823b986a", "5a310dde3f7d1712823b986b"],
+    "spu_id": "5d5f424d604af1002a1870e0",
+    "seller_id": "5b0cbaa71254511484a86315",
+    "desc": "HiDou 休闲粗花呢格子外套·2020春秋新款复古港味女装宽松百搭上衣 蓝色",
+    "spv_id": "5d5f425053056536d63ad77a"
+  }, {
+    "image": "https://qimg.xiaohongshu.com/90511af525da5990a84a6964526ab735e8c80082?itemId=5e33afae0cf9a129055ae740&imageView2/1/w/320/h/320/q/90.jpg%7Cwatermark/1/image/aHR0cDovL3FpbWctMTI1MTUyNDMxOS5waWNzaC5teXFjbG91ZC5jb20vYmNjYmVmNjQ1NjM0ZTA1NWM3MDA4M2QyMjA3ZWM5MjdkOWM3MjE2NQ==/gravity/southwest/dx/0/dy/0",
+    "promotion_type": 4,
+    "stock_status": 1,
+    "spu_name": "新款显瘦直筒休闲裤女装春季穿搭韩版纯色宽松九分裤显瘦阔腿裤",
+    "item_price": [{
+      "price": 133.9,
+      "index": 1,
+      "type": "sale_price"
+    }, {
+      "price": 249.0,
+      "index": 2,
+      "type": "origin_price"
+    }],
+    "link": "xhsdiscover://webview/www.xiaohongshu.com/goods/5e33afae0cf9a129055ae740?isRN=true&rnName=fantasy-goods-detail-rn&rnPath=goods/5e33afae0cf9a129055ae740&xhs_g_s=0001&country=%E4%B8%AD%E5%9B%BD&is_self_managing=false&max_height=800&new_arriving=true&sale_price=133.9&has_video=false&self_pre_cs=true&first_height=800&item_trade_mode=2&max_width=800&listing_image=https%3A%2F%2Fqimg.xiaohongshu.com%2F90511af525da5990a84a6964526ab735e8c80082%3FitemId%3D5e33afae0cf9a129055ae740%26imageView2%2F1%2Fw%2F320%2Fh%2F320%2Fq%2F90.jpg%257Cwatermark%2F1%2Fimage%2FaHR0cDovL3FpbWctMTI1MTUyNDMxOS5waWNzaC5teXFjbG91ZC5jb20vYmNjYmVmNjQ1NjM0ZTA1NWM3MDA4M2QyMjA3ZWM5MjdkOWM3MjE2NQ%3D%3D%2Fgravity%2Fsouthwest%2Fdx%2F0%2Fdy%2F0&feature=%E9%81%AE%E8%82%89%E6%98%BE%E7%98%A6%E4%BC%91%E9%97%B2%E7%99%BE%E6%90%AD&has_color_variant=true&prefetch-image=https%3A%2F%2Fqimg.xiaohongshu.com%2F90511af525da5990a84a6964526ab735e8c80082%3FitemId%3D5e33afae0cf9a129055ae740%26imageView2%2F2%2Fw%2F800%2Fq%2F90.jpg%3F%257Cwatermark%2F1%2Fimage%2FaHR0cDovL3FpbWctMTI1MTUyNDMxOS5waWNzaC5teXFjbG91ZC5jb20vNGRhYTFjOGI4MzNjMDZmZTQxMTUxMjk4MDA4MGE1YTQ5YTYwZmMyMA%3D%3D%2Fgravity%2Fsouthwest%2Fdx%2F0%2Fdy%2F0&name=%E6%96%B0%E6%AC%BE%E6%98%BE%E7%98%A6%E7%9B%B4%E7%AD%92%E4%BC%91%E9%97%B2%E8%A3%A4%E5%A5%B3%E8%A3%85%E6%98%A5%E5%AD%A3%E7%A9%BF%E6%90%AD%E9%9F%A9%E7%89%88%E7%BA%AF%E8%89%B2%E5%AE%BD%E6%9D%BE%E4%B9%9D%E5%88%86%E8%A3%A4%E6%98%BE%E7%98%A6%E9%98%94%E8%85%BF%E8%A3%A4++%E5%8D%A1%E5%85%B6%E8%89%B2+31&seller_type=0&first_width=800&origin_price=249.0&naviHidden=yes",
+    "vendor_name": "JONAS WAGELL琼\\斯\\维\\格旗舰店",
+    "source": 1,
+    "title": "中国·遮肉显瘦休闲百搭",
+    "type": "goods",
+    "h_image_info": {
+      "width": 320,
+      "url": "https://qimg.xiaohongshu.com/90511af525da5990a84a6964526ab735e8c80082?itemId=5e33afae0cf9a129055ae740&imageView2/1/w/320/h/320/q/90.jpg",
+      "height": 320
+    },
+    "vendor_info": {
+      "icon": "http://qimg.xiaohongshu.com/seller/73ccce4d9c2e28cb92b043962f353ebe",
+      "link": "https://www.xiaohongshu.com/vendor/5c734fbf1d9771143d43f55b?naviHidden=yes",
+      "name": "JONAS WAGELL琼\\斯\\维\\格旗舰店"
+    },
+    "fav_info": {
+      "fav_count": 0,
+      "show_fav": false
+    },
+    "tags": [{
+      "name": "15元券",
+      "index": 1,
+      "type": 1
+    }],
+    "spl_id": "5e33afa80cf9a129055ae71c",
+    "transparent_image": "https://qimg.xiaohongshu.com/0cf4e2554dd33c3aaa8c86b3332ec2c2bc1c63c4?itemId=5e33afae0cf9a129055ae740&imageView2/1/w/320/h/320/q/90.png",
+    "vendor_icon": "http://qimg.xiaohongshu.com/seller/73ccce4d9c2e28cb92b043962f353ebe",
+    "id": "5e33afae0cf9a129055ae740",
+    "vendor_link": "https://www.xiaohongshu.com/vendor/5c734fbf1d9771143d43f55b?naviHidden=yes",
+    "category_ids": ["5a310dde3f7d1712823b9869", "5a310dde3f7d1712823b986a", "5a310dde3f7d1712823b9879"],
+    "spu_id": "5e33afa6aa2f3800322cbd78",
+    "seller_id": "5c734fbf1d9771143d43f55b",
+    "desc": "JONAS WAGELL琼\\斯\\维\\格 新款显瘦直筒休闲裤女装春季穿搭韩版纯色宽松九分裤显瘦阔腿裤 卡其色",
+    "spv_id": "5e33afad0cf9a129055ae73c"
+  }, {
+    "image": "https://qimg.xiaohongshu.com/25019cca6c7321177c53fa2aae829a1a405f31b9?itemId=5d79b4fc81d4c17188e89300&imageView2/1/w/320/h/427/q/90.jpg",
+    "promotion_type": 3,
+    "stock_status": 1,
+    "spu_name": "中长款显瘦设计感风衣式连衣裙小个子女生2019秋季穿搭新款女装",
+    "item_price": [{
+      "price": 259.0,
+      "index": 1,
+      "type": "sale_price"
+    }],
+    "link": "xhsdiscover://webview/www.xiaohongshu.com/goods/5d79b4fc81d4c17188e89300?isRN=true&rnName=fantasy-goods-detail-rn&rnPath=goods/5d79b4fc81d4c17188e89300&xhs_g_s=0001&country=%E4%B8%AD%E5%9B%BD&is_self_managing=false&max_height=1000&new_arriving=false&sale_price=259.0&has_video=false&self_pre_cs=true&first_height=1000&item_trade_mode=2&max_width=750&listing_image=https%3A%2F%2Fqimg.xiaohongshu.com%2F25019cca6c7321177c53fa2aae829a1a405f31b9%3FitemId%3D5d79b4fc81d4c17188e89300%26imageView2%2F1%2Fw%2F320%2Fh%2F427%2Fq%2F90.jpg&feature=%E8%A3%99%E6%91%86%E8%8A%B1%E8%BE%B9%E7%AE%80%E7%BA%A6%E4%BC%98%E9%9B%85&has_color_variant=true&prefetch-image=https%3A%2F%2Fqimg.xiaohongshu.com%2F25019cca6c7321177c53fa2aae829a1a405f31b9%3FitemId%3D5d79b4fc81d4c17188e89300%26imageView2%2F2%2Fw%2F800%2Fq%2F90.jpg&name=%E4%B8%AD%E9%95%BF%E6%AC%BE%E6%98%BE%E7%98%A6%E8%AE%BE%E8%AE%A1%E6%84%9F%E9%A3%8E%E8%A1%A3%E5%BC%8F%E8%BF%9E%E8%A1%A3%E8%A3%99%E5%B0%8F%E4%B8%AA%E5%AD%90%E5%A5%B3%E7%94%9F2019%E7%A7%8B%E5%AD%A3%E7%A9%BF%E6%90%AD%E6%96%B0%E6%AC%BE%E5%A5%B3%E8%A3%85++%E7%81%B0%E8%B1%86%E7%BB%BF+L&seller_type=0&first_width=750&origin_price=null&naviHidden=yes",
+    "vendor_name": "安妮陈旗舰店",
+    "source": 1,
+    "title": "中国·裙摆花边简约优雅",
+    "type": "goods",
+    "h_image_info": {
+      "width": 320,
+      "url": "https://qimg.xiaohongshu.com/25019cca6c7321177c53fa2aae829a1a405f31b9?itemId=5d79b4fc81d4c17188e89300&imageView2/1/w/320/h/427/q/90.jpg",
+      "height": 427
+    },
+    "vendor_info": {
+      "icon": "http://qimg.xiaohongshu.com/seller/33ce9895eb34c34038b1f8ed64d5322a",
+      "link": "https://www.xiaohongshu.com/vendor/58007a23328352339e72654a?naviHidden=yes",
+      "name": "安妮陈旗舰店"
+    },
+    "fav_info": {
+      "fav_count": 0,
+      "show_fav": false
+    },
+    "tags": [{
+      "name": "399选2",
+      "index": 1,
+      "type": 1
+    }],
+    "spl_id": "5d79b4fa81d4c17188e892f0",
+    "transparent_image": "https://qimg.xiaohongshu.com/aa6a55a51617b16626203a64942226ddd2661f79?itemId=5d79b4fc81d4c17188e89300&imageView2/1/w/320/h/320/q/90.png",
+    "vendor_icon": "http://qimg.xiaohongshu.com/seller/33ce9895eb34c34038b1f8ed64d5322a",
+    "id": "5d79b4fc81d4c17188e89300",
+    "vendor_link": "https://www.xiaohongshu.com/vendor/58007a23328352339e72654a?naviHidden=yes",
+    "category_ids": ["5a310dde3f7d1712823b9869", "5a310dde3f7d1712823b986a", "5a310dde3f7d1712823b9884"],
+    "spu_id": "5d79b4f9c6a2ac002cd87eea",
+    "seller_id": "58007a23328352339e72654a",
+    "desc": "安妮陈 中长款显瘦设计感风衣式连衣裙小个子女生2019秋季穿搭新款女装 灰豆绿",
+    "spv_id": "5d79b4fc81d4c17188e892fc"
+  }, {
+    "image": "https://qimg.xiaohongshu.com/26331850-a210-11e9-80b4-af17d175aec4-ifowmg83opb1dhnjhsemi?itemId=5d242c7053056530528a8fd9&imageView2/1/w/320/h/427/q/90.jpg",
+    "promotion_type": 4,
+    "stock_status": 1,
+    "spu_name": "胖mm大码女装胖妹妹秋季显瘦两件套洋气遮肚适合胖女人穿的套装",
+    "item_price": [{
+      "price": 79.0,
+      "index": 1,
+      "type": "sale_price"
+    }, {
+      "price": 158.0,
+      "index": 2,
+      "type": "origin_price"
+    }],
+    "link": "xhsdiscover://webview/www.xiaohongshu.com/goods/5d242c7053056530528a8fd9?isRN=true&rnName=fantasy-goods-detail-rn&rnPath=goods/5d242c7053056530528a8fd9&xhs_g_s=0001&country=%E4%B8%AD%E5%9B%BD&is_self_managing=false&max_height=1000&new_arriving=false&sale_price=79.0&has_video=false&self_pre_cs=true&first_height=1000&item_trade_mode=2&max_width=750&listing_image=https%3A%2F%2Fqimg.xiaohongshu.com%2F26331850-a210-11e9-80b4-af17d175aec4-ifowmg83opb1dhnjhsemi%3FitemId%3D5d242c7053056530528a8fd9%26imageView2%2F1%2Fw%2F320%2Fh%2F427%2Fq%2F90.jpg&feature=%E4%BC%98%E9%9B%85%E6%B0%94%E8%B4%A8%E9%80%9A%E5%8B%A4%E5%8D%95%E5%93%81&has_color_variant=true&prefetch-image=https%3A%2F%2Fqimg.xiaohongshu.com%2F26331850-a210-11e9-80b4-af17d175aec4-ifowmg83opb1dhnjhsemi%3FitemId%3D5d242c7053056530528a8fd9%26imageView2%2F2%2Fw%2F800%2Fq%2F90.jpg&name=%E8%83%96mm%E5%A4%A7%E7%A0%81%E5%A5%B3%E8%A3%85%E8%83%96%E5%A6%B9%E5%A6%B9%E7%A7%8B%E5%AD%A3%E6%98%BE%E7%98%A6%E4%B8%A4%E4%BB%B6%E5%A5%97%E6%B4%8B%E6%B0%94%E9%81%AE%E8%82%9A%E9%80%82%E5%90%88%E8%83%96%E5%A5%B3%E4%BA%BA%E7%A9%BF%E7%9A%84%E5%A5%97%E8%A3%85++%E4%B8%8A%E8%A1%A3+-+%E7%B1%B3%E8%89%B2+%E5%A4%A7%E7%A0%81XL&seller_type=1&first_width=750&origin_price=158.0&naviHidden=yes",
+    "vendor_name": "夏大大品牌店",
+    "source": 1,
+    "title": "中国·优雅气质通勤单品",
+    "type": "goods",
+    "h_image_info": {
+      "width": 320,
+      "url": "https://qimg.xiaohongshu.com/26331850-a210-11e9-80b4-af17d175aec4-ifowmg83opb1dhnjhsemi?itemId=5d242c7053056530528a8fd9&imageView2/1/w/320/h/427/q/90.jpg",
+      "height": 427
+    },
+    "vendor_info": {
+      "icon": "http://qimg.xiaohongshu.com/c6eddfe7-ffa7-447c-b49e-a6ff84efbe78?e=1561702463&token=edMBpdzSWI2pH13onoAIcpYw7pSU2tplRrPTySQO:SNljAV5i95sArc1piiLcZWl8uq0=",
+      "link": "https://www.xiaohongshu.com/vendor/5d1c12b37d8b380001d84b57?naviHidden=yes",
+      "name": "夏大大品牌店"
+    },
+    "fav_info": {
+      "fav_count": 0,
+      "show_fav": false
+    },
+    "tags": [],
+    "spl_id": "5d242c6e53056530528a8fd2",
+    "transparent_image": "https://qimg.xiaohongshu.com/2824af20-a210-11e9-80b4-af17d175aec4-s5xoxlmypyhh2apxpqfr?itemId=5d242c7053056530528a8fd9&imageView2/1/w/320/h/320/q/90.png",
+    "vendor_icon": "http://qimg.xiaohongshu.com/c6eddfe7-ffa7-447c-b49e-a6ff84efbe78?e=1561702463&token=edMBpdzSWI2pH13onoAIcpYw7pSU2tplRrPTySQO:SNljAV5i95sArc1piiLcZWl8uq0=",
+    "id": "5d242c7053056530528a8fd9",
+    "vendor_link": "https://www.xiaohongshu.com/vendor/5d1c12b37d8b380001d84b57?naviHidden=yes",
+    "category_ids": ["5a310dde3f7d1712823b9869", "5a310dde3f7d1712823b986a", "5a310dde3f7d1712823b9885"],
+    "spu_id": "5d242c6d3175ad002ab61cc3",
+    "seller_id": "5d1c12b37d8b380001d84b57",
+    "desc": "夏大大 胖mm大码女装胖妹妹秋季显瘦两件套洋气遮肚适合胖女人穿的套装 上衣 - 米色",
+    "spv_id": "5d242c6f53056530528a8fd3"
+  }, {
+    "image": "https://qimg.xiaohongshu.com/bdebff5ad43966fd26d65f2ffc1237eebad26d67?itemId=5d9071b55305650e2588007e&imageView2/1/w/320/h/427/q/90.jpg",
+    "stock_status": 1,
+    "spu_name": "新年年会中长款纯色显瘦高腰连衣裙2019冬季小个子穿搭新款女装",
+    "item_price": [{
+      "price": 189.0,
+      "index": 1,
+      "type": "sale_price"
+    }],
+    "link": "xhsdiscover://webview/www.xiaohongshu.com/goods/5d9071b55305650e2588007e?isRN=true&rnName=fantasy-goods-detail-rn&rnPath=goods/5d9071b55305650e2588007e&xhs_g_s=0001&country=%E4%B8%AD%E5%9B%BD&is_self_managing=false&max_height=1000&new_arriving=false&sale_price=189.0&has_video=false&self_pre_cs=true&first_height=1000&item_trade_mode=2&max_width=750&listing_image=https%3A%2F%2Fqimg.xiaohongshu.com%2Fbdebff5ad43966fd26d65f2ffc1237eebad26d67%3FitemId%3D5d9071b55305650e2588007e%26imageView2%2F1%2Fw%2F320%2Fh%2F427%2Fq%2F90.jpg&feature=%E5%B0%8FA%E8%A3%99%E5%9E%8B%E6%98%BE%E7%98%A6%E6%98%BE%E9%AB%98&has_color_variant=true&prefetch-image=https%3A%2F%2Fqimg.xiaohongshu.com%2Fbdebff5ad43966fd26d65f2ffc1237eebad26d67%3FitemId%3D5d9071b55305650e2588007e%26imageView2%2F2%2Fw%2F800%2Fq%2F90.jpg&name=%E6%96%B0%E5%B9%B4%E5%B9%B4%E4%BC%9A%E4%B8%AD%E9%95%BF%E6%AC%BE%E7%BA%AF%E8%89%B2%E6%98%BE%E7%98%A6%E9%AB%98%E8%85%B0%E8%BF%9E%E8%A1%A3%E8%A3%992019%E5%86%AC%E5%AD%A3%E5%B0%8F%E4%B8%AA%E5%AD%90%E7%A9%BF%E6%90%AD%E6%96%B0%E6%AC%BE%E5%A5%B3%E8%A3%85++%E9%85%92%E7%BA%A2%E8%89%B2+S&seller_type=0&first_width=750&origin_price=null&naviHidden=yes",
+    "vendor_name": "安妮陈旗舰店",
+    "source": 1,
+    "title": "中国·小A裙型显瘦显高",
+    "type": "goods",
+    "h_image_info": {
+      "width": 320,
+      "url": "https://qimg.xiaohongshu.com/bdebff5ad43966fd26d65f2ffc1237eebad26d67?itemId=5d9071b55305650e2588007e&imageView2/1/w/320/h/427/q/90.jpg",
+      "height": 427
+    },
+    "vendor_info": {
+      "icon": "http://qimg.xiaohongshu.com/seller/33ce9895eb34c34038b1f8ed64d5322a",
+      "link": "https://www.xiaohongshu.com/vendor/58007a23328352339e72654a?naviHidden=yes",
+      "name": "安妮陈旗舰店"
+    },
+    "fav_info": {
+      "fav_count": 0,
+      "show_fav": false
+    },
+    "tags": [],
+    "spl_id": "5d9071b45305650e25880078",
+    "transparent_image": "https://qimg.xiaohongshu.com/2edf0cc2b91029ecfb9f6f6eb81ba565ad88a10b?itemId=5d9071b55305650e2588007e&imageView2/1/w/320/h/320/q/90.png",
+    "vendor_icon": "http://qimg.xiaohongshu.com/seller/33ce9895eb34c34038b1f8ed64d5322a",
+    "id": "5d9071b55305650e2588007e",
+    "vendor_link": "https://www.xiaohongshu.com/vendor/58007a23328352339e72654a?naviHidden=yes",
+    "category_ids": ["5a310dde3f7d1712823b9869", "5a310dde3f7d1712823b986a", "5a310dde3f7d1712823b9884"],
+    "spu_id": "5d9071b32bd3c400358c9912",
+    "seller_id": "58007a23328352339e72654a",
+    "desc": "安妮陈 新年年会中长款纯色显瘦高腰连衣裙2019冬季小个子穿搭新款女装 酒红色",
+    "spv_id": "5d9071b45305650e25880079"
+  }, {
+    "image": "https://qimg.xiaohongshu.com/c64e2cfa393e202dd4bb1c94d039182d7e5613b6?itemId=5e3a1f400cf9a128f24ef000&imageView2/1/w/320/h/320/q/90.jpg",
+    "stock_status": 1,
+    "spu_name": "网纱蛋糕半身裙2020年春季新款女装a字复古高腰韩版宽松中长裙子",
+    "item_price": [{
+      "price": 159.0,
+      "index": 1,
+      "type": "sale_price"
+    }],
+    "link": "xhsdiscover://webview/www.xiaohongshu.com/goods/5e3a1f400cf9a128f24ef000?isRN=true&rnName=fantasy-goods-detail-rn&rnPath=goods/5e3a1f400cf9a128f24ef000&xhs_g_s=0001&country=%E4%B8%AD%E5%9B%BD&is_self_managing=false&max_height=800&new_arriving=true&sale_price=159.0&has_video=false&self_pre_cs=true&first_height=800&item_trade_mode=2&max_width=800&listing_image=https%3A%2F%2Fqimg.xiaohongshu.com%2Fc64e2cfa393e202dd4bb1c94d039182d7e5613b6%3FitemId%3D5e3a1f400cf9a128f24ef000%26imageView2%2F1%2Fw%2F320%2Fh%2F320%2Fq%2F90.jpg&feature=%E7%BD%91%E7%BA%B1%E8%9B%8B%E7%B3%95%E5%8D%8A%E8%BA%AB%E8%A3%99&has_color_variant=true&prefetch-image=https%3A%2F%2Fqimg.xiaohongshu.com%2Fc64e2cfa393e202dd4bb1c94d039182d7e5613b6%3FitemId%3D5e3a1f400cf9a128f24ef000%26imageView2%2F2%2Fw%2F800%2Fq%2F90.jpg&name=%E7%BD%91%E7%BA%B1%E8%9B%8B%E7%B3%95%E5%8D%8A%E8%BA%AB%E8%A3%992020%E5%B9%B4%E6%98%A5%E5%AD%A3%E6%96%B0%E6%AC%BE%E5%A5%B3%E8%A3%85a%E5%AD%97%E5%A4%8D%E5%8F%A4%E9%AB%98%E8%85%B0%E9%9F%A9%E7%89%88%E5%AE%BD%E6%9D%BE%E4%B8%AD%E9%95%BF%E8%A3%99%E5%AD%90++%E6%9D%8F%E8%89%B2+S&seller_type=1&first_width=800&origin_price=null&naviHidden=yes",
+    "vendor_name": "THENEXT品牌店",
+    "source": 1,
+    "title": "中国·网纱蛋糕半身裙",
+    "type": "goods",
+    "h_image_info": {
+      "width": 320,
+      "url": "https://qimg.xiaohongshu.com/c64e2cfa393e202dd4bb1c94d039182d7e5613b6?itemId=5e3a1f400cf9a128f24ef000&imageView2/1/w/320/h/320/q/90.jpg",
+      "height": 320
+    },
+    "vendor_info": {
+      "icon": "https://qimg.xiaohongshu.com/f34bf74d1997e93ee8fc3cd7f622fafcabfd7d6a",
+      "link": "https://www.xiaohongshu.com/vendor/5df7294b94fe700001e6ba7e?naviHidden=yes",
+      "name": "THENEXT品牌店"
+    },
+    "fav_info": {
+      "fav_count": 0,
+      "show_fav": false
+    },
+    "tags": [{
+      "name": "20元券",
+      "index": 1,
+      "type": 1
+    }],
+    "spl_id": "5e3a1f3f0cf9a128f24eeffa",
+    "vendor_icon": "https://qimg.xiaohongshu.com/f34bf74d1997e93ee8fc3cd7f622fafcabfd7d6a",
+    "id": "5e3a1f400cf9a128f24ef000",
+    "vendor_link": "https://www.xiaohongshu.com/vendor/5df7294b94fe700001e6ba7e?naviHidden=yes",
+    "category_ids": ["5a310dde3f7d1712823b9869", "5a310dde3f7d1712823b986a", "5a310dde3f7d1712823b9880"],
+    "spu_id": "5e3a1f3c8848d573718dc46a",
+    "seller_id": "5df7294b94fe700001e6ba7e",
+    "desc": "THENEXT 网纱蛋糕半身裙2020年春季新款女装a字复古高腰韩版宽松中长裙子 杏色",
+    "spv_id": "5e3a1f400cf9a128f24eeffb"
+  }, {
+    "image": "https://qimg.xiaohongshu.com/65e01628339b58f1808406da9ec3826e6738be62?itemId=5dc3ba3aa09141660b94cdc6&imageView2/1/w/320/h/427/q/90.jpg",
+    "stock_status": 1,
+    "spu_name": "2019秋冬新款慵懒风宽松韩版连帽卫衣女装加厚加绒外套gswy165",
+    "item_price": [{
+      "price": 129.0,
+      "index": 1,
+      "type": "sale_price"
+    }],
+    "link": "xhsdiscover://webview/www.xiaohongshu.com/goods/5dc3ba3aa09141660b94cdc6?isRN=true&rnName=fantasy-goods-detail-rn&rnPath=goods/5dc3ba3aa09141660b94cdc6&xhs_g_s=0001&country=%E4%B8%AD%E5%9B%BD&is_self_managing=false&max_height=1000&new_arriving=false&sale_price=129.0&has_video=false&self_pre_cs=true&first_height=1000&item_trade_mode=2&max_width=750&listing_image=https%3A%2F%2Fqimg.xiaohongshu.com%2F65e01628339b58f1808406da9ec3826e6738be62%3FitemId%3D5dc3ba3aa09141660b94cdc6%26imageView2%2F1%2Fw%2F320%2Fh%2F427%2Fq%2F90.jpg&feature=%E6%97%B6%E5%B0%9A%E6%8B%BC%E6%8E%A5&has_color_variant=true&prefetch-image=https%3A%2F%2Fqimg.xiaohongshu.com%2F65e01628339b58f1808406da9ec3826e6738be62%3FitemId%3D5dc3ba3aa09141660b94cdc6%26imageView2%2F2%2Fw%2F800%2Fq%2F90.jpg&name=2019%E7%A7%8B%E5%86%AC%E6%96%B0%E6%AC%BE%E6%85%B5%E6%87%92%E9%A3%8E%E5%AE%BD%E6%9D%BE%E9%9F%A9%E7%89%88%E8%BF%9E%E5%B8%BD%E5%8D%AB%E8%A1%A3%E5%A5%B3%E8%A3%85%E5%8A%A0%E5%8E%9A%E5%8A%A0%E7%BB%92%E5%A4%96%E5%A5%97gswy165++%E9%BB%91%E8%89%B2%28%E5%8A%A0%E7%BB%92%29+%E5%9D%87%E7%A0%81&seller_type=0&first_width=750&origin_price=null&naviHidden=yes",
+    "vendor_name": "乔可家Jcool story旗舰店",
+    "source": 1,
+    "title": "中国·时尚拼接",
+    "type": "goods",
+    "h_image_info": {
+      "width": 320,
+      "url": "https://qimg.xiaohongshu.com/65e01628339b58f1808406da9ec3826e6738be62?itemId=5dc3ba3aa09141660b94cdc6&imageView2/1/w/320/h/427/q/90.jpg",
+      "height": 427
+    },
+    "vendor_info": {
+      "icon": "http://qimg.xiaohongshu.com/seller/e13438f40a7031c81ee5be985daf23c7",
+      "link": "https://www.xiaohongshu.com/vendor/5b73d0d6bb06cd2f471d2f70?naviHidden=yes",
+      "name": "乔可家Jcool story旗舰店"
+    },
+    "fav_info": {
+      "fav_count": 0,
+      "show_fav": false
+    },
+    "tags": [{
+      "name": "3件7折",
+      "index": 1,
+      "type": 1
+    }],
+    "spl_id": "5dc3ba39a09141660b94cdc0",
+    "transparent_image": "https://qimg.xiaohongshu.com/ab357980f3dab131a4bef31f535b64d200f78e6b?itemId=5dc3ba3aa09141660b94cdc6&imageView2/1/w/320/h/320/q/90.png",
+    "vendor_icon": "http://qimg.xiaohongshu.com/seller/e13438f40a7031c81ee5be985daf23c7",
+    "id": "5dc3ba3aa09141660b94cdc6",
+    "vendor_link": "https://www.xiaohongshu.com/vendor/5b73d0d6bb06cd2f471d2f70?naviHidden=yes",
+    "category_ids": ["5a310dde3f7d1712823b9869", "5a310dde3f7d1712823b986a", "5a310dde3f7d1712823b9878"],
+    "spu_id": "5dc3ba39d6a56c53564ace59",
+    "seller_id": "5b73d0d6bb06cd2f471d2f70",
+    "desc": "乔可家Jcool story 2019秋冬新款慵懒风宽松韩版连帽卫衣女装加厚加绒外套gswy165 黑色(加绒)",
+    "spv_id": "5dc3ba3aa09141660b94cdc1"
+  }, {
+    "image": "https://qimg.xiaohongshu.com/3f3cba60-7252-11e9-8fe8-91d4b1f7964a?itemId=5cd4169b81d4c1251ec0d337&imageView2/1/w/320/h/320/q/90.jpg",
+    "stock_status": 1,
+    "spu_name": "夏季女装2019新款个性圆领撞色宽松拼接网纱中长款假两件T恤",
+    "item_price": [{
+      "price": 99.0,
+      "index": 1,
+      "type": "sale_price"
+    }, {
+      "price": 298.0,
+      "index": 2,
+      "type": "origin_price"
+    }],
+    "link": "xhsdiscover://webview/www.xiaohongshu.com/goods/5cd4169b81d4c1251ec0d337?isRN=true&rnName=fantasy-goods-detail-rn&rnPath=goods/5cd4169b81d4c1251ec0d337&xhs_g_s=0001&country=%E4%B8%AD%E5%9B%BD&is_self_managing=false&max_height=800&new_arriving=false&sale_price=99.0&has_video=false&self_pre_cs=true&first_height=800&item_trade_mode=2&max_width=800&listing_image=https%3A%2F%2Fqimg.xiaohongshu.com%2F3f3cba60-7252-11e9-8fe8-91d4b1f7964a%3FitemId%3D5cd4169b81d4c1251ec0d337%26imageView2%2F1%2Fw%2F320%2Fh%2F320%2Fq%2F90.jpg&feature=%E5%BD%92%E4%BA%8E%E5%B9%B3%E9%9D%99%E4%B8%80%E6%8A%B9%E6%B8%85%E6%96%B0&has_color_variant=true&prefetch-image=https%3A%2F%2Fqimg.xiaohongshu.com%2F3f3cba60-7252-11e9-8fe8-91d4b1f7964a%3FitemId%3D5cd4169b81d4c1251ec0d337%26imageView2%2F2%2Fw%2F800%2Fq%2F90.jpg&name=%E5%A4%8F%E5%AD%A3%E5%A5%B3%E8%A3%852019%E6%96%B0%E6%AC%BE%E4%B8%AA%E6%80%A7%E5%9C%86%E9%A2%86%E6%92%9E%E8%89%B2%E5%AE%BD%E6%9D%BE%E6%8B%BC%E6%8E%A5%E7%BD%91%E7%BA%B1%E4%B8%AD%E9%95%BF%E6%AC%BE%E5%81%87%E4%B8%A4%E4%BB%B6T%E6%81%A4++%E7%99%BD%E8%89%B2+%E5%9D%87%E7%A0%81&seller_type=0&first_width=800&origin_price=298.0&naviHidden=yes",
+    "vendor_name": "UNIFREE旗舰店",
+    "source": 1,
+    "title": "中国·归于平静一抹清新",
+    "type": "goods",
+    "h_image_info": {
+      "width": 320,
+      "url": "https://qimg.xiaohongshu.com/3f3cba60-7252-11e9-8fe8-91d4b1f7964a?itemId=5cd4169b81d4c1251ec0d337&imageView2/1/w/320/h/320/q/90.jpg",
+      "height": 320
+    },
+    "vendor_info": {
+      "icon": "http://qimg.xiaohongshu.com/seller/c53ad156bc6207748a0effc7e1404d22",
+      "link": "https://www.xiaohongshu.com/vendor/5a3a0d7475e4f05ac63b5830?naviHidden=yes",
+      "name": "UNIFREE旗舰店"
+    },
+    "fav_info": {
+      "fav_count": 0,
+      "show_fav": false
+    },
+    "tags": [],
+    "spl_id": "5cd4169a81d4c1251ec0d332",
+    "transparent_image": "https://qimg.xiaohongshu.com/45944360-7252-11e9-8fe8-91d4b1f7964a?itemId=5cd4169b81d4c1251ec0d337&imageView2/1/w/320/h/320/q/90.png",
+    "vendor_icon": "http://qimg.xiaohongshu.com/seller/c53ad156bc6207748a0effc7e1404d22",
+    "id": "5cd4169b81d4c1251ec0d337",
+    "vendor_link": "https://www.xiaohongshu.com/vendor/5a3a0d7475e4f05ac63b5830?naviHidden=yes",
+    "category_ids": ["5a310dde3f7d1712823b9869", "5a310dde3f7d1712823b986a", "5a310dde3f7d1712823b9876"],
+    "spu_id": "5cd41699065d1d5d1917a23d",
+    "seller_id": "5a3a0d7475e4f05ac63b5830",
+    "desc": "UNIFREE 夏季女装2019新款个性圆领撞色宽松拼接网纱中长款假两件T恤 白色",
+    "spv_id": "5cd4169a81d4c1251ec0d333"
+  }, {
+    "image": "https://qimg.xiaohongshu.com/33346dd1aa488620a75fd5afde8dc74973442abe?itemId=5e04f09c5305654b4f20b6b6&imageView2/1/w/320/h/427/q/90.jpg%7Cwatermark/1/image/aHR0cDovL3FpbWctMTI1MTUyNDMxOS5waWNzaC5teXFjbG91ZC5jb20vYmNjYmVmNjQ1NjM0ZTA1NWM3MDA4M2QyMjA3ZWM5MjdkOWM3MjE2NQ==/gravity/southwest/dx/0/dy/0",
+    "promotion_type": 4,
+    "stock_status": 1,
+    "spu_name": "网纱拼接连衣裙女早春新款韩版中长款很仙的气质高腰女装针织裙子",
+    "item_price": [{
+      "price": 118.0,
+      "index": 1,
+      "type": "sale_price"
+    }, {
+      "price": 119.0,
+      "index": 2,
+      "type": "origin_price"
+    }],
+    "link": "xhsdiscover://webview/www.xiaohongshu.com/goods/5e04f09c5305654b4f20b6b6?isRN=true&rnName=fantasy-goods-detail-rn&rnPath=goods/5e04f09c5305654b4f20b6b6&xhs_g_s=0001&country=%E4%B8%AD%E5%9B%BD&is_self_managing=false&max_height=1000&new_arriving=false&sale_price=118.0&has_video=false&self_pre_cs=true&first_height=1000&item_trade_mode=2&max_width=750&listing_image=https%3A%2F%2Fqimg.xiaohongshu.com%2F33346dd1aa488620a75fd5afde8dc74973442abe%3FitemId%3D5e04f09c5305654b4f20b6b6%26imageView2%2F1%2Fw%2F320%2Fh%2F427%2Fq%2F90.jpg%257Cwatermark%2F1%2Fimage%2FaHR0cDovL3FpbWctMTI1MTUyNDMxOS5waWNzaC5teXFjbG91ZC5jb20vYmNjYmVmNjQ1NjM0ZTA1NWM3MDA4M2QyMjA3ZWM5MjdkOWM3MjE2NQ%3D%3D%2Fgravity%2Fsouthwest%2Fdx%2F0%2Fdy%2F0&feature=%E9%AB%98%E8%85%B0%E7%BD%91%E7%BA%B1%E6%AF%9B%E8%A1%A3%E8%A3%99&has_color_variant=true&prefetch-image=https%3A%2F%2Fqimg.xiaohongshu.com%2F33346dd1aa488620a75fd5afde8dc74973442abe%3FitemId%3D5e04f09c5305654b4f20b6b6%26imageView2%2F2%2Fw%2F800%2Fq%2F90.jpg%3F%257Cwatermark%2F1%2Fimage%2FaHR0cDovL3FpbWctMTI1MTUyNDMxOS5waWNzaC5teXFjbG91ZC5jb20vNGRhYTFjOGI4MzNjMDZmZTQxMTUxMjk4MDA4MGE1YTQ5YTYwZmMyMCU3Q2ltYWdlVmlldzIvMi93Lzc1MC9xLzkw%2Fgravity%2Fsouthwest%2Fdx%2F0%2Fdy%2F0&name=%E7%BD%91%E7%BA%B1%E6%8B%BC%E6%8E%A5%E8%BF%9E%E8%A1%A3%E8%A3%99%E5%A5%B3%E6%97%A9%E6%98%A5%E6%96%B0%E6%AC%BE%E9%9F%A9%E7%89%88%E4%B8%AD%E9%95%BF%E6%AC%BE%E5%BE%88%E4%BB%99%E7%9A%84%E6%B0%94%E8%B4%A8%E9%AB%98%E8%85%B0%E5%A5%B3%E8%A3%85%E9%92%88%E7%BB%87%E8%A3%99%E5%AD%90++%E9%BB%91%E8%89%B2+%E5%9D%87%E7%A0%81&seller_type=1&first_width=750&origin_price=119.0&naviHidden=yes",
+    "vendor_name": "裂素品牌店",
+    "source": 1,
+    "title": "高腰网纱毛衣裙",
+    "type": "goods",
+    "h_image_info": {
+      "width": 320,
+      "url": "https://qimg.xiaohongshu.com/33346dd1aa488620a75fd5afde8dc74973442abe?itemId=5e04f09c5305654b4f20b6b6&imageView2/1/w/320/h/427/q/90.jpg",
+      "height": 427
+    },
+    "vendor_info": {
+      "icon": "https://qimg.xiaohongshu.com/51e66292c89d8550310f0d936d43f9a70dff10e8",
+      "link": "https://www.xiaohongshu.com/vendor/5ddcd8808afb1f0001ebd830?naviHidden=yes",
+      "name": "裂素品牌店"
+    },
+    "fav_info": {
+      "fav_count": 0,
+      "show_fav": false
+    },
+    "tags": [{
+      "name": "立减10",
+      "index": 1,
+      "type": 1
+    }],
+    "spl_id": "5e04f09b5305654b4f20b6b0",
+    "transparent_image": "https://qimg.xiaohongshu.com/e71439396322bf66d112e3f01b7405a360969534?itemId=5e04f09c5305654b4f20b6b6&imageView2/1/w/320/h/320/q/90.png",
+    "vendor_icon": "https://qimg.xiaohongshu.com/51e66292c89d8550310f0d936d43f9a70dff10e8",
+    "id": "5e04f09c5305654b4f20b6b6",
+    "vendor_link": "https://www.xiaohongshu.com/vendor/5ddcd8808afb1f0001ebd830?naviHidden=yes",
+    "category_ids": ["5a310dde3f7d1712823b9869", "5a310dde3f7d1712823b986a", "5a310dde3f7d1712823b9884"],
+    "spu_id": "5e04f09a323abe0030c1b85c",
+    "seller_id": "5ddcd8808afb1f0001ebd830",
+    "desc": "LIESU裂素 网纱拼接连衣裙女早春新款韩版中长款很仙的气质高腰女装针织裙子 黑色",
+    "spv_id": "5e04f09c5305654b4f20b6b1"
+  }, {
+    "image": "https://qimg.xiaohongshu.com/6d0ab3fe36a401adf54ac6f24eee1fcaa06700b8?itemId=5e3a1f3f0cf9a128f24eeff4&imageView2/1/w/320/h/320/q/90.jpg",
+    "stock_status": 1,
+    "spu_name": "网纱蛋糕半身裙2020年春季新款女装a字复古高腰韩版宽松中长裙子",
+    "item_price": [{
+      "price": 159.0,
+      "index": 1,
+      "type": "sale_price"
+    }],
+    "link": "xhsdiscover://webview/www.xiaohongshu.com/goods/5e3a1f3f0cf9a128f24eeff4?isRN=true&rnName=fantasy-goods-detail-rn&rnPath=goods/5e3a1f3f0cf9a128f24eeff4&xhs_g_s=0001&country=%E4%B8%AD%E5%9B%BD&is_self_managing=false&max_height=800&new_arriving=true&sale_price=159.0&has_video=false&self_pre_cs=true&first_height=800&item_trade_mode=2&max_width=800&listing_image=https%3A%2F%2Fqimg.xiaohongshu.com%2F6d0ab3fe36a401adf54ac6f24eee1fcaa06700b8%3FitemId%3D5e3a1f3f0cf9a128f24eeff4%26imageView2%2F1%2Fw%2F320%2Fh%2F320%2Fq%2F90.jpg&feature=%E7%BD%91%E7%BA%B1%E8%9B%8B%E7%B3%95%E5%8D%8A%E8%BA%AB%E8%A3%99&has_color_variant=true&prefetch-image=https%3A%2F%2Fqimg.xiaohongshu.com%2F6d0ab3fe36a401adf54ac6f24eee1fcaa06700b8%3FitemId%3D5e3a1f3f0cf9a128f24eeff4%26imageView2%2F2%2Fw%2F800%2Fq%2F90.jpg&name=%E7%BD%91%E7%BA%B1%E8%9B%8B%E7%B3%95%E5%8D%8A%E8%BA%AB%E8%A3%992020%E5%B9%B4%E6%98%A5%E5%AD%A3%E6%96%B0%E6%AC%BE%E5%A5%B3%E8%A3%85a%E5%AD%97%E5%A4%8D%E5%8F%A4%E9%AB%98%E8%85%B0%E9%9F%A9%E7%89%88%E5%AE%BD%E6%9D%BE%E4%B8%AD%E9%95%BF%E8%A3%99%E5%AD%90++%E5%92%96%E5%95%A1%E8%89%B2+M&seller_type=1&first_width=800&origin_price=null&naviHidden=yes",
+    "vendor_name": "THENEXT品牌店",
+    "source": 1,
+    "title": "中国·网纱蛋糕半身裙",
+    "type": "goods",
+    "h_image_info": {
+      "width": 320,
+      "url": "https://qimg.xiaohongshu.com/6d0ab3fe36a401adf54ac6f24eee1fcaa06700b8?itemId=5e3a1f3f0cf9a128f24eeff4&imageView2/1/w/320/h/320/q/90.jpg",
+      "height": 320
+    },
+    "vendor_info": {
+      "icon": "https://qimg.xiaohongshu.com/f34bf74d1997e93ee8fc3cd7f622fafcabfd7d6a",
+      "link": "https://www.xiaohongshu.com/vendor/5df7294b94fe700001e6ba7e?naviHidden=yes",
+      "name": "THENEXT品牌店"
+    },
+    "fav_info": {
+      "fav_count": 0,
+      "show_fav": false
+    },
+    "tags": [{
+      "name": "20元券",
+      "index": 1,
+      "type": 1
+    }],
+    "spl_id": "5e3a1f3d0cf9a128f24eefe9",
+    "vendor_icon": "https://qimg.xiaohongshu.com/f34bf74d1997e93ee8fc3cd7f622fafcabfd7d6a",
+    "id": "5e3a1f3f0cf9a128f24eeff4",
+    "vendor_link": "https://www.xiaohongshu.com/vendor/5df7294b94fe700001e6ba7e?naviHidden=yes",
+    "category_ids": ["5a310dde3f7d1712823b9869", "5a310dde3f7d1712823b986a", "5a310dde3f7d1712823b9880"],
+    "spu_id": "5e3a1f3c8848d573718dc46a",
+    "seller_id": "5df7294b94fe700001e6ba7e",
+    "desc": "THENEXT 网纱蛋糕半身裙2020年春季新款女装a字复古高腰韩版宽松中长裙子 咖啡色",
+    "spv_id": "5e3a1f3e0cf9a128f24eeff0"
+  }, {
+    "image": "https://qimg.xiaohongshu.com/9cedc6d6e4e495b92b11e81845281ccfc4146afb?itemId=5e0d607881d4c12f26c8b975&imageView2/1/w/320/h/427/q/90.jpg%7Cwatermark/1/image/aHR0cDovL3FpbWctMTI1MTUyNDMxOS5waWNzaC5teXFjbG91ZC5jb20vYmNjYmVmNjQ1NjM0ZTA1NWM3MDA4M2QyMjA3ZWM5MjdkOWM3MjE2NQ==/gravity/southwest/dx/0/dy/0",
+    "promotion_type": 4,
+    "stock_status": 1,
+    "spu_name": "2020春装新款宽松时尚衬衫女设计感小众上衣小个子女生穿搭女装",
+    "item_price": [{
+      "price": 155.0,
+      "index": 1,
+      "type": "sale_price"
+    }, {
+      "price": 223.0,
+      "index": 2,
+      "type": "origin_price"
+    }],
+    "link": "xhsdiscover://webview/www.xiaohongshu.com/goods/5e0d607881d4c12f26c8b975?isRN=true&rnName=fantasy-goods-detail-rn&rnPath=goods/5e0d607881d4c12f26c8b975&xhs_g_s=0001&country=%E4%B8%AD%E5%9B%BD&is_self_managing=false&max_height=1000&new_arriving=false&sale_price=155.0&has_video=true&self_pre_cs=true&first_height=1000&item_trade_mode=2&max_width=750&listing_image=https%3A%2F%2Fqimg.xiaohongshu.com%2F9cedc6d6e4e495b92b11e81845281ccfc4146afb%3FitemId%3D5e0d607881d4c12f26c8b975%26imageView2%2F1%2Fw%2F320%2Fh%2F427%2Fq%2F90.jpg%257Cwatermark%2F1%2Fimage%2FaHR0cDovL3FpbWctMTI1MTUyNDMxOS5waWNzaC5teXFjbG91ZC5jb20vYmNjYmVmNjQ1NjM0ZTA1NWM3MDA4M2QyMjA3ZWM5MjdkOWM3MjE2NQ%3D%3D%2Fgravity%2Fsouthwest%2Fdx%2F0%2Fdy%2F0&feature=%E7%BF%BB%E9%A2%86%E8%88%92%E9%80%82%E9%9A%8F%E6%84%8F%E7%99%BE%E6%90%AD&has_color_variant=true&prefetch-image=https%3A%2F%2Fqimg.xiaohongshu.com%2F9cedc6d6e4e495b92b11e81845281ccfc4146afb%3FitemId%3D5e0d607881d4c12f26c8b975%26imageView2%2F2%2Fw%2F800%2Fq%2F90.jpg%3F%257Cwatermark%2F1%2Fimage%2FaHR0cDovL3FpbWctMTI1MTUyNDMxOS5waWNzaC5teXFjbG91ZC5jb20vNGRhYTFjOGI4MzNjMDZmZTQxMTUxMjk4MDA4MGE1YTQ5YTYwZmMyMCU3Q2ltYWdlVmlldzIvMi93Lzc1MC9xLzkw%2Fgravity%2Fsouthwest%2Fdx%2F0%2Fdy%2F0&name=2020%E6%98%A5%E8%A3%85%E6%96%B0%E6%AC%BE%E5%AE%BD%E6%9D%BE%E6%97%B6%E5%B0%9A%E8%A1%AC%E8%A1%AB%E5%A5%B3%E8%AE%BE%E8%AE%A1%E6%84%9F%E5%B0%8F%E4%BC%97%E4%B8%8A%E8%A1%A3%E5%B0%8F%E4%B8%AA%E5%AD%90%E5%A5%B3%E7%94%9F%E7%A9%BF%E6%90%AD%E5%A5%B3%E8%A3%85++%E9%B2%9C%E6%A9%99%E9%BB%84+L&seller_type=0&first_width=750&origin_price=223.0&naviHidden=yes",
+    "vendor_name": "安妮陈旗舰店",
+    "source": 1,
+    "title": "中国·翻领舒适随意百搭",
+    "type": "goods",
+    "h_image_info": {
+      "width": 320,
+      "url": "https://qimg.xiaohongshu.com/9cedc6d6e4e495b92b11e81845281ccfc4146afb?itemId=5e0d607881d4c12f26c8b975&imageView2/1/w/320/h/427/q/90.jpg",
+      "height": 427
+    },
+    "vendor_info": {
+      "icon": "http://qimg.xiaohongshu.com/seller/33ce9895eb34c34038b1f8ed64d5322a",
+      "link": "https://www.xiaohongshu.com/vendor/58007a23328352339e72654a?naviHidden=yes",
+      "name": "安妮陈旗舰店"
+    },
+    "fav_info": {
+      "fav_count": 0,
+      "show_fav": false
+    },
+    "tags": [],
+    "spl_id": "5e0d607681d4c12f26c8b965",
+    "transparent_image": "https://qimg.xiaohongshu.com/2807d934dac564e18f7c0ae7cce11caecb71c47e?itemId=5e0d607881d4c12f26c8b975&imageView2/1/w/320/h/320/q/90.png",
+    "vendor_icon": "http://qimg.xiaohongshu.com/seller/33ce9895eb34c34038b1f8ed64d5322a",
+    "id": "5e0d607881d4c12f26c8b975",
+    "vendor_link": "https://www.xiaohongshu.com/vendor/58007a23328352339e72654a?naviHidden=yes",
+    "category_ids": ["5a310dde3f7d1712823b9869", "5a310dde3f7d1712823b986a", "5a310dde3f7d1712823b986b"],
+    "spu_id": "5e0d607541bbf100398039a2",
+    "seller_id": "58007a23328352339e72654a",
+    "desc": "安妮陈 2020春装新款宽松时尚衬衫女设计感小众上衣小个子女生穿搭女装 鲜橙黄",
+    "spv_id": "5e0d607881d4c12f26c8b971"
+  }]
+}

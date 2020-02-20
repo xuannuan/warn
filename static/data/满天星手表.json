@@ -1,0 +1,295 @@
+{
+  "dataType": "detail",
+  "appCode": "taobaodetail",
+  "version": "1.0",
+  "retcode": "0000",
+  "hasNext": true,
+  "page": 0,
+  "data": {
+    "seller": {
+      "sellerNick": "迦堤手表旗舰店",
+      "goodRatePercentage": "100.00%",
+      "shopName": "迦堤手表旗舰店",
+      "shopIcon": "//img.alicdn.com/imgextra//ff/28/TB1k32zQVXXXXb5XVXXSutbFXXX.jpg",
+      "evaluates": [{
+        "score": "4.9 ",
+        "level": "1",
+        "levelText": "高",
+        "title": "宝贝描述",
+        "type": "desc"
+      }, {
+        "score": "4.9 ",
+        "level": "1",
+        "levelText": "高",
+        "title": "卖家服务",
+        "type": "serv"
+      }, {
+        "score": "4.9 ",
+        "level": "1",
+        "levelText": "高",
+        "title": "物流服务",
+        "type": "post"
+      }],
+      "shopUrl": "tmall://page.tm/shop?item_id=594582005339&shopId=263985311",
+      "userId": "3256424620",
+      "fans": "5.5万",
+      "itemCount": "59",
+      "taoShopUrl": "https://shop263985311.taobao.com/",
+      "creditLevel": "8",
+      "sellerId": "3256424620",
+      "creditLevelIcon": "//gw.alicdn.com/tfs/TB1QoJUIwmTBuNjy1XbXXaMrVXa-84-36.png?getAvatar=avatar",
+      "shopId": "263985311",
+      "starts": "2017-04-24 16:35:37"
+    },
+    "item": {
+      "isTmall": true,
+      "marketPriceRange": "4880.00",
+      "videos": [],
+      "title": "Galtiscopio手表女 迦堤腕表 满天星小表盘新品法国进口水晶手表",
+      "subTitle": "",
+      "descUrl": "http://h5.m.taobao.com/app/detail/desc.html?_isH5Des=true#!id=594582005339&type=0&f=TB1YXz0va61gK0jSZFl8qtDKFla&sellerType=B",
+      "sku": [{
+        "quantity": "163",
+        "price": "4880",
+        "propPath": "",
+        "skuId": "0"
+      }, {
+        "skuName": "颜色分类--玫瑰金白色",
+        "image": "//img.alicdn.com/imgextra/i1/3256424620/O1CN01nOAOtR1k00Lt57lkB_!!3256424620.jpg",
+        "quantity": "21",
+        "price": "4880",
+        "propPath": "1627207:3232483",
+        "skuId": "4120743641949"
+      }, {
+        "skuName": "颜色分类--玫瑰金粉色",
+        "image": "//img.alicdn.com/imgextra/i2/3256424620/O1CN01vrFNZL1k00Lnh2avs_!!3256424620.jpg",
+        "quantity": "44",
+        "price": "4880",
+        "propPath": "1627207:90554",
+        "skuId": "4120743641950"
+      }, {
+        "skuName": "颜色分类--银盘蓝色",
+        "image": "//img.alicdn.com/imgextra/i1/3256424620/O1CN01tTrQ6I1k00LvsJCcl_!!3256424620.jpg",
+        "quantity": "9",
+        "price": "4880",
+        "propPath": "1627207:60092",
+        "skuId": "4120743641951"
+      }, {
+        "skuName": "颜色分类--银盘紫色",
+        "image": "//img.alicdn.com/imgextra/i4/3256424620/O1CN01xUvNVb1k00NNmClji_!!3256424620.jpg",
+        "quantity": "12",
+        "price": "4880",
+        "propPath": "1627207:3232479",
+        "skuId": "4367206902986"
+      }, {
+        "skuName": "颜色分类--银盘黄色",
+        "image": "//img.alicdn.com/imgextra/i3/3256424620/O1CN01zsI3sj1k00NMNvgq8_!!3256424620.jpg",
+        "quantity": "77",
+        "price": "4880",
+        "propPath": "1627207:3232480",
+        "skuId": "4367206902987"
+      }],
+      "shopProm": [{
+        "activityId": "0",
+        "iconText": "积分",
+        "title": "购买可得2440积分",
+        "type": "5",
+        "content": ["购买可得2440积分"]
+      }],
+      "descImgs": ["//img.alicdn.com/imgextra/i3/3256424620/O1CN01n2hrZr1k00OhPsowo_!!3256424620.png", "//img.alicdn.com/imgextra/i1/3256424620/O1CN01qiuoEU1k00Ob7n4aA_!!3256424620.png", "//img.alicdn.com/imgextra/i4/3256424620/O1CN01vXKSsQ1k00OVUslA4_!!3256424620.png", "//img.alicdn.com/imgextra/i4/3256424620/O1CN01HaKsfw1k00OdXw0sk_!!3256424620.png", "//img.alicdn.com/imgextra/i3/3256424620/O1CN015Xqz611k00Oewy1Eb_!!3256424620.png", "//img.alicdn.com/imgextra/i1/3256424620/O1CN01vPCWBm1k00Oewykyr_!!3256424620.png", "//img.alicdn.com/imgextra/i3/3256424620/O1CN01Utixm31k00OeJJcRc_!!3256424620.png", "//img.alicdn.com/imgextra/i2/3256424620/O1CN019bi8bO1k00Ob7oLYa_!!3256424620.png", "//img.alicdn.com/imgextra/i3/3256424620/O1CN01CBptwi1k00OhPrY0O_!!3256424620.png", "//img.alicdn.com/imgextra/i3/3256424620/O1CN01eQkOm11k00OhPrgIS_!!3256424620.png", "//img.alicdn.com/imgextra/i1/3256424620/O1CN01Ur2lfD1k00OdH5vTG_!!3256424620.png", "//img.alicdn.com/imgextra/i3/3256424620/O1CN01lnNxcm1k00OewzlMT_!!3256424620.png", "//img.alicdn.com/imgextra/i1/3256424620/O1CN01HDBBzC1k00Oa98jje_!!3256424620.png", "//img.alicdn.com/imgextra/i1/3256424620/O1CN01wwzWnp1k00Oewy5Pg_!!3256424620.png", "//img.alicdn.com/imgextra/i4/3256424620/O1CN01cwACAC1k00OeJIoZw_!!3256424620.png", "//img.alicdn.com/imgextra/i1/3256424620/O1CN010Cvp1k1k00OdXxkys_!!3256424620.png", "//img.alicdn.com/imgextra/i1/3256424620/O1CN01lWMDZ01k00OdH6b2d_!!3256424620.png", "//img.alicdn.com/imgextra/i4/3256424620/O1CN01tQsUUR1k00OdH57dH_!!3256424620.png", "//img.alicdn.com/imgextra/i4/3256424620/O1CN01WKimpF1k00OgxeDk1_!!3256424620.jpg", "//img.alicdn.com/imgextra/i4/3256424620/O1CN01ZRwHh51k00OcvCc1C_!!3256424620.jpg", "//img.alicdn.com/imgextra/i2/3256424620/O1CN01y6NBKu1k00ObFXtUO_!!3256424620.jpg"],
+      "delivery": "0.00",
+      "vagueSellCount": "42",
+      "images": ["//img.alicdn.com/imgextra/i3/3256424620/O1CN01iBEV8j1k00PIjEz5I_!!0-item_pic.jpg", "//img.alicdn.com/imgextra/i4/3256424620/O1CN01MHxjQP1k00LwAxl2G_!!3256424620.jpg", "//img.alicdn.com/imgextra/i3/3256424620/O1CN01v4mcYS1k00LxPua1Z_!!3256424620.jpg", "//img.alicdn.com/imgextra/i1/3256424620/O1CN01zKXB291k00OdQE9Tm_!!3256424620.jpg", "//img.alicdn.com/imgextra/i4/3256424620/O1CN01S674tM1k00LuM9eWY_!!3256424620.jpg"],
+      "favouriteCount": "16368",
+      "consumerProtection": {
+        "strength": "normal",
+        "serviceProtection": {
+          "basicService": {
+            "name": "基础保障",
+            "id": "204",
+            "services": [{
+              "name": "假一赔四",
+              "icon": "//img.alicdn.com/tfs/TB1_YjSjeL2gK0jSZPhXXahvXXa-54-54.png",
+              "serviceId": "3839",
+              "priority": "12900",
+              "desc": ["正品保障，假一赔四"]
+            }, {
+              "name": "退货运费险",
+              "icon": "//img.alicdn.com/tfs/TB1_YjSjeL2gK0jSZPhXXahvXXa-54-54.png",
+              "serviceId": "3852",
+              "priority": "6580",
+              "desc": ["卖家投保退货运费险，负担一定金额退货运费（保单生效以下单显示为准）"]
+            }, {
+              "name": "上门取退",
+              "icon": "//img.alicdn.com/tfs/TB1_YjSjeL2gK0jSZPhXXahvXXa-54-54.png",
+              "serviceId": "4425",
+              "priority": "6555",
+              "desc": ["预约上门取件，最快1小时上门，取件后极速退款到账"]
+            }, {
+              "license": {
+                "icon": "//assets.alicdn.com/app/marketing/xfile/national_emblem_light.png",
+                "link": "//zhaoshang.tmall.com/maintaininfo/liangzhao.htm?xid=9464442c6ed55473e2c6e1b19a002dcf",
+                "text": "本服务由浙江天猫供应链管理有限公司提供"
+              },
+              "name": "延保服务",
+              "icon": "//img.alicdn.com/tfs/TB1_YjSjeL2gK0jSZPhXXahvXXa-54-54.png",
+              "link": "https://pages.tmall.com/wow/fuwu/act/wyg-new?serviceCode=dqyb&wyg=false",
+              "serviceId": "5127",
+              "priority": "6550",
+              "desc": ["在延保服务期内，出现商品性能故障，由服务商提供延长保修服务"]
+            }, {
+              "name": "极速退款",
+              "icon": "//img.alicdn.com/tfs/TB1_YjSjeL2gK0jSZPhXXahvXXa-54-54.png",
+              "serviceId": "2966",
+              "priority": "6505",
+              "desc": ["诚信用户在退货寄出后，享受极速退款到账"]
+            }, {
+              "name": "七天无理由退换",
+              "icon": "//img.alicdn.com/tfs/TB1_YjSjeL2gK0jSZPhXXahvXXa-54-54.png",
+              "serviceId": "2972",
+              "priority": "5130",
+              "desc": ["满足相应条件时，消费者可申请 “七天无理由退换货”"]
+            }, {
+              "name": "三包服务",
+              "icon": "//img.alicdn.com/tfs/TB1_YjSjeL2gK0jSZPhXXahvXXa-54-54.png",
+              "serviceId": "5041",
+              "priority": "4750",
+              "desc": ["商家依据国家法定条款和天猫服务规范在承诺的时效内向消费者提供商品三包服务"]
+            }]
+          }
+        },
+        "passValue": "none",
+        "params": "204:3838,5303,5369,2979,3851,2973,5040",
+        "items": [{
+          "serviceId": "3838",
+          "title": "假一赔四",
+          "type": "0",
+          "priority": "12900",
+          "desc": "正品保障，假一赔四"
+        }, {
+          "serviceId": "5303",
+          "title": "上门取退",
+          "type": "0",
+          "priority": "6555",
+          "desc": "预约上门取件，最快1小时上门，取件后极速退款到账"
+        }, {
+          "serviceId": "5369",
+          "title": "延保服务",
+          "type": "0",
+          "priority": "6550",
+          "desc": "在延保服务期内，出现商品性能故障，由服务商提供延长保修服务"
+        }, {
+          "serviceId": "2979",
+          "title": "极速退款",
+          "type": "0",
+          "priority": "6505",
+          "desc": "诚信用户在退货寄出后，享受极速退款到账"
+        }, {
+          "serviceId": "3851",
+          "title": "退货运费险",
+          "type": "0",
+          "priority": "6504",
+          "desc": "卖家投保退货运费险，负担一定金额退货运费（保单生效以下单显示为准）"
+        }, {
+          "serviceId": "2973",
+          "title": "七天无理由退换",
+          "type": "0",
+          "priority": "5130",
+          "desc": "满足相应条件时，消费者可申请 “七天无理由退换货”"
+        }, {
+          "serviceId": "5040",
+          "title": "三包服务",
+          "type": "0",
+          "priority": "4750",
+          "desc": "商家依据国家法定条款和天猫服务规范在承诺的时效内向消费者提供商品三包服务"
+        }]
+      },
+      "groupProps": [{
+        "基本信息": [{
+          "品牌": "Galtiscopio/迦堤"
+        }, {
+          "型号": "Amoureux"
+        }, {
+          "风格": "时尚"
+        }, {
+          "形状": "圆形"
+        }, {
+          "成色": "全新"
+        }, {
+          "保修": "全国联保"
+        }, {
+          "品牌产地": "欧美"
+        }, {
+          "流行元素": "水钻"
+        }, {
+          "机芯类型": "石英机芯"
+        }, {
+          "表带材质": "真皮"
+        }, {
+          "表盘厚度": "10mm"
+        }, {
+          "颜色分类": "玫瑰金白色 玫瑰金粉色 银盘蓝色 银盘紫色 银盘黄色"
+        }, {
+          "表盘直径": "40mm"
+        }, {
+          "表壳材质": "不锈钢"
+        }, {
+          "上市时间": "2019年夏季"
+        }, {
+          "显示方式": "指针式"
+        }, {
+          "手表种类": "女"
+        }, {
+          "表扣款式": "蝴蝶双按扣"
+        }, {
+          "防水深度": "0M"
+        }, {
+          "是否商场同款": "是"
+        }, {
+          "手表镜面材质": "人工合成蓝宝石表镜"
+        }, {
+          "机芯产地": "瑞士"
+        }]
+      }],
+      "url": "https://item.taobao.com/item.htm?id=594582005339",
+      "rootCategoryId": "50468001",
+      "commentCount": "167",
+      "props": [{
+        "values": [{
+          "vid": "3232483",
+          "image": "//img.alicdn.com/imgextra/i1/3256424620/O1CN01nOAOtR1k00Lt57lkB_!!3256424620.jpg",
+          "name": "玫瑰金白色"
+        }, {
+          "vid": "90554",
+          "image": "//img.alicdn.com/imgextra/i2/3256424620/O1CN01vrFNZL1k00Lnh2avs_!!3256424620.jpg",
+          "name": "玫瑰金粉色"
+        }, {
+          "vid": "60092",
+          "image": "//img.alicdn.com/imgextra/i1/3256424620/O1CN01tTrQ6I1k00LvsJCcl_!!3256424620.jpg",
+          "name": "银盘蓝色"
+        }, {
+          "vid": "3232479",
+          "image": "//img.alicdn.com/imgextra/i4/3256424620/O1CN01xUvNVb1k00NNmClji_!!3256424620.jpg",
+          "name": "银盘紫色"
+        }, {
+          "vid": "3232480",
+          "image": "//img.alicdn.com/imgextra/i3/3256424620/O1CN01zsI3sj1k00NMNvgq8_!!3256424620.jpg",
+          "name": "银盘黄色"
+        }],
+        "name": "颜色分类",
+        "pid": "1627207"
+      }],
+      "itemId": "594582005339",
+      "transmitPrice": {
+        "sugProm": "false",
+        "priceText": "4880"
+      },
+      "brandId": "1752898979",
+      "sellCount": "42",
+      "location": "北京",
+      "priceRange": "4880",
+      "categoryId": "124986002",
+      "desc": "<p><img src=\"//img.alicdn.com/imgextra/i3/3256424620/O1CN01n2hrZr1k00OhPsowo_!!3256424620.png\" align=\"absmiddle\" size=\"790x630\"><img src=\"//img.alicdn.com/imgextra/i1/3256424620/O1CN01qiuoEU1k00Ob7n4aA_!!3256424620.png\" align=\"absmiddle\" size=\"790x1360\"><img src=\"//img.alicdn.com/imgextra/i4/3256424620/O1CN01vXKSsQ1k00OVUslA4_!!3256424620.png\" align=\"absmiddle\" size=\"790x1226\"><img src=\"//img.alicdn.com/imgextra/i4/3256424620/O1CN01HaKsfw1k00OdXw0sk_!!3256424620.png\" align=\"absmiddle\" size=\"790x1090\"><img src=\"//img.alicdn.com/imgextra/i3/3256424620/O1CN015Xqz611k00Oewy1Eb_!!3256424620.png\" align=\"absmiddle\" size=\"790x1163\"><img src=\"//img.alicdn.com/imgextra/i1/3256424620/O1CN01vPCWBm1k00Oewykyr_!!3256424620.png\" align=\"absmiddle\" size=\"790x1314\"><img src=\"//img.alicdn.com/imgextra/i3/3256424620/O1CN01Utixm31k00OeJJcRc_!!3256424620.png\" align=\"absmiddle\" size=\"790x1227\"><img src=\"//img.alicdn.com/imgextra/i2/3256424620/O1CN019bi8bO1k00Ob7oLYa_!!3256424620.png\" align=\"absmiddle\" size=\"790x1113\"><img src=\"//img.alicdn.com/imgextra/i3/3256424620/O1CN01CBptwi1k00OhPrY0O_!!3256424620.png\" align=\"absmiddle\" size=\"790x1186\"><img src=\"//img.alicdn.com/imgextra/i3/3256424620/O1CN01eQkOm11k00OhPrgIS_!!3256424620.png\" align=\"absmiddle\" size=\"790x742\"><img src=\"//img.alicdn.com/imgextra/i1/3256424620/O1CN01Ur2lfD1k00OdH5vTG_!!3256424620.png\" align=\"absmiddle\" size=\"790x1382\"><img src=\"//img.alicdn.com/imgextra/i3/3256424620/O1CN01lnNxcm1k00OewzlMT_!!3256424620.png\" align=\"absmiddle\" size=\"790x588\"><img src=\"//img.alicdn.com/imgextra/i1/3256424620/O1CN01HDBBzC1k00Oa98jje_!!3256424620.png\" align=\"absmiddle\" size=\"790x1186\"><img src=\"//img.alicdn.com/imgextra/i1/3256424620/O1CN01wwzWnp1k00Oewy5Pg_!!3256424620.png\" align=\"absmiddle\" size=\"790x864\"><img src=\"//img.alicdn.com/imgextra/i4/3256424620/O1CN01cwACAC1k00OeJIoZw_!!3256424620.png\" align=\"absmiddle\" size=\"790x1186\"><img src=\"//img.alicdn.com/imgextra/i1/3256424620/O1CN010Cvp1k1k00OdXxkys_!!3256424620.png\" align=\"absmiddle\" size=\"790x628\"><img src=\"//img.alicdn.com/imgextra/i1/3256424620/O1CN01lWMDZ01k00OdH6b2d_!!3256424620.png\" align=\"absmiddle\" size=\"790x1389\"><img src=\"//img.alicdn.com/imgextra/i4/3256424620/O1CN01tQsUUR1k00OdH57dH_!!3256424620.png\" align=\"absmiddle\" size=\"790x1356\"><img src=\"//img.alicdn.com/imgextra/i4/3256424620/O1CN01WKimpF1k00OgxeDk1_!!3256424620.jpg\" align=\"absmiddle\" size=\"790x859\"><img src=\"//img.alicdn.com/imgextra/i4/3256424620/O1CN01ZRwHh51k00OcvCc1C_!!3256424620.jpg\" align=\"absmiddle\" size=\"790x1498\"><img src=\"//img.alicdn.com/imgextra/i2/3256424620/O1CN01y6NBKu1k00ObFXtUO_!!3256424620.jpg\" align=\"absmiddle\" size=\"790x1150\" /></p>"
+    }
+  }
+}

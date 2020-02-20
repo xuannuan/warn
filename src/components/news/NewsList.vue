@@ -1,0 +1,97 @@
+<template>
+  <div class="newslist">
+
+    <!-- 全局的导航栏组件，父组件给子组件传值，直接自定义title属性，不用在js里绑定属性 -->
+    <TopBar title="科技天地" :srcURL="imgUrl"/>
+
+      <div class="list-group-item" v-for="(item,index) in newsList" :key="item.id">
+       <router-link :to="{name:'detail',query:{id:item.id}}">
+          <div class="media" >
+          <div class="media-left">
+              <img class="media-object" :src="item.cover" alt="">
+          </div>
+          <div class="media-body">
+            <h6 class="media-heading">{{item.title}}</h6>
+            <p>简介：{{item.summary}}
+            </p>
+            <span>作者：{{item.user.name}}
+            &nbsp;&nbsp;&nbsp;</span>
+            <span class="clock">
+              <i class="clock_icon"></i>
+              <!-- 过滤器 -->
+            {{item.published_at | coverTime("YYYY-MM-DD HH:mm:ss")}}
+            </span>
+          </div>
+        </div>
+      </router-link>
+  </div>
+  </div>
+</template>
+
+<script>
+export default {
+
+  name: 'NewsList',
+
+  data () {
+    return {
+      newsList:[],
+      imgUrl:''
+    }
+  },
+  created(){
+    this.$axios.get('../../../static/data/新闻列表.json')
+    //https://api03.6bqb.com/kr/category?apikey=69330CA8CE3088F90BED27B6012BB0D9&category=web_news
+    .then(res=>{
+      console.log(res.data.data);
+      this.newsList=res.data.data;
+      this.imgUrl=this.newsList[1].cover;
+    })
+    .catch(err=>{
+      console.log('新闻列表异常',err);
+    });
+  }
+};
+</script>
+
+<style lang="css" scoped>
+
+
+.list-group-item {
+    position: relative;
+    height: auto;
+    padding: 20px 0;
+    font-size: 14px;
+}
+.list-group-item img{
+  width: 100px;
+  height: 100px;
+}
+.list-group-item .media-body{
+   padding-left:20px;
+   padding-right: 5px;
+
+}
+.list-group-item p{
+    color: #555;
+}
+.media-body span{
+  color:#fd7e14;
+}
+.media-body .clock{
+  float:right;
+
+}
+.clock .clock_icon{
+  display: inline-block;
+  position: relative;
+  top: 1px;
+    right: -1px;
+    width: 10px;
+    height: 10px;
+  background:url(../../../static/homeke.png)  no-repeat;
+  background-size: 246px 1012px;
+  background-position:  0 -115px;
+
+}
+</style>
