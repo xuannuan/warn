@@ -1,5 +1,5 @@
 <template>
-  <div class="car">
+  <div class="car_shop">
     <el-checkbox-group v-model="example" @change="handleCheckedChange">
     <el-checkbox v-for="i in all" :label="i" :key="i">
      <div class="goods_con" ref="cbox"  >
@@ -8,10 +8,11 @@
         <div class="con_box">
             <img :src="products['img'+i]" alt="">
             <div class="small_box">
-            <a href="#">{{products['title'+i]}}&nbsp;{{products['category'+i]}}</a>
-            <h6> ¥{{products['price'+i]}}</h6>
+            <h5 href="#">{{products['title'+i]}}&nbsp;{{products['category'+i]}}</h5>
+            <h4> ¥{{products['price'+i]}}</h4>
                 <div class="changebox">
                      <button class="left" @click="jian(i)">-</button>
+                     <!-- 要监视加减数量，改变结算的价格和商品数量 -->
                     <input type="number" v-model="products['num'+i]"/>
                     <button class="right" @click="add(i)">+</button>
                 </div>
@@ -31,8 +32,8 @@
        <el-checkbox  v-model="checkAll" @change="handleCheckAllChange">&nbsp;&nbsp;&nbsp;&nbsp;全选</el-checkbox>
 
     <div class="ToSum">
-      合计:<span style="color:#ef4f4f">￥{{money}}</span>
-       <el-button type="warning" round>结算（{{Count}}）</el-button>
+      合计:<span style="color:#ef4f4f">￥{{money}}|{{b}}</span>
+       <el-button type="warning" round @click="going">结算（{{Count}}）</el-button>
     </div>
 
 </footer>
@@ -104,7 +105,7 @@ export default {
         this.show=false;
         // 使触发的那一个垃圾桶盖复原
         this.dele[this.index]=false;
-            // 删除商品数据存储，进行删除商品
+        // 删除商品数据存储，进行删除商品
         GoodsTool.deleteGoods(this.index);
       },
       //添加商品
@@ -123,8 +124,27 @@ export default {
         let key='num'+index;
         let value= this.products['num'+index];
         GoodsTool.updataGoods(key,value);
+      },//提交后触发的
+       going() {
+        this.$alert('目前无商家入驻,请敬请期待',  {
+          confirmButtonText: '确定',
+          callback: action => {
+            this.$message({
+              type: 'info',
+              message: `action: ${ action }`
+            });
+          }
+        });
       }
 
+  },
+  // 对加减商品进行结算监控，获取和设置值
+  computed:{
+    b:function(){
+      this.jian(index=>{
+        return this.products['num'+index];
+      })
+    }
   },
   watch:{
     //监视复选框的选中状态,对于单选的
@@ -177,6 +197,7 @@ export default {
 
 <style lang="css" scoped>
 
+
 .ToSum{
   float:right;
   line-height: 60px;
@@ -211,13 +232,10 @@ label{
     display: block;
 }
 .goods_con .con_box .small_box{
-    padding-left: 90px;
+    padding-left: 80px;
+    padding-right: 10px;
 }
-.goods_con .con_box .small_box a{
-    font-size: 13px;
-    display: block;
-    overflow: hidden;
-}
+
 
 
 .changebox button,.changebox input{

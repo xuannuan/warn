@@ -30,13 +30,16 @@
                   </li>
              </ul>
                 <!-- 加载更多 -->
-                <mt-button @click.native="LoadMore" class="mint_button">
-                  <svg class="icon" aria-hidden="true" style="width: 30px;height: 40px" slot="icon">
+                <mt-button @click.native="LoadMore" class="mint_button" v-if="loadding">
+                 <!--  <svg class="icon" aria-hidden="true" style="width: 30px;height: 40px" slot="icon">
                     <use xlink:href='#icon-plant-4'></use>
-                </svg>
+                </svg> -->
                 More
                 </mt-button>
             </div>
+              <!-- 解决百分比布局被底部栏fixed定位后遮挡内容 -->
+        <div class="forCover"></div>
+
     </div>
     <div class="car">
       <router-link :to="{name:'shop.car'}" class="el-icon-shopping-cart-2">
@@ -45,6 +48,7 @@
        </router-link>
     </div>
 </div>
+
 </div>
 </template>
 
@@ -62,13 +66,14 @@ export default {
       products:[],
       geta:[],//组件传值
       key:'',
-      page:'',
+      page:1,
       allLoaded:false,
       currentIndex:'',//判断当前内容关键字，触发高亮显示
+      loadding:true//当商品无法加载就隐藏加载更多的按钮
     }
   },
   methods:{
-    // 点击分类列表获取商品列表
+    // 点击分类列表获取商品列表,且关键词高亮显示
     getKeyWord(item,index){
       this.category=item;
       this.currentIndex=index;
@@ -86,6 +91,13 @@ export default {
       this.$router.push({name:'shop',params:{categoryTitle:this.key,page:this.page}});
     }
   },
+  //因为开始进去页面是空的，路由加载了但内容没有，所以设置路由守卫，一点进去就切换到路由第二页
+  beforeRouteEnter(to,from,next){
+    next(vm=>{
+      vm.$router.push({name:to.name,params:{categoryTitle:to.params.categoryTitle,page:to.params.page+1}});
+    });
+  },
+
   created(){
     this.$axios.get('../../../static/data/商品分类.json')
     .then((res)=>{
@@ -109,6 +121,8 @@ export default {
     });
     // 当页面进行刷新，商品数量保留，调用GoodsTool.getTotalCount()方法获取总数量
     this.pickNum= GoodsTool.getTotalCount();
+
+
     },
 
     //当点击分类时路由会切换内容(失败的经验，更在意逻辑思考)
@@ -124,6 +138,8 @@ export default {
       })
       .catch((err)=>{
         console.log("商品加载失败",err);
+      this.loadding=false;
+
         this.$toast({
           message:"暂无商品",
           iconClass:'iconfont icon-plant-18'
@@ -136,29 +152,13 @@ export default {
 </script>
 
 <style lang="css" scoped>
-/*铺满屏幕*/
-body{
-    width: 100%;
-    height: 100%;
-    position: absolute;
-}
-.car{
-  width: 50px;height: 50px;
-  position: fixed;
-  bottom: 50px;right: 5px;
+.forCover{
+  width: 100%;height: 158px;
+  position: relative;
+  bottom: 0;left: 0;
   background-color: #fff;
 }
-.car a{
-  width: 100%;
-  font-size: 30px;
-  color: #8cc5ff;
-  text-align: center;
-}
-.carBall {
-    position: absolute;
-    top: -9px;
-    right: 0px;
-}
+
 
 .mint_button{
   position: relative;
@@ -179,6 +179,7 @@ body{
 .category{
     width: 100%;
     height: 100%;
+    overflow: hidden;
 }
 .category_left{
     width: 20%;
@@ -192,17 +193,19 @@ body{
 }
 .category_right{
     width: 100%;
-    padding-left: 20%;
     height: 100%;
+    padding-bottom: 58px;
     margin-top: 43px;
-    padding-bottom: 154px;
-    /*定位是为了不在滑出顶部栏组件上面*/
+    /*定位是为了滚动条不在滑出顶部栏组件上面*/
     position: absolute;
     top: 40px;
     right: 0;
     overflow: scroll;
-
 }
+.r_product{
+  padding-left: 20%;
+}
+
 .category_left_box{
     width: 100%;
     height: 100%;
@@ -234,15 +237,7 @@ body{
   font-size: 14px;
 }
 
-.category_right.r_product{
-    width: 100%;
-}
 
-.category_right .r_product ul{
-  /*padding-top: 40px;*/
-    width: 100%;
-
-}
 .category_right .r_product li{
     float: left;
     width: 47%;

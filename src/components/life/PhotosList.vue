@@ -5,7 +5,7 @@
     <div class="banner">
       <ul>
         <!-- getCategoryTitle为了获取关键字进行搜索 -->
-        <li v-for="(item,index) in category" :key="item.id" @click='getCategoryTitle("item.title",index)'>
+        <li v-for="(item,index) in category" :key="item.id" @click='getCategoryTitle(item.title,index)'>
           <!-- @click='getCategoryTitle("item.title")' -->
         <!-- 这个CategoryHandle为了获取正在点击的分类，来渲染样式 -->
           <a href="javascript:void(0)"   :class='{active:item.id==currentIndex}'>{{item.title}}&nbsp;&nbsp;&nbsp;</a>
@@ -77,7 +77,6 @@ export default {
   },
     beforeRouteUpdate (to, from, next) {
     // 可以访问组件实例 `this`
-    // console.log(to);//name: "photos.list"params: {categoryTitle: "旅行"}path: "/photos/list/旅行"
     this.getCategoryTitle(to.params.categoryTitle);//当路由改变内容也会变化
     next();
   },
@@ -88,7 +87,6 @@ export default {
     // this.getCategoryTitle("旅行");//默认title是旅行，点进去是旅行的分类图片
     this.$axios.get('../../../static/data/category.json')
     .then(res=>{
-      // console.log(res.data.message);
       this.category=res.data.message;
 
       // 搜索组件
@@ -115,7 +113,7 @@ export default {
 .banner{
   /*横向滚动条*/
   overflow-x:scroll;
-  width: 378px;
+  width: 375px;
 }
  .banner ul{
   padding:10px;
@@ -138,11 +136,12 @@ ul li{
 }
 
 .photo_list ul li p{
-  width: 100%;
+  /*width: 98%;*/
   position: absolute;
-  bottom: 10px;
-  left: 5px;
+  bottom: 15px;
+  /*left: 5px;*/
   z-index: 1000;
+  padding: 0 10px;
   background-color: #6c757d3d;
 }
 .photo_list ul li p span{

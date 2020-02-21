@@ -1,72 +1,104 @@
 <template>
-  <div class="vip">
-    <form>
-      <label>用户名：</label>
-      <input type="text" name="" v-model="name"><br/>
-      <label>密码：</label>
-      <input type="password" name="" v-model="password "><br/>
-      <input type="button" name="" value="登录" @click="login">
-    </form>
-    <div>反馈：{{errorTip}}</div>
-    <div class="bgimg">
-      <img src="../../../static/img/sha.jpg" height="100%" width="100%">
+  <div class="mine">
+
+    <!-- 头像背景图 -->
+       <el-image
+      style="width: 100%; height: 120px;overflow:hidden"
+      :src="imageUrl"
+      fit="cover"></el-image>
+    <!-- 上传头像 -->
+    <div class="me">
+    <el-upload
+       class="avatar-uploader headimg"
+       action="https://jsonplaceholder.typicode.com/posts/"
+       :show-file-list="false"
+       :on-success="handleAvatarSuccess"
+       :before-upload="beforeAvatarUpload">
+       <el-avatar shape="square" :size="100" fit="cover" :src="imageUrl" class="avatar" v-if="imageUrl"></el-avatar>
+       <!-- <img v-if="imageUrl" :src="imageUrl" class="avatar"> -->
+       <i v-else class="el-icon-plus avatar-uploader-icon"></i>
+    </el-upload>
+     <el-button type="danger" class="share">分享瞬间</el-button>
+    <el-button size="mini" round class="intruduce" v-if="!imageUrl">
+        <router-link :to="{name:'message'}">
+          加入岁月间？
+        </router-link>
+    </el-button>
     </div>
-    <el-avatar shape="square" :size="100" fit="scale-down" :src="hurl" class="headimg"></el-avatar>
-    button
+
+      <!-- 通过 value 属性来指定当前选中的标签页。v-model得值绑定的是name属性 -->
+      <el-tabs v-model="activeName" @tab-click="handleClick"  type="card" :value="activeName">
+    <el-tab-pane label="笔记" name="first">笔记{{activeName}}</el-tab-pane>
+    <el-tab-pane label="收藏" name="second">收藏</el-tab-pane>
+    <el-tab-pane label="关注" name="third">关注</el-tab-pane>
+  </el-tabs>
+
+
+
   </div>
 </template>
 
 <script>
 export default {
 
-  name: 'Vip',
+  name: 'Mine',
 
   data () {
     return {
-      name:'',//用户名
-      password :'',//密码
-      errortip:'',//boolean值
-      errorTip:'',//登录成功失败提示
-      hurl:'../../../static/img/sha.jpg',//头像图片
+
+      imageUrl: '',//头像图片
+      activeName:'third',//tab栏切换
     }
   },
   methods:{
-     login(){
-        //前端验证数据
-        if(!this.name || !this.password){   //若任意一个参数为空，则返回并提示错误
-          this.errortip=true;
-          this.errorTip='账号或密码有误';
-          return;
-         }
-       //直接把参数写在post头部，还有好几种写法，区别不大
-        this.$axios.post('/api/user.php',{
-          Name:this.name,
-          userPwd:this.password})//用户名和密码将转为json传到后台接口
-          .then(response => {
-          let res = response.data;  //用res承接返回后台的json文件(像使用数组那样)
-            console.log('login的值'+res);
-       if(res.status>0){   //显示登录结果
-           console.log('登录成功');
-           this.errortip=true;
-           this.errorTip='登录成功';
-         }else {
-           console.log('登录失败');
-           this.errortip=true;
-           this.errorTip='登录失败';
-
-         }
-        })
+    //从本地上传图片当头像
+      handleAvatarSuccess(res, file) {
+      this.imageUrl = URL.createObjectURL(file.raw);
       },
+      beforeAvatarUpload(file) {
+        const isJPG = file.type === 'image/jpeg';
+        const isLt2M = file.size / 1024 / 1024 < 2;
+
+        if (!isJPG) {
+          this.$message.error('上传头像图片只能是 JPG 格式!');
+        }
+        if (!isLt2M) {
+          this.$message.error('上传头像图片大小不能超过 2MB!');
+        }
+        return isJPG && isLt2M;
+      },
+      // tab栏切换
+      handleClick(){
+
+      },
+
   },
 };
 </script>
 
 <style lang="css" scoped>
-.vip{
-  width: 100%;height: 100%;
-  overflow: hidden;
+.me{
+  position: relative;
 }
-.bgimg{
-  width: 100%;height: 20%;
+
+
+.headimg{
+  position: relative;
+  top: -40px;
+  left:10px;
 }
+
+  .share{
+    position: absolute;
+    right: 20px;
+    top: 10px;
+  }
+  .intruduce{
+  background-color: #ccc;
+  /*margin:0px 10px;*/
+  position: absolute;
+  left: -7px;
+  /*因为button自带padding:7px*/
+  bottom: 0px;
+  }
 </style>

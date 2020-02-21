@@ -24,8 +24,8 @@ Vue.use(ElementUI);
 import 'element-ui/lib/theme-chalk/index.css';
 
 // 引入bootstrap
-import $ from 'jquery' ;
-import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+// import $ from 'jquery' ;
+// import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 // import '../node_modules/bootstrap/dist/js/bootstrap.min.js';
 
 //引入图片查看器，查看放大图

@@ -16,6 +16,11 @@ import GoodsDetail from '@/components/shop/GoodsDetail'
 import GoodsComment from '@/components/shop/GoodsComment'
 import Car from '@/components/shop/Car'
 
+// 以下是用户信息模块
+import Message from '@/components/mine/Message'
+import Login from '@/components/mine/Login'
+import Register from '@/components/mine/Register'
+
 
 
 
@@ -80,6 +85,22 @@ export default new Router({
        path:'/shop/car',
       name:'shop.car',
       component:Car
+    },
+    //用户信息
+    {
+      path:'/message',
+      name:'message',
+      component:Message
+    },
+    {
+      path:'/message/login',
+      name:'message.login',
+      component:Login
+    },
+    {
+      path:'/message/register',
+      name:'message.register',
+      component:Register
     }
   ]
 })

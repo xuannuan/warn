@@ -2,18 +2,15 @@
   <div class="newslist">
 
     <!-- 全局的导航栏组件，父组件给子组件传值，直接自定义title属性，不用在js里绑定属性 -->
-    <TopBar title="科技天地" :srcURL="imgUrl"/>
+    <!-- <TopBar title="科技天地" :srcURL="imgUrl"/> -->
 
-      <div class="list-group-item" v-for="(item,index) in newsList" :key="index">
-       <router-link :to="{name:'detail',query:{id:item.id}}">
-          <div class="media" >
-          <div class="media-left">
-              <img class="media-object" :src="item.cover" alt="">
-          </div>
-          <div class="media-body">
-            <h6 class="media-heading">{{item.title}}</h6>
-            <p>简介：{{item.summary}}
-            </p>
+    <ul>
+      <li class="list-group-item" v-for="(item,index) in newsList" :key="index">
+        <router-link :to="{name:'detail',query:{id:item.id}}">
+          <img :src="item.cover">
+          <div class="body">
+            <h4 class="heading">{{item.title}}</h4>
+            <p>简介：{{item.summary}}</p>
             <span>作者：{{item.user.name}}
             &nbsp;&nbsp;&nbsp;</span>
             <span class="clock">
@@ -22,9 +19,11 @@
             {{item.published_at | coverTime("YYYY-MM-DD HH:mm:ss")}}
             </span>
           </div>
-        </div>
-      </router-link>
-  </div>
+        </router-link>
+      </li>
+    </ul>
+
+
   </div>
 </template>
 
@@ -55,6 +54,29 @@ export default {
 </script>
 
 <style lang="css" scoped>
+.newslist{
+  background-color: #9e9e9e1c;
+}
+
+ul li{
+  width: 98%;
+  overflow:hidden;
+  border-radius: 5px;
+  margin: 5px;
+  background-color: #fff;
+
+}
+ul li a img{
+  float: left;
+}
+ul li a .body{
+  margin-left: 120px;
+}
+.body span{
+  display: inline-block;
+  padding-top: 10px;
+  color: #918f8f;
+}
 
 
 .list-group-item {

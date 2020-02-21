@@ -5,14 +5,30 @@
       <router-link to="/" slot="left">
         <mt-button icon="back" @click="goBack()" style="outline-style: none"></mt-button>
       </router-link>
-      <mt-button icon="more" slot="right"></mt-button>
+      <!-- 用户头像 -->
+      <mt-button slot="right">
+      <router-link :to="{name:'message.login'}">
+      <el-avatar icon="el-icon-user-solid" :size="40" v-if="!hsrc">
+       </el-avatar>
+     </router-link>
+        <!-- v-if="!hsrc"根据登录状态显示头像 -->
+      <router-link :to="{name:'message'}">
+      <el-avatar :size="40" v-if="hsrc">
+          <img :src="hsrc"/>
+      </el-avatar>
+      </router-link>
+          <!-- <span class="nickname">宣暖</span> -->
+      </mt-button>
     </mt-header>
 
     <!-- 内容展示模块 -->
     <!-- vue的动画效果 -->
-    <transition name="slide-fade">
-    <router-view/>
-    </transition>
+    <div class="con">
+      <transition name="slide-fade">
+        <router-view/>
+      </transition>
+    </div>
+
 
     <!-- 底部栏 固定，fixed默认是false-->
     <mt-tabbar :fixed="fixed" v-model="selected" style="z-index: 1001">
@@ -21,11 +37,6 @@
       :id="item.routerName.name">
          <router-link :to="item.routerName" style="width: 100%,height:100%" >
           <span :class="{'el-icon-view':index==0,'el-icon-reading':index==1,'el-icon-s-promotion':index==2,'el-icon-goods':index==3,'el-icon-user':index==4}"></span>
-          <!-- 扩大a的范围，点击识别范围更广，用户体验感更好 -->
-        <!-- 引入字体图标js方式，SVG 符号引入是现代浏览器未来主流的图标引入方式 -->
-         <!-- <svg class="icon" aria-hidden="true" style="width: 30px;height: 40px">
-            <use :xlink:href="item.imgSrc"></use>
-        </svg> -->
         <p>{{item.title}}</p>
       </router-link>
       </mt-tab-item>
@@ -55,6 +66,7 @@ export default {
       selected:'',
       bars:bar,
       fixed:'fixed',
+      hsrc:''
     }
   },
   watch:{
@@ -94,9 +106,15 @@ export default {
 /*a标签*/
 .mint-tab-item{
   position: relative;
-
-  height: 60px;
 }
+
+.nickname{
+    position: relative;
+    top: -15px;
+    right: 0;
+    color: #fff;
+}
+
 
 .mint-tab-item a span{
    font-size: 20px;
@@ -107,5 +125,10 @@ export default {
   color: #fff;
 }
 
-
+.con{
+  width: 100%;height: 100%;
+  overflow: hidden;
+  margin-bottom:58px;
+  padding-bottom: 58px;
+}
 </style>

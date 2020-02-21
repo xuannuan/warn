@@ -36,8 +36,8 @@ export default {
       // queryString是自己输入的搜索关键词
       createFilter(queryString) {
         return (restaurant) => {
-          //restaurant时进行关键词推荐的json数组，必须要有value值，所有英文单词都变成大写进行比对，逻辑思考，就不用对大小写分别对比
-          return (restaurant.value.toLowerCase().indexOf(queryString.toLowerCase()) !=-1;);
+          //restaurant时进行关键词推荐的json数组，必须要有value值，所有英文单词都变成或小写进行比对，只要关键词在其中，indexof!=-1就可以检测
+          return (restaurant.value.toLowerCase().indexOf(queryString.toLowerCase()) !=-1);
         };
       },
       //这个是搜索匹配成功后自定义路由跳转等的方法
@@ -47,9 +47,13 @@ export default {
           this.$router.push({name:'life',params:{categoryTitle:this.state}});
         // 如果是photolist对象的话，传入现在的id，进行对应分类的高亮效果
         this.$bus.$emit('sendNowIndex',item.id);
-        }else{
+        }
+        else if(item.catId){
           this.$router.push({name:'shop',params:{categoryTitle:item.value,page:1}});
           this.$bus.$emit('sendIndex',item.catId);
+        }
+        else{
+          console.log("暂无内容");
         }
 
         // console.log(item);//当前输入搜索的对象

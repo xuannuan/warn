@@ -1,6 +1,12 @@
 <template>
   <div class="goodsdetail">
   <!-- 要有一个根元素 -->
+   <div class="car">
+      <router-link :to="{name:'shop.car'}" class="el-icon-shopping-cart-2">
+       <!-- 这个是购物车的图标-->
+         <mt-badge size="small" color="#8cc5ff" class="carBall">{{pickNum}}</mt-badge>
+       </router-link>
+    </div>
   <!-- 轮播图组件 -->
   <MySwipper :url="url"/>
   <!--  <mt-swipe style="height: 200px;width: 100%">
@@ -82,8 +88,7 @@
         </div>
    </div>
    <el-button type="danger" round @click="SureBuy" class="sure">确定</el-button>
-   <!-- 小球的动画效果 ，加入JavaScript-钩子函数,小球进入之后
--->
+   <!-- 小球的动画效果 ，加入JavaScript-钩子函数,小球进入之后-->
     <transition name="bounce" @after-enter="afterEnter">
     <span v-if="isExist" class="ball">{{num}}</span>
   </transition>
@@ -143,12 +148,12 @@ export default {
       color:[],
       tobuy:false,
       direction: 'btt',//从底部上滑
-      num:0,
+      num:0,//加入购物车的单个商品数量
       changeUrl:'',
       changeTitle:'',
       url:'../../../static/data/满天星手表.json',//轮播图组件传值
       isExist:false,//默认动态小球隐藏
-
+      pickNum:0,//购物车所有商品的数量
     }
   },
   methods: {
@@ -163,7 +168,7 @@ export default {
     //小球进入之后隐藏
     afterEnter(){
       this.isExist=false;
-       this.tobuy=false;//让购物车页面隐藏
+      this.tobuy=false;//让购物车页面隐藏
        // 当数量为0时就不触发提示加入购物车成功动画
        if(parseInt(this.num)!=0){
       //触发bus绑定的事件，给App.vue的购物数量传值
@@ -244,6 +249,12 @@ export default {
     this.changeTitle=this.color[0].name;
     // console.log(this.color);
 
+     //使用bus绑定购物数量事件，接受从加入购物车的值
+    this.$bus.$on('sendPickNum',(data)=>{
+      this.pickNum+=data;
+    });
+    // 当页面进行刷新，商品数量保留，调用GoodsTool.getTotalCount()方法获取总数量
+    this.pickNum= GoodsTool.getTotalCount();
     })
     .catch((err=>{
         console.log("商品详情加载失败",err);
@@ -324,7 +335,7 @@ span{color: gray;}
   position: absolute;
   right: 50px;bottom: 65px;
   width: 20px;height: 20px;
-  background-color: pink;
+  background-color: #8cc5ff;
   border-radius: 20px;
   text-align: center;
 }
@@ -336,16 +347,16 @@ span{color: gray;}
     transform: translate3d(0,0,0);
   }
   25% {
-    transform: translate3d(-50px,-50px,0);
+    transform: translate3d(10px,-25px,0);
   }
   50% {
-    transform: translate3d(-80px,50px,0);
+    transform: translate3d(25px,0px,0);
   }
   75% {
-    transform: translate3d(-90px,200px,0);
+    transform: translate3d(35px,25px,0);
   }
   100% {
-    transform: translate3d(-100px,400px,0);
+    transform: translate3d(45px,50px,0);
   }
 }
 /*小球动漫transition的类名*/
