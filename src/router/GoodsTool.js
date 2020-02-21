@@ -54,7 +54,7 @@ obj.deleteGoods=function(index){
   // 删了index的数据后，后面的i要往前自动改变，
   // 不然在car.vue中无法遍历获取数据
   for(let j=index;j<i;j++){
-    //想过设置删除的那些属性，
+    //想过设置删除的那些属性，(对象，属性，属性值)
     // Vue.set(goodsList,'id'+j,goodsList['id'+(j+1)]);
     // Vue.set(goodsList,'title'+j,goodsList['title'+(j+1)]);
     // Vue.set(goodsList,'price'+j,goodsList['price'+(j+1)]);

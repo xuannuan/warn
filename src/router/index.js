@@ -1,18 +1,20 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 // 引入模块，自定义组件
-import Home from '@/components/home/Home'
-import Car from '@/components/car/Car'
-import Vip from '@/components/vip/Vip'
-import Search from '@/components/search/Search'
-import NewsList from '@/components/news/NewsList'
-import NewsDetail from '@/components/news/NewsDetail'
-import PhotosList from '@/components/photo/PhotosList'
-import PhotosDetail from '@/components/photo/PhotosDetail'
-import Goods from '@/components/Goods/Goods'
-import GoodsDetail from '@/components/Goods/GoodsDetail'
-import GoodsComment from '@/components/Goods/GoodsComment'
-
+import Life from '@/components/life/PhotosList'
+import Technology from '@/components/technology/NewsList'
+import Shop from '@/components/shop/Goods'
+import Mine from '@/components/mine/Mine'
+import Publish from '@/components/publish/Publish'
+//以上是底部栏模块
+// import NewsList from '@/components/news/NewsList'
+import NewsDetail from '@/components/technology/NewsDetail'
+// import PhotosList from '@/components/photo/PhotosList'
+import PhotosDetail from '@/components/life/PhotosDetail'
+// import Goods from '@/components/Goods/Goods'
+import GoodsDetail from '@/components/shop/GoodsDetail'
+import GoodsComment from '@/components/shop/GoodsComment'
+import Car from '@/components/shop/Car'
 
 
 
@@ -24,28 +26,30 @@ Vue.use(Router)
 export default new Router({
   routes: [
     {
-      path: '/home',
-      name: 'home',//命名路由
-      component: Home
+      //动态路由匹配
+      path: '/life/:categoryTitle',
+      name: 'life',//命名路由
+      component: Life
     }, {
-      path: '/car',
-      name: 'car',//命名路由
-      component: Car
+      path: '/technology',
+      name: 'technology',//命名路由
+      component:Technology
     }, {
-      path: '/search',
-      name: 'search',//命名路由
-      component: Search
+      path: '/publish',
+      name: 'publish',//命名路由
+      component: Publish
     }, {
-      path: '/vip',
-      name: 'vip',//命名路由
-      component: Vip
+      path: '/shop/:categoryTitle/:page',
+      name: 'shop',//命名路由
+      component: Shop
     },
+     {
+      path: '/mine',
+      name: 'mine',//命名路由
+      component: Mine
+    },
+    //以上是底部栏的路由设置
     //新闻列表
-    {
-      path:'/news/list',
-      name:'news.list',
-      component:NewsList
-    },
     {
       path:'/news/detail',
       name:'detail',
@@ -53,23 +57,12 @@ export default new Router({
     },
     //图文分享
     {
-      //动态路由匹配
-      path:'/photos/list/:categoryTitle',
-      name:'photos.list',
-      component:PhotosList
-    },{
       //query,?id=
       path:'/photos/detail',
       name:'photos.detail',
       component:PhotosDetail
     },
     //商品列表
-    {
-      //动态路由匹配
-      path:'/goods/list/:categoryTitle/:page',
-      name:'goods.list',
-      component:Goods
-    },
     {
       //query,?id=
       path:'/goods/detail',
@@ -84,8 +77,8 @@ export default new Router({
     },
     //购物车
     {
-       path:'/car',
-      name:'car',
+       path:'/shop/car',
+      name:'shop.car',
       component:Car
     }
   ]

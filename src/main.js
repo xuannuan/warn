@@ -97,6 +97,10 @@ import '../static/iconfont/iconfont.js'
 import TopBar from '@/components/comment/TopBar'
 Vue.component(TopBar.name,TopBar);//(自定义组件名，TopBar.vue的组件名)
 
+// 注册全局搜索子组件
+import Search from '@/components/comment/Search'
+Vue.component(Search.name,Search);
+
 //注册全局的轮播图子组件
 import MySwipper from '@/components/comment/MySwipper'
 Vue.component(MySwipper.name,MySwipper);

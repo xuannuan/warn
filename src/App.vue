@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <!-- 引入mint-ui的导航栏 -->
-    <mt-header fixed title="暖团" style="background-color: #343a4029;color: #000;font-size: 20px">
+    <mt-header fixed title="岁月间" style="background-color: #343a4029;color: #000;font-size: 20px">
       <router-link to="/" slot="left">
         <mt-button icon="back" @click="goBack()" style="outline-style: none"></mt-button>
       </router-link>
@@ -12,18 +12,22 @@
     <!-- vue的动画效果 -->
     <transition name="slide-fade">
     <router-view/>
-    </transition
+    </transition>
+
     <!-- 底部栏 固定，fixed默认是false-->
     <mt-tabbar :fixed="fixed" v-model="selected" style="z-index: 1001">
-      <!-- 要绑定数据就要v-bind指令，缩写： -->
-      <mt-tab-item v-for="(item,index) in bars" :key="item.id" :id="item.routerName.name">
+      <!-- 要绑定数据就要v-bind指令，缩写：里面绑定的id用来获取点击的元素 -->
+      <mt-tab-item v-for="(item,index) in bars" :key="item.id"
+      :id="item.routerName.name">
+         <router-link :to="item.routerName" style="width: 100%,height:100%" >
+          <span :class="{'el-icon-view':index==0,'el-icon-reading':index==1,'el-icon-s-promotion':index==2,'el-icon-goods':index==3,'el-icon-user':index==4}"></span>
+          <!-- 扩大a的范围，点击识别范围更广，用户体验感更好 -->
         <!-- 引入字体图标js方式，SVG 符号引入是现代浏览器未来主流的图标引入方式 -->
-        <mt-badge size="small" color="#20c99763" v-if="index==2" class="carBall">{{pickNum}}</mt-badge>
-         <svg class="icon" aria-hidden="true" style="width: 30px;height: 40px">
+         <!-- <svg class="icon" aria-hidden="true" style="width: 30px;height: 40px">
             <use :xlink:href="item.imgSrc"></use>
-        </svg>
-        <!-- <img slot="icon" :src="item.imgSrc" > -->
-        {{item.title}}
+        </svg> -->
+        <p>{{item.title}}</p>
+      </router-link>
       </mt-tab-item>
 
     </mt-tabbar>
@@ -36,10 +40,11 @@
 <script>
 //命名路由要用对象表达式
 var bar=[
-{id:1,title:'首页',imgSrc:'#icon-plant-',routerName:{name:'home'}},
-{id:2,title:'小世界',imgSrc:'#icon-plant-1',routerName:{name:'vip'}},
-{id:3,title:'购物车',imgSrc:'#icon-plant-2',routerName:{name:'car'}},
-{id:4,title:'搜索',imgSrc:'#icon-plant-3',routerName:{name:'search'}}
+{id:1,title:'言.享',imgSrc:'#icon-plant-',routerName:{name:'life',params:{categoryTitle:'旅行'}}},
+{id:2,title:'勤.学',imgSrc:'#icon-plant-1',routerName:{name:'technology'}},
+{id:3,title:'',imgSrc:'',routerName:{name:'publish'}},
+{id:4,title:'碎.巷',imgSrc:'#icon-plant-2',routerName:{name:'shop',params:{categoryTitle:'手表',page:1}}},
+{id:5,title:'吾',imgSrc:'#icon-plant-3',routerName:{name:'mine'}}
 ]
 // 载入js
 import GoodsTool from '@/router/GoodsTool'
@@ -50,7 +55,6 @@ export default {
       selected:'',
       bars:bar,
       fixed:'fixed',
-      pickNum:0
     }
   },
   watch:{
@@ -67,17 +71,13 @@ export default {
   }
   },
   created(){
-    //使用bus绑定购物数量事件，接受从加入购物车的值
-    this.$bus.$on('sendPickNum',(data)=>{
-      this.pickNum+=data;
-    });
-    // 当页面进行刷新，商品数量保留，调用GoodsTool.getTotalCount()方法获取总数量
-    this.pickNum= GoodsTool.getTotalCount();
+
   }
 };
 </script>
 
 <style>
+
 /* 可以设置不同的进入和离开动画 */
 /* 设置持续时间和动画函数 */
 .slide-fade-enter-active {
@@ -94,11 +94,18 @@ export default {
 /*a标签*/
 .mint-tab-item{
   position: relative;
+
+  height: 60px;
 }
-.carBall{
-  position: absolute;
-      top: 3px;
-    left: 20px;
+
+.mint-tab-item a span{
+   font-size: 20px;
+  /*给元素改变字号就可以改变字体图标的尺寸*/
+  line-height: 30px;
 }
+.mint-tab-item a:hover{
+  color: #fff;
+}
+
 
 </style>

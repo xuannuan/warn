@@ -111,15 +111,15 @@ export default {
       jian(index){
         if(this.products['num'+index]>1){
           this.products['num'+index]--;
-          // 组件bus传值给App.vue组件的购物车数量
-          this.$bus.$emit('sendPickNum',-1);//只能针对于点击改变数量即时传给购物车的小球
+          // 组件bus传值给App.vue组件的购物车数量，
+          // this.$bus.$emit('sendPickNum',-1);//只能针对于点击改变数量即时传给购物车的小球,当进行输入数量，就无法获取插值进行正确的数量相加
           GoodsTool.updataGoods('num'+index,this.products['num'+index]);//传入到本地存储
 
         }
       },
       add(index){
         this.products['num'+index]++;
-        this.$bus.$emit('sendPickNum',1);
+        // this.$bus.$emit('sendPickNum',1);
         let key='num'+index;
         let value= this.products['num'+index];
         GoodsTool.updataGoods(key,value);

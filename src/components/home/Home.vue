@@ -1,15 +1,5 @@
 <template>
   <div id='home'>
-    <!-- 轮播图 :show-indicators="false"隐藏下面的点点-->
-    <!-- <MySwipper :url="url"/> -->
-    <!-- <mt-swipe :show-indicators="false" :auto="4000" style="height: 250px" class='swipe'>
-      <mt-swipe-item v-for='(item,index) in imgs' :key='index'> -->
-        <!-- src属性要绑定，v-bind -->
-        <!-- 要写样式,要图片尺寸合适 -->
-        <!--  <p class="title">{{item.title}}</p>
-        <img :src="item.image" alt=""/>
-      </mt-swipe-item>
-    </mt-swipe> -->
 
     <!-- 九宫格列表 -->
     <div class="list">

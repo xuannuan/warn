@@ -241,6 +241,8 @@ export default {
 
 <style lang="css" scoped>
 
+
+
 .content{
   padding-top: 5px;
   padding-left: 10px;

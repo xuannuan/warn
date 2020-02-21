@@ -1,5 +1,5 @@
 <template>
-  <div class="search">search</div>
+  <div class="search">发布笔记</div>
 </template>
 
 <script>

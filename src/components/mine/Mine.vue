@@ -1,13 +1,13 @@
 <template>
   <div class="vip">
-    <!-- <form>
+    <form>
       <label>用户名：</label>
       <input type="text" name="" v-model="name"><br/>
       <label>密码：</label>
       <input type="password" name="" v-model="password "><br/>
       <input type="button" name="" value="登录" @click="login">
     </form>
-    <div>反馈：{{errorTip}}</div> -->
+    <div>反馈：{{errorTip}}</div>
     <div class="bgimg">
       <img src="../../../static/img/sha.jpg" height="100%" width="100%">
     </div>

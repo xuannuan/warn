@@ -4,7 +4,7 @@
     <!-- 全局的导航栏组件，父组件给子组件传值，直接自定义title属性，不用在js里绑定属性 -->
     <TopBar title="科技天地" :srcURL="imgUrl"/>
 
-      <div class="list-group-item" v-for="(item,index) in newsList" :key="item.id">
+      <div class="list-group-item" v-for="(item,index) in newsList" :key="index">
        <router-link :to="{name:'detail',query:{id:item.id}}">
           <div class="media" >
           <div class="media-left">
