@@ -22,9 +22,9 @@
     </mt-header>
 
     <!-- 内容展示模块 -->
-    <!-- vue的动画效果 -->
+    <!-- vue的动画效果 mode="out-in"前面一个过渡完在进行下一个-->
     <div class="con">
-      <transition name="slide-fade">
+      <transition name="slide-fade" mode="out-in">
         <router-view/>
       </transition>
     </div>
@@ -37,7 +37,7 @@
       :id="item.routerName.name">
          <router-link :to="item.routerName" style="width: 100%,height:100%" >
           <span :class="{'el-icon-view':index==0,'el-icon-reading':index==1,'el-icon-s-promotion':index==2,'el-icon-goods':index==3,'el-icon-user':index==4}"></span>
-        <p>{{item.title}}</p>
+        <!-- <p>{{item.title}}</p> -->
       </router-link>
       </mt-tab-item>
 

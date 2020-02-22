@@ -11,9 +11,9 @@ module.exports = {
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
     proxyTable: {
-       //php文件
+       //php文件连接数据库操作
       '/api': {
-        target: 'http://localhost:8085',//接口域名
+        target: 'http://localhost:8085/ToUser',//接口域名
         changeOrigin: true,//是否跨域
         pathRewrite: {
           '^/api': '/'//需要重写的

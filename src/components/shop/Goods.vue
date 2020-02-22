@@ -36,10 +36,9 @@
                 </svg> -->
                 More
                 </mt-button>
+                   <!-- 解决百分比布局被底部栏fixed定位后遮挡内容 -->
+        <!-- <div class="forCover"></div> -->
             </div>
-              <!-- 解决百分比布局被底部栏fixed定位后遮挡内容 -->
-        <div class="forCover"></div>
-
     </div>
     <div class="car">
       <router-link :to="{name:'shop.car'}" class="el-icon-shopping-cart-2">

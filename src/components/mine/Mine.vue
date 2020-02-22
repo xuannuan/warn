@@ -8,20 +8,16 @@
       fit="cover"></el-image>
     <!-- 上传头像 -->
     <div class="me">
-    <el-upload
-       class="avatar-uploader headimg"
-       action="https://jsonplaceholder.typicode.com/posts/"
-       :show-file-list="false"
-       :on-success="handleAvatarSuccess"
-       :before-upload="beforeAvatarUpload">
-       <el-avatar shape="square" :size="100" fit="cover" :src="imageUrl" class="avatar" v-if="imageUrl"></el-avatar>
-       <!-- <img v-if="imageUrl" :src="imageUrl" class="avatar"> -->
-       <i v-else class="el-icon-plus avatar-uploader-icon"></i>
-    </el-upload>
+      <router-link :to="{name:'message'}">
+       <el-avatar shape="square" :size="100" fit="cover" :src=" imageUrl" class="headimg"></el-avatar>
+     </router-link>
      <el-button type="danger" class="share">分享瞬间</el-button>
     <el-button size="mini" round class="intruduce" v-if="!imageUrl">
-        <router-link :to="{name:'message'}">
+        <router-link :to="{name:'message.login'}" v-if="!imageUrl">
           加入岁月间？
+        </router-link>
+        <router-link :to="{name:'message'}" v-if="imageUrl">
+          一句话介绍一下自己？
         </router-link>
     </el-button>
     </div>
@@ -45,7 +41,6 @@ export default {
 
   data () {
     return {
-
       imageUrl: '',//头像图片
       activeName:'third',//tab栏切换
     }
@@ -73,6 +68,15 @@ export default {
       },
 
   },
+  created(){
+    this.$axios.get('/api/checkUser.php')
+    .then(res=>{
+      console.log(res.data);
+    })
+    .catch(err=>{
+      console.log("获取数据库连接失败",err);
+    })
+  }
 };
 </script>
 

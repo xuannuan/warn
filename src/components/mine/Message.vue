@@ -21,7 +21,11 @@
     <el-input v-model="sizeForm.name" maxlength="8"></el-input>
   </el-form-item>
   <el-form-item label="性别">
-    <el-input v-model="sizeForm.sex"></el-input>
+    <el-radio-group v-model="sizeForm.radio">
+    <el-radio :label="1">男生</el-radio>
+    <el-radio :label="2">女生</el-radio>
+    <el-radio :label="3">保密</el-radio>
+  </el-radio-group>
   </el-form-item>
    <el-form-item label="破蛋日">
       <el-date-picker type="date" placeholder="选择日期" v-model="sizeForm.date" style="width: 100%;"></el-date-picker>
@@ -35,19 +39,16 @@
   <el-form-item label="职业">
     <el-input v-model="sizeForm.work"></el-input>
   </el-form-item>
-  <el-form-item label="个性签名">
+  <el-form-item label="关于自己">
     <el-input
   type="textarea"
-  maxlength="30"
-  :autosize="{ minRows: 1, maxRows: 3}"
+  maxlength="50"
+  :autosize="{ minRows: 2, maxRows: 4}"
   placeholder="一句话介绍一下你自己？"
   v-model="sizeForm.sign">
 </el-input>
   </el-form-item>
 </el-form>
-
-    <el-button type="primary" class="exit" @click="open">退出登录</el-button>
-
   </div>
 </template>
 
@@ -62,6 +63,8 @@ export default {
       sizeForm:{
         name:'',
         date:'',
+        radio:'',//1,2,3
+
       }
     }
   },
@@ -86,17 +89,6 @@ export default {
       // 提交表单
       onSubmit(){
          console.log('submit!');
-      },
-      open() {
-        this.$alert('确定退出登录？',  {
-          confirmButtonText: '确定',
-          callback: action => {
-            this.$message({
-              type: 'info',
-              message: `action: ${ action }`
-            });
-          }
-        });
       }
 
   }
