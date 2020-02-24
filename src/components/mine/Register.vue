@@ -102,7 +102,7 @@ export default {
             .then(res=>{
               console.log(res.data);
                alert('岁月间欢迎你~');
-              this.$router.push({name:'mine'});
+              this.$router.push({name:'message.login'});
             })
             .catch(err=>{
               console.log('获取连接PHP失败',err);

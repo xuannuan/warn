@@ -25,7 +25,8 @@
     <!-- vue的动画效果 mode="out-in"前面一个过渡完在进行下一个-->
     <div class="con">
       <transition name="slide-fade" mode="out-in">
-        <router-view/>
+        <!-- <router-view/> 加key属性进行路由改变页面改变，防止页面缓存无法加载跳转-->
+        <router-view :key="this.$route.path"></router-view>
       </transition>
     </div>
 

@@ -3,7 +3,7 @@ let obj={}
 
 
 //保存商品
-obj.svaeGoods=function(goodsList){
+obj.saveGoods=function(goodsList){
   window.localStorage.setItem('goodsList',JSON.stringify(goodsList));
 }
 
@@ -14,34 +14,44 @@ obj.getGoodsList=function(){
  }
 
  //因为属性+i，所以需要全局变量i,进行增删操作是获取最后的i
-let goodsList=obj.getGoodsList();
-let k=Object.keys(goodsList);//获取对象的所有属性组成数组
-let i=k.length/6-1;//全局变量，因为一次循环有6个不同的对象属性，为虚拟数组的长度
+ //但是不能用全局变量，获取的i到后面不准确
+// let goodsList=obj.getGoodsList();
+// let k=Object.keys(goodsList);//获取对象的所有属性组成数组
+// let i=k.length/6-1;因为一次循环有6个不同的对象属性，为虚拟数组的长度
 
 
 //添加商品
 // goods参数是一个对象，{加入购物车商品id，商品数量}
  obj.addGoods=function(goods){
   let goodsList=this.getGoodsList();
-      i++; //继续存储商品而不是刷新后从0开始
-      // console.log(i);//0,1,2...
+  let k=Object.keys(goodsList);//获取对象的所有属性组成数组
+  let i=k.length/6-1;
+   i++; //不是刷新后从0开始，从数组长度-1开始
+   // console.log("数组长度"+i);
    //2,因为obj是一个对象，不是一个数组,所以要不同的属性名才可以存进去，
     // if(goods.num!=0){因为在数量为0不进入小球动漫触发后，即不调用添加方法
-    goodsList['id'+i]=goods.id;
-    goodsList['title'+i]=goods.title;
-    goodsList['price'+i]=goods.price;
-    goodsList['img'+i]=goods.img;
-    goodsList['num'+i]=goods.num;
-    goodsList['category'+i]=goods.category;
-
+    // goodsList['id'+i]=goods.id;
+    // goodsList['title'+i]=goods.title;
+    // goodsList['price'+i]=goods.price;
+    // goodsList['img'+i]=goods.img;
+    // goodsList['num'+i]=goods.num;
+    // goodsList['category'+i]=goods.category;
+     Vue.set(goodsList,'id'+i,goods.id);
+    Vue.set(goodsList,'title'+i,goods.title);
+    Vue.set(goodsList,'price'+i,goods.price);
+    Vue.set(goodsList,'img'+i,goods.img);
+    Vue.set(goodsList,'num'+i,goods.num);
+    Vue.set(goodsList,'category'+i,goods.category);
     // 保存一下
-    this.svaeGoods(goodsList);
+    this.saveGoods(goodsList);
 }
 
 
 //删除商品，删除对象属性
 obj.deleteGoods=function(index){
   let goodsList=this.getGoodsList();
+  let k=Object.keys(goodsList);//获取对象的所有属性组成数组
+  let i=k.length/6-1;
    // 删除对象属性，且不占位置Vue.delete(obj,key);
    //删除相应的商品数据，而不是删除标签节点，可以存储
   Vue.delete(goodsList,'id'+index);
@@ -78,7 +88,8 @@ obj.deleteGoods=function(index){
   Vue.delete(goodsList,'num'+i);
   Vue.delete(goodsList,'category'+i);
   //存储改变
-  this.svaeGoods(goodsList);
+  console.log("删除后的数组长度"+i);
+  this.saveGoods(goodsList);
 }
 
 //修改加入购物车的商品,传入对象要修改的属性和值
@@ -86,7 +97,7 @@ obj.updataGoods=function(key,value){
   let goodsList=this.getGoodsList();
   goodsList[key]=value;
   // console.log(key,value);
-  this.svaeGoods(goodsList);
+  this.saveGoods(goodsList);
 }
 
 
@@ -94,10 +105,12 @@ obj.updataGoods=function(key,value){
 obj.getTotalCount=function(){
   let sum=0;
   let goodsList=this.getGoodsList();
+  let k=Object.keys(goodsList);//获取对象的所有属性组成数组
+  let i=k.length/6-1;
   // 因为i此时已经是长度-1
   for(let j=0;j<=i;j++){
     let values=goodsList['num'+j];
-    // console.log(values);
+    console.log(values);
     sum+=values;
   }
   return sum;

@@ -36,16 +36,10 @@
                 </svg> -->
                 More
                 </mt-button>
-                   <!-- 解决百分比布局被底部栏fixed定位后遮挡内容 -->
-        <!-- <div class="forCover"></div> -->
             </div>
     </div>
-    <div class="car">
-      <router-link :to="{name:'shop.car'}" class="el-icon-shopping-cart-2">
-       <!-- 这个是购物车的图标-->
-         <mt-badge size="small" color="#8cc5ff" class="carBall">{{pickNum}}</mt-badge>
-       </router-link>
-    </div>
+        <!-- 这个是购物车的图标 -->
+    <fixCar/>
 </div>
 
 </div>
@@ -60,7 +54,6 @@ export default {
 
   data () {
     return {
-      pickNum:0,
       goods:[],
       products:[],
       geta:[],//组件传值
@@ -85,16 +78,9 @@ export default {
       this.page=this.$route.params.page;
       this.page++;//从当前路由的page数增
       this.getKeyWord(this.key);//调用上述方法请求第二页的数据，因为有关键字，所以只能这样
-
        //动态路由匹配，再次改变路由
       this.$router.push({name:'shop',params:{categoryTitle:this.key,page:this.page}});
     }
-  },
-  //因为开始进去页面是空的，路由加载了但内容没有，所以设置路由守卫，一点进去就切换到路由第二页
-  beforeRouteEnter(to,from,next){
-    next(vm=>{
-      vm.$router.push({name:to.name,params:{categoryTitle:to.params.categoryTitle,page:to.params.page+1}});
-    });
   },
 
   created(){
@@ -106,45 +92,29 @@ export default {
         Vue.set(item,'value',item.catName);//要引入vue模块
         JSON.stringify(item);
       });
-
     })
     .catch((err)=>{
       console.log("商品分类加载失败",err);
     });
-    //使用bus绑定购物数量事件，接受从加入购物车的值
-    this.$bus.$on('sendPickNum',(data)=>{
-      this.pickNum+=data;
-    });
     this.$bus.$on('sendIndex',(data)=>{
       this.currentIndex=data;
     });
-    // 当页面进行刷新，商品数量保留，调用GoodsTool.getTotalCount()方法获取总数量
-    this.pickNum= GoodsTool.getTotalCount();
 
-
-    },
-
-    //当点击分类时路由会切换内容(失败的经验，更在意逻辑思考)
-    watch:{
-      $route:function(newurl,oldurl){
         this.key=this.$route.params.categoryTitle;
         this.page=this.$route.params.page;//作用1：把路由的page参数传进去更改对应的内容
         // 作用2：给getKeyWord(item)传进去第一个page=1，不能再方法里面写，因为在加载第二页会调用，防止不被覆盖
          this.$axios.get('../../../static/data/商品'+this.key+this.page+'.json')
-      //'http://api01.6bqb.com/taobao/search?apikey=5F3779A028E404694FC192684E80B7C3&keyword='+item+'&page=$(this.page)'
-      .then((res)=>{
-          this.products=res.data.data;
-      })
-      .catch((err)=>{
-        console.log("商品加载失败",err);
-      this.loadding=false;
-
-        this.$toast({
-          message:"暂无商品",
-          iconClass:'iconfont icon-plant-18'
-        })
-      });
-      }
+           .then((res)=>{
+               this.products=res.data.data;
+           })
+           .catch((err)=>{
+             console.log("商品加载失败",err);
+             this.loadding=false;
+            this.$toast({
+              message:"暂无商品",
+              iconClass:'iconfont icon-plant-18'
+            })
+          });
     }
 
 };

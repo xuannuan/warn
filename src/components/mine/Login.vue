@@ -24,6 +24,7 @@
 </template>
 
 <script>
+import UserTool from '@/router/UserTool'
 export default {
 
   name: 'Login',
@@ -44,7 +45,6 @@ export default {
           this.errorTip='请输入账号';
           return;
          }
-       //直接把参数写在post头部，还有好几种写法，区别不大
        //使用自编写的PHP后端语言连接数据库，打开地址http://localhost:8085/ToUser/checkUser.php(首先要打开wampserver服务器)
         this.$axios.post('/api/UserLogin.php',{
           Name:this.name,
@@ -53,13 +53,20 @@ export default {
           .then(response => {
           let res = response.data;  //用res承接返回后台的json文件(像使用数组那样)
             console.log('login的值'+res);
-          if(res.status>0){   //显示登录结果
+          if(res.status>0){   //res.status=1,显示登录结果
            console.log('登录成功');
            this.$router.push({name:'mine'});//跳转页面
            this.errortip=true;
            this.errorTip='登录成功';
-           //传值
-           this.$bus.$emit('sendUser',(this.name,this.password));
+
+
+            //存到本地session存储，关闭浏览器要重新登录，因为可用用户名或号码当做账号,
+            UserTool.addUser({
+            name:res.name,
+            password:res.password,
+            logintip:res.status//登录提示，成功=1.否则=0
+           });
+
 
 
          }else {

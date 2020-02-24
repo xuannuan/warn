@@ -5,6 +5,8 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import Axios from 'axios'
+//引入vuex仓库，还要在实例中挂载
+import store from './store'
 
 
 // 配置axios,每一个文件对axios发起请求，要挂载到vue实例化对象上
@@ -61,7 +63,7 @@ Vue.filter('Tolength',function(str,num){
 });
 
 //axios拦截器在请求或响应被 then 或 catch 处理前拦截它们。
-// 添加请求拦截器
+// 添加请求拦截器，在数据加载完前加loading动画
 Axios.interceptors.request.use(function (config) {
     // 在发送请求之前做些什么
     //加载提示框
@@ -105,6 +107,10 @@ Vue.component(Search.name,Search);
 import MySwipper from '@/components/comment/MySwipper'
 Vue.component(MySwipper.name,MySwipper);
 
+//注册全局购物车组件
+import fixCar from '@/components/comment/fixCar'
+Vue.component(fixCar.name,fixCar);
+
 Vue.config.productionTip = false
 
 // 将bus总线对象挂载到vue实例上
@@ -115,6 +121,8 @@ Vue.prototype.$bus=EventBus;
 new Vue({
   el: '#app',
   router,
+  //挂载vuex仓库
+  store,
   components: { App },
   template: '<App/>'
 })

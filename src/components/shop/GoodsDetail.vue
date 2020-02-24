@@ -1,19 +1,11 @@
+
 <template>
   <div class="goodsdetail">
   <!-- 要有一个根元素 -->
-   <div class="car">
-      <router-link :to="{name:'shop.car'}" class="el-icon-shopping-cart-2">
        <!-- 这个是购物车的图标-->
-         <mt-badge size="small" color="#8cc5ff" class="carBall">{{pickNum}}</mt-badge>
-       </router-link>
-    </div>
+       <fixCar/>
   <!-- 轮播图组件 -->
   <MySwipper :url="url"/>
-  <!--  <mt-swipe style="height: 200px;width: 100%">
-      <mt-swipe-item v-for="(item1,index) in goods.item.images" :key="index">
-        <img :src="item1" width="100%" height="200px">
-      </mt-swipe-item>
-    </mt-swipe> -->
 <div class="price">
   <h3 style="color:orange">￥{{goods.item.priceRange}}</h3>
   <h5>{{goods.item.title}}</h5>
@@ -153,7 +145,7 @@ export default {
       changeTitle:'',
       url:'../../../static/data/满天星手表.json',//轮播图组件传值
       isExist:false,//默认动态小球隐藏
-      pickNum:0,//购物车所有商品的数量
+      // pickNum:0,//购物车所有商品的数量
     }
   },
   methods: {
@@ -172,7 +164,8 @@ export default {
        // 当数量为0时就不触发提示加入购物车成功动画
        if(parseInt(this.num)!=0){
       //触发bus绑定的事件，给App.vue的购物数量传值
-       this.$bus.$emit('sendPickNum',parseInt(this.num));
+       // this.$bus.$emit('sendPickNum',parseInt(this.num));
+       this.$store.dispatch('addGoodsNum',this.num);
 
        //调用js添加到购物车页面的数据，保存到本地数据方法
        // id:this.goods.item.itemId,
@@ -249,12 +242,6 @@ export default {
     this.changeTitle=this.color[0].name;
     // console.log(this.color);
 
-     //使用bus绑定购物数量事件，接受从加入购物车的值
-    this.$bus.$on('sendPickNum',(data)=>{
-      this.pickNum+=data;
-    });
-    // 当页面进行刷新，商品数量保留，调用GoodsTool.getTotalCount()方法获取总数量
-    this.pickNum= GoodsTool.getTotalCount();
     })
     .catch((err=>{
         console.log("商品详情加载失败",err);
@@ -361,8 +348,8 @@ span{color: gray;}
 }
 /*小球动漫transition的类名*/
 .bounce-enter-active {
-  /*给1s时间让小球进入动画效果*/
-  animation: bounce-in 1s;
+  /*给0.5s时间让小球完成动画效果*/
+  animation: bounce-in 0.5s;
 }
 /*https://cn.vuejs.org/v2/guide/transitions.html#CSS-动画*/
 .bounce-leave {

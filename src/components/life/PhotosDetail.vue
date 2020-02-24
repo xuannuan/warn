@@ -32,21 +32,11 @@
       <h5>{{imgs.title}}</h5>
     <p>{{imgs.desc}}</p>
   </div>
-  <!-- 小图是视频同时存在，否则大的轮播图存在 ,得出结论，有视频就不用图，因为图是截图用作封面-->
-  <!-- <div class="pic" v-if="imgs.video_info">
-    <ul>
-      <li v-for='(pic,index) in imgs.images_list' :key='index'>
-      <img :src="pic.url" alt="" width="100px" height="150px"/>
-    </li>
-    </ul>
-    </div>
- -->
 <hr/>
     <div class="comment">
       <p class="count">共{{count}}条评论</p>
-      <input type="text" name="" width="80%" placeholder="发送评论" v-model="talk">&nbsp;&nbsp;
-        <!-- <mt-button type="primary" size="big">加载更多</mt-button> -->
-      <input type="button" value="发送" @click="sub">
+      <input type="text" width="80%" placeholder="发送评论" v-model="talk">
+      <button class="el-icon-upload2" @click="sub"></button>
       <!-- 自己提交的评论 -->
       <ul>
         <li v-for="(item,index) in talkList" :key="index">
@@ -61,7 +51,7 @@
               <p> {{item}}</p>
               </div>
               <div class="r">
-                <span @click="toCountM">♥</span>
+                <a @click="toCountM">♥</a>
                 <span>{{like_my}}</span>
               </div>
         </li>
@@ -79,8 +69,8 @@
         <p @click="sub">{{item.content}}</p>
         </div>
         <div class="r">
-          <span @click="toCountF(index)">♥</span>
-          <span>{{item.like_count}}</span>
+          <a @click="toCountF(index)">♥</a>
+         <span> {{item.like_count}}</span>
         </div>
           <!-- 不过要先写好评论，点击即可提交，在评论中再评论 -->
          <ul class="inside">
@@ -88,12 +78,12 @@
               <div class="l">
                   <a href="javascript:void(0)">
                   <img :src="item.user.images" alt="user" width="30px" height="30px">&nbsp;&nbsp;
-                  <span style="font-size: 14px">{{item.user.nickname}}</span>
+                  <span style="font-size: 14px;color:#9e9e9e">{{item.user.nickname}}</span>
                   </a>
-                  <p @click="sub">{{item.content}}</p>
+                  <p @click="sub" style="color:#9e9e9e">{{item.content}}</p>
                   </div>
                   <div class="r">
-                    <span @click="toCountS(index,index1)">♥</span>
+                    <a @click="toCountS(index,index1)">♥</a>
                     <span>{{item.like_count}}</span>
                   </div>
             </li>
@@ -241,7 +231,28 @@ export default {
 
 <style lang="css" scoped>
 
+.comment input{
+  margin-left:5%;
+  padding-left: 10px;
+    border-radius: 4px;
+    border: 1px solid #9e9e9e47;
+    width: 80%;
+    background: #9e9e9e21;
+    height: 30px;
+}
 
+.comment button{
+  border-radius: 4px;
+    border: 1px solid #9e9e9e47;
+    width: 10%;
+    background: #9e9e9e21;
+    height: 30px;
+}
+.count{
+  margin: 10px;
+  font-size: 18px;
+  color: #de7688;
+}
 
 .content{
   padding-top: 5px;
@@ -269,16 +280,25 @@ export default {
   /*评论内容离头像远一点*/
 }
 .r{
-  float: right;width: 5px;
-  position: absolute;
-  top: 5px;right: 20px;
+      float: right;
+    width: 5px;
+    position: absolute;
+    top: 10px;
+    right: 15px;
+}
+.r a{
+  color: pink;
+  font-size: 16px;
+}
+.r a:hover{
+color:#8cc5ff;
 }
 /*样式权重值要多*/
 .comment .inside li{
+  width: 85%;
   border: none;
   /*覆盖之前的边框*/
   padding-left: 50px;
-  padding-right: 20px;
   margin-top:10px;
 
 }

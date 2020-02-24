@@ -86,24 +86,7 @@ h1,h2, h3, h4, h5, h6 {
 .fr{
   float: right;
 }
-/*购物车图标*/
-.car{
-  width: 50px;height: 50px;
-  position: fixed;
-  bottom: 50px;right: 5px;
-  background-color: #fff;
-}
-.car a{
-  width: 100%;
-  font-size: 30px;
-  color: #8cc5ff;
-  text-align: center;
-}
-.carBall {
-    position: absolute;
-    top: -9px;
-    right: 0px;
-}
+
 
 /*上传头像*/
 .avatar-uploader .el-upload {

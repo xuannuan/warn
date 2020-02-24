@@ -32,8 +32,8 @@
        <el-checkbox  v-model="checkAll" @change="handleCheckAllChange">&nbsp;&nbsp;&nbsp;&nbsp;全选</el-checkbox>
 
     <div class="ToSum">
-      合计:<span style="color:#ef4f4f">￥{{money}}|{{b}}</span>
-       <el-button type="warning" round @click="going">结算（{{Count}}）</el-button>
+      合计:<span style="color:#ef4f4f">￥{{payment.total}}</span>
+       <el-button type="warning" round @click="going">结算（{{payment.count}}）</el-button>
     </div>
 
 </footer>
@@ -67,19 +67,30 @@ export default {
       show:false,//弹出框隐藏
       index:'',//获取第几个垃圾桶，点击删除第几个商品的数据
       dele:[],
-      Count:0,//选中商品的数量，用在单选操作和统计商品数量
-      money:0,
+      // Count:0,//选中商品的数量，用在单选操作和统计商品数量
+      // money:0,
+      isSelected:[],//选中的数组
 
     }
   },
   methods:{
     //对于全选的复选框
      handleCheckAllChange(val) {
-        this.example = val ? this.all : [];
+      // console.log(val);//boolean
+      //如果true，即为全选，则全选数组为all
+      if(val==true){
+        this.isSelected=this.all;
+        console.log(this.isSelected)
+      }
+      else{
+        this.isSelected=[];
+      }
+      this.example = val ? this.all : [];
+
       },
       //对于单选的复选框
       handleCheckedChange(value) {
-        // console.log(value);//选中复选框的值组成数组[0, 1,]
+        this.isSelected=value;//选中复选框的值组成数组[0, 1,]
         let checkedCount = value.length;
         this.checkAll = checkedCount === this.all.length;
       },
@@ -107,12 +118,22 @@ export default {
         this.dele[this.index]=false;
         // 删除商品数据存储，进行删除商品
         GoodsTool.deleteGoods(this.index);
+        //删除元素，因为v-model绑定的是all,所以要改变数组all，
+         this.all.splice(this.index,1);
+         this.length--;
+         console.log(this.length);
+         if(this.length==0){
+            this.all=[];
+         }
+
+
       },
       //添加商品
       jian(index){
         if(this.products['num'+index]>1){
           this.products['num'+index]--;
           // 组件bus传值给App.vue组件的购物车数量，
+          this.$store.dispatch('addGoodsNum',-1);
           // this.$bus.$emit('sendPickNum',-1);//只能针对于点击改变数量即时传给购物车的小球,当进行输入数量，就无法获取插值进行正确的数量相加
           GoodsTool.updataGoods('num'+index,this.products['num'+index]);//传入到本地存储
 
@@ -120,6 +141,7 @@ export default {
       },
       add(index){
         this.products['num'+index]++;
+        this.$store.dispatch('addGoodsNum',1);
         // this.$bus.$emit('sendPickNum',1);
         let key='num'+index;
         let value= this.products['num'+index];
@@ -140,51 +162,66 @@ export default {
   },
   // 对加减商品进行结算监控，获取和设置值
   computed:{
-    b:function(){
-      this.jian(index=>{
-        return this.products['num'+index];
-      })
-    }
-  },
-  watch:{
-    //监视复选框的选中状态,对于单选的
-    example:function(newc,oldc){
-      // console.log(newc,oldc);
-      if(newc.length>oldc.length){//选中新的商品
-
-        let i=newc[newc.length-1];//选中就会插入到value数组最后一个
-        this.money+=this.products['price'+i]*this.products['num'+i];//结算勾选的商品总价
-        this.Count+=this.products['num'+i];//加上勾选的总商品数
-      }
-      else{//取消选中的商品
-
-       let i=oldc[oldc.length-1];//减去旧的选中序列的最后一个，即取消的商品
-         if(this.money>0||this.Count>0){
-          this.money-=this.products['price'+i]*this.products['num'+i];//减去取消勾中的商品价格
-          this.Count-=this.products['num'+i];//减去取消勾中的商品数量
-        }
-      }
-    },
-    checkAll:function(newed,olded){
-      console.log(newed,olded);
-      if(newed==true){//全选的状态
-        for(let i=0;i<this.length;i++){
-          this.money+=this.products['price'+i]*this.products['num'+i];//结算勾选的商品总价
-          this.Count+=this.products['num'+i];
-        }
-      }
-      else{//全部选的状态
-        this.money=0;
-        this.Count=0;
+    payment(){
+      //computed默认getter方法
+        let total=0;//商品总价
+        let count=0;//商品总数
+        this.all.forEach((item,index)=>{
+          // 如果选中，则在选中数组中
+          if(this.isSelected.indexOf(item)!=-1){
+              count+=this.products['num'+index];
+              total+=this.products['price'+index]*this.products['num'+index];
+          }
+        });
+      return{
+        total,count//在组件中用payment.total调用
       }
     }
+
   },
+  //watch监听结算变化，但功能不全，被淘汰了，但当时的思路还是伟大的，哈哈哈~
+  // watch:{
+  //   //监视复选框的选中状态,对于单选的
+  //   example:function(newc,oldc){
+  //     // console.log(newc,oldc);
+  //     if(newc.length>oldc.length){//选中新的商品
+
+  //       let i=newc[newc.length-1];//选中就会插入到value数组最后一个
+  //       this.money+=this.products['price'+i]*this.products['num'+i];//结算勾选的商品总价
+  //       this.Count+=this.products['num'+i];//加上勾选的总商品数
+  //     }
+  //     else{//取消选中的商品
+
+  //      let i=oldc[oldc.length-1];//减去旧的选中序列的最后一个，即取消的商品
+  //        if(this.money>0||this.Count>0){
+  //         this.money-=this.products['price'+i]*this.products['num'+i];//减去取消勾中的商品价格
+  //         this.Count-=this.products['num'+i];//减去取消勾中的商品数量
+  //       }
+  //     }
+  //   },
+  //   checkAll:function(newed,olded){
+  //     // console.log(newed,olded);
+  //     if(newed==true){//全选的状态
+  //       for(let i=0;i<this.length;i++){
+  //         this.money+=this.products['price'+i]*this.products['num'+i];//结算勾选的商品总价
+  //         this.Count+=this.products['num'+i];
+  //       }
+  //     }
+  //     else{//全部选的状态
+  //       this.money=0;
+  //       this.Count=0;
+  //     }
+  //   }
+  // },
   created(){
-    let goodsList=GoodsTool.getGoodsList();
-    // console.log(goodsList);
-    this.products=goodsList;
-    let keys=Object.keys(goodsList);//获取对象的所有属性 
+    // vuex
+    // this.$store.dispatch('setGoodsList',GoodsTool.getGoodsList());
+    // let goodsList=this.$store.state.goodsList;
+
+    this.products=GoodsTool.getGoodsList();//对象
+    let keys=Object.keys(this.products);//获取对象的所有属性 
     this.length=keys.length/6;//获取虚拟的数组长度，即最后i的值
+
     //all数组是进行全选操作的数组控制，dele数组时进行单个翻盖动画效果的控制
     for(let i=0;i<this.length;i++){
       this.all.push(i);
@@ -270,7 +307,7 @@ footer{
     width: 100%;
     height: 60px;
     position: fixed;
-    bottom: 53px;
+    bottom: 44px;
     left: 0;
     background-color: #fff;
     z-index: 1001;
