@@ -27,15 +27,10 @@ obj.getGoodsList=function(){
   let k=Object.keys(goodsList);//获取对象的所有属性组成数组
   let i=k.length/6-1;
    i++; //不是刷新后从0开始，从数组长度-1开始
-   // console.log("数组长度"+i);
+
    //2,因为obj是一个对象，不是一个数组,所以要不同的属性名才可以存进去，
     // if(goods.num!=0){因为在数量为0不进入小球动漫触发后，即不调用添加方法
     // goodsList['id'+i]=goods.id;
-    // goodsList['title'+i]=goods.title;
-    // goodsList['price'+i]=goods.price;
-    // goodsList['img'+i]=goods.img;
-    // goodsList['num'+i]=goods.num;
-    // goodsList['category'+i]=goods.category;
      Vue.set(goodsList,'id'+i,goods.id);
     Vue.set(goodsList,'title'+i,goods.title);
     Vue.set(goodsList,'price'+i,goods.price);
@@ -66,11 +61,6 @@ obj.deleteGoods=function(index){
   for(let j=index;j<i;j++){
     //想过设置删除的那些属性，(对象，属性，属性值)
     // Vue.set(goodsList,'id'+j,goodsList['id'+(j+1)]);
-    // Vue.set(goodsList,'title'+j,goodsList['title'+(j+1)]);
-    // Vue.set(goodsList,'price'+j,goodsList['price'+(j+1)]);
-    // Vue.set(goodsList,'img'+j,goodsList['img'+(j+1)]);
-    // Vue.set(goodsList,'num'+j,goodsList['num'+(j+1)]);
-    // Vue.set(goodsList,'category'+j,goodsList['category'+(j+1)]);
     //直接用后面覆盖前面的方法，认真分析过j<i还是j<i-1,
     // i-1不行,这样就只可获取长度-2，不可，只能再删除最后一个元素
     goodsList['id'+j]=goodsList['id'+(j+1)]
@@ -88,7 +78,7 @@ obj.deleteGoods=function(index){
   Vue.delete(goodsList,'num'+i);
   Vue.delete(goodsList,'category'+i);
   //存储改变
-  console.log("删除后的数组长度"+i);
+  // console.log("删除后的数组长度"+i);
   this.saveGoods(goodsList);
 }
 
@@ -110,7 +100,6 @@ obj.getTotalCount=function(){
   // 因为i此时已经是长度-1
   for(let j=0;j<=i;j++){
     let values=goodsList['num'+j];
-    console.log(values);
     sum+=values;
   }
   return sum;

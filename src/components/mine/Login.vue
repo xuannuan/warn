@@ -46,34 +46,31 @@ export default {
           return;
          }
        //使用自编写的PHP后端语言连接数据库，打开地址http://localhost:8085/ToUser/checkUser.php(首先要打开wampserver服务器)
-        this.$axios.post('/api/UserLogin.php',{
+        this.$axios.post('/api/checkUser.php',{
           Name:this.name,
           userPwd:this.password
           })//用户名和密码将转为json传到后台接口
-          .then(response => {
-          let res = response.data;  //用res承接返回后台的json文件(像使用数组那样)
-            console.log('login的值'+res);
-          if(res.status>0){   //res.status=1,显示登录结果
-           console.log('登录成功');
-           this.$router.push({name:'mine'});//跳转页面
+          .then(res => {
+            let user = res.data;
+            console.log('login的值'+user);
+
+          if(user.status>0){   //res.status=1,显示登录结果
            this.errortip=true;
            this.errorTip='登录成功';
-
-
-            //存到本地session存储，关闭浏览器要重新登录，因为可用用户名或号码当做账号,
+            //用户信息都存到本地session存储，关闭浏览器要重新登录，
             UserTool.addUser({
-            name:res.name,
-            password:res.password,
-            logintip:res.status//登录提示，成功=1.否则=0
+             name:user.name,
+             tele:user.telephone,
+             password:user.password,
+             id:user.id,
+             img:user.img,
+             logintip:user.status//登录提示，成功=1.否则=0
            });
 
-
-
+            this.$router.push({name:'mine'});//跳转页面
          }else {
-           console.log('登录失败');
            this.errortip=true;
            this.errorTip='登录失败';
-
          }
         })
         }

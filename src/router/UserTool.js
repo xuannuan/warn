@@ -15,11 +15,11 @@ user.getUser=function(){
 
 user.addUser=function(obj){
   let user=this.getUser();
-  // 'userName'属性最好与store仓库state存储一样，
-  // obj.name属性值与数据库连接的PHP，echo的变量名一样
   Vue.set(user,'userName',obj.name);
-  Vue.set(user,'userTele',obj.name);
+  Vue.set(user,'userTele',obj.tele);
   Vue.set(user,'userPassWord',obj.password);
+  Vue.set(user,'userImg',obj.img);
+  Vue.set(user,'userId',obj.id);
   Vue.set(user,'userLoginTip',obj.logintip);
   this.saveUser(user);
 }

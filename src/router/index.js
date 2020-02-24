@@ -17,10 +17,11 @@ import GoodsComment from '@/components/shop/GoodsComment'
 import Car from '@/components/shop/Car'
 
 // 以下是用户信息模块
+import Install from '@/components/mine/Install'
 import Message from '@/components/mine/Message'
 import Login from '@/components/mine/Login'
 import Register from '@/components/mine/Register'
-
+import Password from '@/components/mine/Password'
 
 
 
@@ -88,19 +89,29 @@ export default new Router({
     },
     //用户信息
     {
-      path:'/message',
-      name:'message',
+      path:'/install',
+      name:'install',
+      component:Install
+    },
+    {
+      path:'/install/message',
+      name:'install.message',
       component:Message
     },
     {
-      path:'/message/login',
-      name:'message.login',
+      path:'/login',
+      name:'login',
       component:Login
     },
     {
-      path:'/message/register',
-      name:'message.register',
+      path:'/register',
+      name:'register',
       component:Register
-    }
+    },
+    {
+      path:'/install/password',
+      name:'install.password',
+      component:Password
+    },
   ]
 })

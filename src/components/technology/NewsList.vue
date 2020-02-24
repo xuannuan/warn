@@ -42,7 +42,6 @@ export default {
     this.$axios.get('../../../static/data/新闻列表.json')
     //https://api03.6bqb.com/kr/category?apikey=69330CA8CE3088F90BED27B6012BB0D9&category=web_news
     .then(res=>{
-      console.log(res.data.data);
       this.newsList=res.data.data;
       this.imgUrl=this.newsList[1].cover;
     })

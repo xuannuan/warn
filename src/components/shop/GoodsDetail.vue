@@ -207,14 +207,6 @@ export default {
     add(){
       this.num++;
     }
-    //关闭加入购物车,在index.css中修改弹出框的样式,自定义按钮后就不需要了
-    // handleClose(done) {
-    //     this.$confirm('将宝贝加入购物车？')
-    //       .then(_ => {
-    //         done();
-    //       })
-    //       .catch(_ => {});
-    //   }
   },
   created(){
     this.$axios.get('../../../static/data/满天星手表.json')

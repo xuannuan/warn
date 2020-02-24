@@ -6,10 +6,7 @@
       <ul>
         <!-- getCategoryTitle为了获取关键字进行搜索 -->
         <li v-for="(item,index) in category" :key="item.id" @click='getCategoryTitle(item.title,index)'>
-          <!-- @click='getCategoryTitle("item.title")' -->
-        <!-- 这个CategoryHandle为了获取正在点击的分类，来渲染样式 -->
           <a href="javascript:void(0)"   :class='{active:item.id==currentIndex}'>{{item.title}}&nbsp;&nbsp;&nbsp;</a>
-          <!-- 为什么index不行，或者调用api后只能点一两次 -->
         </li>
       </ul>
     </div>
@@ -17,7 +14,7 @@
       <ul>
         <li v-for="(item,index) in pic" :key="item.id" >
           <router-link :to="{name:'photos.detail',query:{id:item.id}}">
-           <!--  <img :src="item.image_info.original"  width="100%" height="365px"> -->
+            <!-- <img :src="item.image_info.original"  width="100%" height="400px"> -->
            <!-- mint-ui 懒加载 ,看一张加载一张-->
            <img v-lazy="item.image_info.original" width="100%" height="400px" >
           </router-link>
@@ -48,6 +45,7 @@ export default {
   methods:{
     // 小转弯，再点击相应分类后再发起图片的跨域请求
     getCategoryTitle(title,index){
+      // 为了获取正在点击的分类，来渲染样式
       this.currentIndex=index;
       // 拼接
       this.$axios.get('../../../static/data/图片'+title+'.json')

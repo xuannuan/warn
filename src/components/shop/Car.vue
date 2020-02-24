@@ -80,7 +80,6 @@ export default {
       //如果true，即为全选，则全选数组为all
       if(val==true){
         this.isSelected=this.all;
-        console.log(this.isSelected)
       }
       else{
         this.isSelected=[];
@@ -148,14 +147,10 @@ export default {
         GoodsTool.updataGoods(key,value);
       },//提交后触发的
        going() {
-        this.$alert('目前无商家入驻,请敬请期待',  {
-          confirmButtonText: '确定',
-          callback: action => {
-            this.$message({
-              type: 'info',
-              message: `action: ${ action }`
-            });
-          }
+        this.$notify.info({
+          title: '(＞人＜；)',
+          message: '目前无商家入驻，请敬请期待',
+          offset: 300//提示框偏移
         });
       }
 
@@ -179,40 +174,7 @@ export default {
     }
 
   },
-  //watch监听结算变化，但功能不全，被淘汰了，但当时的思路还是伟大的，哈哈哈~
-  // watch:{
-  //   //监视复选框的选中状态,对于单选的
-  //   example:function(newc,oldc){
-  //     // console.log(newc,oldc);
-  //     if(newc.length>oldc.length){//选中新的商品
 
-  //       let i=newc[newc.length-1];//选中就会插入到value数组最后一个
-  //       this.money+=this.products['price'+i]*this.products['num'+i];//结算勾选的商品总价
-  //       this.Count+=this.products['num'+i];//加上勾选的总商品数
-  //     }
-  //     else{//取消选中的商品
-
-  //      let i=oldc[oldc.length-1];//减去旧的选中序列的最后一个，即取消的商品
-  //        if(this.money>0||this.Count>0){
-  //         this.money-=this.products['price'+i]*this.products['num'+i];//减去取消勾中的商品价格
-  //         this.Count-=this.products['num'+i];//减去取消勾中的商品数量
-  //       }
-  //     }
-  //   },
-  //   checkAll:function(newed,olded){
-  //     // console.log(newed,olded);
-  //     if(newed==true){//全选的状态
-  //       for(let i=0;i<this.length;i++){
-  //         this.money+=this.products['price'+i]*this.products['num'+i];//结算勾选的商品总价
-  //         this.Count+=this.products['num'+i];
-  //       }
-  //     }
-  //     else{//全部选的状态
-  //       this.money=0;
-  //       this.Count=0;
-  //     }
-  //   }
-  // },
   created(){
     // vuex
     // this.$store.dispatch('setGoodsList',GoodsTool.getGoodsList());
