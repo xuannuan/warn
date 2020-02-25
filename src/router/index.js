@@ -16,12 +16,16 @@ import GoodsDetail from '@/components/shop/GoodsDetail'
 import GoodsComment from '@/components/shop/GoodsComment'
 import Car from '@/components/shop/Car'
 
-// 以下是用户信息模块
-import Install from '@/components/mine/Install'
-import Message from '@/components/mine/Message'
+// 以下是用户信息和关于项目解说模块
 import Login from '@/components/mine/Login'
 import Register from '@/components/mine/Register'
+import Install from '@/components/mine/Install'
+import Message from '@/components/mine/Message'
 import Password from '@/components/mine/Password'
+import Secret from '@/components/mine/Secret'
+import About from '@/components/mine/About'
+
+
 
 
 
@@ -112,6 +116,14 @@ export default new Router({
       path:'/install/password',
       name:'install.password',
       component:Password
-    },
+    },{
+      path:'/install/secret',
+      name:'install.secret',
+      component:Secret
+    },{
+      path:'/install/about',
+      name:'install.about',
+      component:About
+    }
   ]
 })

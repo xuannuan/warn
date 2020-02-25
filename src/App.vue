@@ -75,6 +75,25 @@ export default {
      // console.log(this.selected);//相当于newk跳转的新路由，命名路由
       // 通过命名路由对路由进行跳转，关键
       this.$router.push({name:this.selected});
+    },
+    $route:function(newu,oldu){
+      this.$store.dispatch('setUserMessage',{
+      name:UserTool.getUser().userName,
+      tele:UserTool.getUser().userTele,
+      password:UserTool.getUser().userPassWord,
+      id:UserTool.getUser().userId,
+      img:UserTool.getUser().userImg,
+      logintip:UserTool.getUser().userLoginTip,
+      //个人信息修改
+      sex:UserTool.getUser().userSex,
+      date:UserTool.getUser().userBirthday,
+      interest:UserTool.getUser().userInterest,
+      work:UserTool.getUser().userWork,
+      myself:UserTool.getUser().userMyself,
+      star:UserTool.getUser().userStar
+    });
+     // console.log("app"+this.userMessage);
+
     }
   },
   methods:{
@@ -86,20 +105,26 @@ export default {
     'userMessage'//获取vuex的store仓库
     ]),
   created(){
-
-  },
-  mounted(){
-    //在主页面存vuex，解决刷新后，vuex中store清空分页面内的依靠state的数据加载不出，因为刷新过后vuex会格式化，所以主页面重新加载获取从本地存储sessionStorage传入vuex仓库
-     this.$store.dispatch('setUserMessage',{
+     //在主页面存vuex，解决刷新后，vuex中store清空分页面内的依靠state的数据加载不出，因为刷新过后vuex会格式化，所以主页面重新加载获取从本地存储sessionStorage传入vuex仓库，因为钩子函数只执行一次，在没登录已经执行插入undefined，所以需要监听路由，但刷新同一个路由就无法加载数据undefined，需要钩子函数配合
+      this.$store.dispatch('setUserMessage',{
       name:UserTool.getUser().userName,
       tele:UserTool.getUser().userTele,
       password:UserTool.getUser().userPassWord,
       id:UserTool.getUser().userId,
       img:UserTool.getUser().userImg,
-      logintip:UserTool.getUser().userLoginTip
+      logintip:UserTool.getUser().userLoginTip,
+      sex:UserTool.getUser().userSex,
+      date:UserTool.getUser().userBirthday,
+      interest:UserTool.getUser().userInterest,
+      work:UserTool.getUser().userWork,
+      myself:UserTool.getUser().userMyself,
+      star:UserTool.getUser().userStar
     });
-     // console.log(this.userMessage);
-     // console.log(this.$route.path);
+     // console.log("appCreated"+this.userMessage);
+  },
+  mounted(){
+
+
 
   }
 };

@@ -1,126 +1,133 @@
 <template>
   <div class="password">
-        <div class="top">
-    <h2>账号设置</h2>
-    <span @click="onSubmit">保存</span>
-    </div>
-    <div class="bg">
-      <el-upload
-       class="avatar-uploader img"
-       action="https://jsonplaceholder.typicode.com/posts/"
-       :show-file-list="false"
-       :on-success="handleAvatarSuccess"
-       :before-upload="beforeAvatarUpload">
-         <em class="el-icon-edit"></em>
+    <TopUser :titles="titles"/>
 
-       <el-avatar v-if="userMessage.logintip==1" shape="square" :size="100" fit="cover" :src="userMessage.img" class="avatar" >
-       </el-avatar>
-       <i v-else class="el-icon-plus avatar-uploader-icon"></i>
-    </el-upload>
-    </div>
     <!-- 提交表单 -->
-   <el-form ref="form" :model="sizeForm" label-width="80px" size="medium">
-  <el-form-item label="昵称">
-    <el-input v-model="sizeForm.name" maxlength="8"></el-input>
+    <el-form :model="ruleForm" status-icon :rules="rules" ref="ruleForm" label-width="80px" class="demo-ruleForm">
+      <el-form-item label="旧密码" prop="oldpsd">
+    <el-input type="password" v-model="ruleForm.oldpsd" maxlength="8"></el-input>
   </el-form-item>
-  <el-form-item label="旧密码">
-    <el-input v-model="sizeForm.oldpsd" maxlength="8"></el-input>
+  <el-form-item label="密码" prop="pass">
+    <el-input type="password" v-model="ruleForm.pass" autocomplete="off"></el-input>
   </el-form-item>
-  <el-form-item label="新密码">
-    <el-input v-model="sizeForm.newpsd" maxlength="8"></el-input>
+  <el-form-item label="确认密码" prop="psd_more">
+    <el-input type="password" v-model="ruleForm.psd_more" autocomplete="off"></el-input>
   </el-form-item>
+  <el-button type="primary" @click="submitForm('ruleForm')"
+  class="save" >保存</el-button>
 </el-form>
+
 
   </div>
 </template>
 
 <script>
 import {mapState} from 'vuex'
+import UserTool from '@/router/UserTool'
 export default {
 
   name: 'Password',
-
-  data () {
-    return {
-      sizeForm:{
-        name:'',
-        oldpsd:'',
-        newpsd:''
-      }
-    }
-  },
   computed:mapState([
     'userMessage'
     ]),
-  methods:{
-    //从本地上传图片当头像
-      handleAvatarSuccess(res, file) {
-      this.imageUrl = URL.createObjectURL(file.raw);
-      },
-      beforeAvatarUpload(file) {
-        const isJPG = file.type === 'image/jpeg';
-        const isLt2M = file.size / 1024 / 1024 < 2;
-
-        if (!isJPG) {
-          this.$message.error('上传头像图片只能是 JPG 格式!');
-        }
-        if (!isLt2M) {
-          this.$message.error('上传头像图片大小不能超过 2MB!');
-        }
-        return isJPG && isLt2M;
-      },
-      onSubmit(){
-        console.log("submit");
+  data () {
+    var checkOldPsd=function(rule,value,callback){
+      if(!value){
+        return callback(new Error("请输入旧密码"));
       }
+      else if(value!=UserTool.getUser().userPassWord){
+        return callback(new Error("密码错误"));
+      }
+      else{
+        callback();
+      }
+    };
+
+     var checkpsd=(rule,value,callback)=>{
+
+      if(!value){
+        return callback(new Error("请输入密码"))
+      }
+      else{
+        var rege=/^[a-zA-Z][a-zA-Z0-9_-]{5,19}$/;
+        if(!rege.test(value)){
+          callback(new Error("请设计必须以字母开头，仅包含字母和数字，至少六位数字的密码"));
+        }
+          else if(this.ruleForm.psd_more!==''){
+          this.$refs.ruleForm.validateField('psd_more');
+        }
+       callback();
+    }
+
+    };
+    var checkagain=(rule,value,callback)=>{
+      if(!value){
+        return callback(new Error("请再次确认密码"))
+      }else if(value!=this.ruleForm.pass){
+        callback(new Error('两次输入密码不一致!'));
+        } else {
+          callback();
+        }
+    };
+    return {
+      titles:[{name:'我的',routeName:{path:'/mine'}},
+      {name:'设置',routeName:{path:'/install'}},
+      {name:'账号设置',routeName:{path:'/install/password'}}
+      ],
+      ruleForm:{
+        oldpsd:'',
+        pass:'',
+        psd_more:''
+      },
+      rules:{
+        oldpsd:[{validator:checkOldPsd,trigger:'blur'}],
+        pass:[{validator:checkpsd,trigger:'blur'}],
+        psd_more:[{validator:checkagain,trigger:'blur'}]
+      }
+    }
+  },
+
+ methods:{
+ submitForm(formName) {
+this.$refs[formName].validate((valid) => {
+  if (valid) {
+  this.$axios.post('/api/updatePsd.php',{
+  tel:this.userMessage.tele,
+  psd:this.ruleForm.pass//更改后的密码
+  })
+  .then(res=>{
+  let tip=res.data.status;//注册提示，成功返回1，否则0
+  console.log(res.data);
+  if(tip==1){
+    //弹出框提示(可自动关闭)
+    const h = this.$createElement;
+    this.$notify({
+    message: h('i', { style: 'color: teal'},'修改成功'),
+    type: 'success'
+    });
+  }
+  })
+  .catch(err=>{
+  console.log('获取连接PHP失败',err);
+  })
+  }
+else {
+this.$notify.error({
+message: '修改失败'
+});
+return false;
+}
+});
+}
   }
 };
 </script>
 
 <style lang="css" scoped>
-.message{
-  width: 100%;
-  background-color: #cccccc57;
-}
-.top{
-  background-color: #fff;
-  position: relative;
-  line-height: 40px;
-  font-size: 18px;
-}
-.top h2{
-  text-align: center;
-  /*margin-bottom: 20px;*/
-}
-.top span{
-  color: #8cc5ff;
-  position: absolute;
-  right: 5px;
-  top: -1px;
-  font-size: 18px;
-  padding-right: 10px;
-}
-.bg{
-  width: 100%;
-  height:150px;
-  background-color: #cccccc47;
-  position: relative;
-}
-.bg .img{
-  width: 100px;height: 100px;
-  margin: 0px auto;
-  padding-top: 25px;
-}
-/*小图标*/
-.bg em{
-  position: absolute;
-    top: 0;
-    left: 0;
-    font-size: 15px;
-}
-.el-form{
-  background-color: #fff;
-}
-.exit{
-  margin: 10px 35%;
+
+.save{
+  width: 40%;margin: 10px 30%;color: #FFF;
+    background-color: #8cc5ff;font-size: 16px;
+    border-color: #8cc5ff;
 }
 </style>

@@ -13,7 +13,7 @@
       <input type="text" name="" v-model="name"><br/>
       <label>密码：</label>
       <input type="password" name="" v-model="password "><br/>
-      <router-link :to="{name:'message.register'}">
+      <router-link :to="{name:'register'}">
       没有账号？去注册
       </router-link>
        <el-button  type="danger"  @click="login" class="btn">登录</el-button>

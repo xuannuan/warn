@@ -2,24 +2,30 @@
   <div class="mine">
 
     <!-- 头像背景图 -->
-       <el-image
+      <el-image
       style="width: 100%; height: 120px;overflow:hidden"
       :src="userMessage.img"
-      fit="cover"></el-image>
+      fit="cover">
+      </el-image>
     <div class="me">
       <!-- 上传头像 -->
-      <router-link :to="{name:'install.message'}">
+      <router-link :to="{name:'install.message'}" >
        <el-avatar shape="square" :size="100" fit="cover" :src="userMessage.img" class="headimg"></el-avatar>
      </router-link>
       <h3 v-if="userMessage.logintip">{{userMessage.name}}</h3>
-     <el-button type="danger" class="share">分享瞬间</el-button>
+     <el-button type="danger" class="share" >
+      <router-link :to="{name:'publish'}">
+     分享瞬间
+   </router-link>
+   </el-button>
 
     <el-button size="mini" round class="intruduce">
-        <router-link :to="{name:'login'}" v-if="userMessage.logintip!=1">
+        <router-link :to="{name:'register'}" v-if="userMessage.logintip!=1">
           加入岁月间？
         </router-link>
         <router-link :to="{name:'install.message'}" v-if="userMessage.logintip==1">
-          一句话介绍一下自己？
+          <span v-if="!userMessage.myself">一句话介绍自己？</span>
+          <span v-else>{{userMessage.myself}}</span>
         </router-link>
     </el-button>
     </div>
@@ -30,8 +36,6 @@
     <el-tab-pane label="收藏" name="second">收藏</el-tab-pane>
     <el-tab-pane label="关注" name="third">关注</el-tab-pane>
   </el-tabs>
-
-
 
   </div>
 </template>
@@ -60,7 +64,10 @@ export default {
     //注意是数组形式，vuex官网上有介绍
   computed:mapState([
       'userMessage',
-    ])
+    ]),
+  created(){
+    console.log(this.userMessage);
+  }
 };
 </script>
 

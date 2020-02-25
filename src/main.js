@@ -98,6 +98,9 @@ import '../static/iconfont/iconfont.js'
 //注册全局的导航栏子组件
 import TopBar from '@/components/comment/TopBar'
 Vue.component(TopBar.name,TopBar);//(自定义组件名，TopBar.vue的组件名)
+//注册信息设置顶部栏
+import TopUser from '@/components/comment/TopUser'
+Vue.component(TopUser.name,TopUser);
 
 // 注册全局搜索子组件
 import Search from '@/components/comment/Search'

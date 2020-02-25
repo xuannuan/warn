@@ -86,48 +86,48 @@ export default {
           tel:[{validator:checkTel,trigger:'blur'}],
           name:[{validator:checkname,trigger:'blur'}],
           psd:[{validator:checkpsd,trigger:'blur'}],
-          psd_again:[{validator:checkagain,trigger:'blur'}],
+          psd_again:[{validator:checkagain,trigger:'blur'}]
         },
     }
   },
 
   methods:{
-     submitForm(formName) {
-        this.$refs[formName].validate((valid) => {
-        if (valid) {
-          this.$axios.post('/api/insertUser.php',{
-            tel:this.telForm.tel,
-            name:this.telForm.name,
-            psd:this.telForm.psd
-          })
-          .then(res=>{
-            let tip=res.data.status;//注册提示，成功返回1，否则0
-          if(tip==1){
-            //弹出框提示(可自动关闭)
-            const h = this.$createElement;
-           this.$notify({
-            message: h('i', { style: 'color: teal'},'岁月间欢迎小主'),
-             type: 'success',
-             showClose: false
-            });
-          this.$router.push({name:'message.login'});
-        }//跳转到登录页面
-      else{
-           this.$notify.error({
-            message: '该号码已注册，请返回登录'
-            });
-      }
-   })
-   .catch(err=>{
-     console.log('获取连接PHP失败',err);
-   })
+    submitForm(formName) {
+this.$refs[formName].validate((valid) => {
+if (valid) {
+this.$axios.post('/api/insertUser.php',{
+tel:this.telForm.tel,
+name:this.telForm.name,
+psd:this.telForm.psd
+})
+.then(res=>{
+let tip=res.data.status;//注册提示，成功返回1，否则0
+if(tip==1){
+//弹出框提示(可自动关闭)
+const h = this.$createElement;
+this.$notify({
+message: h('i', { style: 'color: teal'},'岁月间欢迎小主'),
+type: 'success',
+showClose: false
+});
+this.$router.push({name:'login'});
+}//跳转到登录页面
+else{
+this.$notify.error({
+message: '该号码已注册，请返回登录'
+});
+}
+})
+.catch(err=>{
+console.log('获取连接PHP失败',err);
+})
+} else {
+console.log('error submit!!');
+return false;
+}
+});
+}
 
-          } else {
-            console.log('error submit!!');
-            return false;
-          }
-        });
-      }
   }
 };
 </script>
