@@ -4,13 +4,17 @@ import Vue from 'vue'
 let user={}
 
 user.saveUser=function(userobj){
-  window.sessionStorage.setItem('User',JSON.stringify(userobj));
-  // window.localStorage.setItem('User',JSON.stringify(user));
+  // window.sessionStorage.setItem('User',JSON.stringify(userobj));
+  window.localStorage.setItem('User',JSON.stringify(userobj));
 }
 
 user.getUser=function(){
-  return JSON.parse(window.sessionStorage.getItem('User')||'{}');
-  // return JSON.parse(window.localStorage.getItem('User')||'{}');
+  // return JSON.parse(window.sessionStorage.getItem('User')||'{}');
+  return JSON.parse(window.localStorage.getItem('User')||'{}');
+}
+user.deleteUser=function(){
+  // window.sessionStorage.removeItem('User');
+  window.localStorage.removeItem('User');
 }
 
 user.addUser=function(obj){

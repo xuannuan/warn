@@ -10,7 +10,6 @@
        :before-upload="beforeAvatarUpload">
          <em class="el-icon-edit"></em>
         <img v-if="userMessage.logintip==1" :src="userMessage.img" class="avatar">
-       <!-- <el-avatar v-if="userMessage.logintip==1" shape="square" :size="100" fit="cover" :src="userMessage.img" class="avatar" > -->
        </el-avatar>
        <i v-else class="el-icon-plus avatar-uploader-icon"></i>
     </el-upload>
@@ -101,20 +100,33 @@ export default {
       'userMessage',
     ]),
    created(){
-    this.sizeForm.name=this.userMessage.name;
-    this.sizeForm.star=this.userMessage.star;
-    this.sizeForm.birthday=this.userMessage.date;
-    this.sizeForm.radio=this.userMessage.sex;
-    this.sizeForm.myself=this.userMessage.myself;
-    this.sizeForm.interest=this.userMessage.interest;
-    this.sizeForm.work=this.userMessage.work;
+    this.sizeForm=this.userMessage;
+
    },
 
   methods:{
-    //从本地上传图片当头像
+    //从本地上传图片当头像,url格式从blob：http的格式换成Base64
+    getBase64(file) {
+     return new Promise(function(resolve, reject) { let reader = new FileReader();
+      let imgResult = "";
+      reader.readAsDataURL(file);
+       reader.onload = function() {
+        imgResult = reader.result;
+      };
+       reader.onerror = function(error) {
+        reject(error);
+      };
+       reader.onloadend = function() {
+        resolve(imgResult);
+      };
+    });
+   },
       handleAvatarSuccess(res, file) {
-      this.userMessage.img = URL.createObjectURL(file.raw);
-      console.log(this.userMessage.img);
+      this.getBase64(file.raw).then(res => {
+      this.userMessage.img = res;
+      // console.log(this.userMessage.img);
+      });
+      // this.userMessage.img = URL.createObjectURL(file.raw);
       },
       beforeAvatarUpload(file) {
         const isJPG = file.type === 'image/jpeg';
@@ -148,7 +160,8 @@ export default {
           star:this.sizeForm.star,
           interest:this.sizeForm.interest,
           work:this.sizeForm.work,
-          myself:this.sizeForm.myself
+          myself:this.sizeForm.myself,
+          img:this.userMessage.img
          };
          console.log(obj);
          this.$axios.post('/api/updateUser.php',obj)

@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+
 // 引入模块，自定义组件
 import Life from '@/components/life/PhotosList'
 import Technology from '@/components/technology/NewsList'
@@ -26,15 +27,17 @@ import Secret from '@/components/mine/Secret'
 import About from '@/components/mine/About'
 
 
-
-
-
 // 使用vue-router插件,相当于Vue.prototype.$route=Router;
 Vue.use(Router)
 
 // 根据匹配路由规则，加载对应的组件
 export default new Router({
+
   routes: [
+  {
+    path:'/',
+    redirect:'/mine'//将初始页面重定向
+  },
     {
       //动态路由匹配
       path: '/life/:categoryTitle',
@@ -47,7 +50,8 @@ export default new Router({
     }, {
       path: '/publish',
       name: 'publish',//命名路由
-      component: Publish
+      component: Publish,
+      meta:{auto:true}//路由元信息
     }, {
       path: '/shop/:categoryTitle/:page',
       name: 'shop',//命名路由
@@ -67,8 +71,8 @@ export default new Router({
     },
     //图文分享
     {
-      //query,?id=
-      path:'/photos/detail',
+      //先params后query,?id=
+      path:'/photos/detail/:categoryTitle',
       name:'photos.detail',
       component:PhotosDetail
     },
@@ -100,7 +104,8 @@ export default new Router({
     {
       path:'/install/message',
       name:'install.message',
-      component:Message
+      component:Message,
+      meta:{auto:true}//路由元信息
     },
     {
       path:'/login',
@@ -115,7 +120,8 @@ export default new Router({
     {
       path:'/install/password',
       name:'install.password',
-      component:Password
+      component:Password,
+      meta:{auto:true}//路由元信息
     },{
       path:'/install/secret',
       name:'install.secret',
@@ -126,4 +132,6 @@ export default new Router({
       component:About
     }
   ]
-})
+});
+
+

@@ -4,16 +4,17 @@
     <el-checkbox v-for="i in all" :label="i" :key="i">
      <div class="goods_con" ref="cbox"  >
       <!-- 比那里常数，但i从1开始 -->
-        <!-- <div class="checkbox"></div> -->
         <div class="con_box">
-            <img :src="products['img'+i]" alt="">
+          <router-link :to="{name:'goods.detail',query:{id:products.goods_id||products[i].goods_id}}">
+            <img :src="products.img||products[i].img" alt="">
+          </router-link>
             <div class="small_box">
-            <h5 href="#">{{products['title'+i]}}&nbsp;{{products['category'+i]}}</h5>
-            <h4> ¥{{products['price'+i]}}</h4>
+            <h5 href="#">{{products.title||products[i].title}}&nbsp;{{products.category||products[i].category}}</h5>
+            <h4> ¥{{products.price||products[i].price}}</h4>
                 <div class="changebox">
                      <button class="left" @click="jian(i)">-</button>
                      <!-- 要监视加减数量，改变结算的价格和商品数量 -->
-                    <input type="number" v-model="products['num'+i]"/>
+                    <input type="number" v-model="products.num||products[i].num"/>
                     <button class="right" @click="add(i)">+</button>
                 </div>
 
@@ -51,7 +52,7 @@
 </template>
 
 <script>
-import GoodsTool from '@/router/GoodsTool'
+import Time from '@/router/time'
 export default {
 
   name: 'Car',
@@ -59,18 +60,14 @@ export default {
   data () {
     return {
       num:'',
-      products:{},//是一个对象
+      products:[],
       example:[],
       all:[],
-      length:'',
       checkAll: false,
       show:false,//弹出框隐藏
       index:'',//获取第几个垃圾桶，点击删除第几个商品的数据
       dele:[],
-      // Count:0,//选中商品的数量，用在单选操作和统计商品数量
-      // money:0,
       isSelected:[],//选中的数组
-
     }
   },
   methods:{
@@ -109,52 +106,76 @@ export default {
           iconClass:'iconfont icon-plant-1'
         })
       },
-      // 确定删除元素结点
+      //提取公共的删除和修改商品的PHP连接操作
+      commen(cz,id){
+        this.$axios.post('/api/deleteGoods.php',{
+          caozuo:cz,
+          goods_id:id
+        })
+        .then(res=>{
+          console.log(res.data);
+        })
+        .catch(err=>{
+          console.log(err);
+        })
+      },
+      // 确定删除元素结点，应该以哪一个元素作为标志进行删除？
       com(){
         // 使弹出框隐藏
         this.show=false;
         // 使触发的那一个垃圾桶盖复原
         this.dele[this.index]=false;
         // 删除商品数据存储，进行删除商品
-        GoodsTool.deleteGoods(this.index);
+        // GoodsTool.deleteGoods(this.index);
+        let goods_id=this.products.goods_id?this.products.goods_id:this.products[this.index].goods_id;
+        this.commen("delete",goods_id);
         //删除元素，因为v-model绑定的是all,所以要改变数组all，
          this.all.splice(this.index,1);
-         this.length--;
-         console.log(this.length);
-         if(this.length==0){
-            this.all=[];
-         }
-
-
       },
       //添加商品
       jian(index){
-        if(this.products['num'+index]>1){
-          this.products['num'+index]--;
-          // 组件bus传值给App.vue组件的购物车数量，
+        //因为数据处理不好，所以有一条数据与多条数据
+        let cnum=this.products.num?this.products.num:this.products[index].num;
+        let goods_id=this.products.goods_id?this.products.goods_id:this.products[index].goods_id;
+        if(cnum>1){
+          // vuex传值给App.vue组件的购物车数量，
           this.$store.dispatch('addGoodsNum',-1);
-          // this.$bus.$emit('sendPickNum',-1);//只能针对于点击改变数量即时传给购物车的小球,当进行输入数量，就无法获取插值进行正确的数量相加
-          GoodsTool.updataGoods('num'+index,this.products['num'+index]);//传入到本地存储
-
+          this.commen("jian",goods_id);
+          this.getGoods();//修改后的数据显示，双向数据绑定
         }
       },
       add(index){
-        this.products['num'+index]++;
+        //let作用在该块级作用域内
+        let goods_id=this.products.goods_id?this.products.goods_id:this.products[index].goods_id;
         this.$store.dispatch('addGoodsNum',1);
-        // this.$bus.$emit('sendPickNum',1);
-        let key='num'+index;
-        let value= this.products['num'+index];
-        GoodsTool.updataGoods(key,value);
-      },//提交后触发的
+        this.commen("add",goods_id);
+        this.getGoods();
+      },
+      //提交后触发的
        going() {
         this.$notify.info({
           title: '(＞人＜；)',
           message: '目前无商家入驻，请敬请期待',
           offset: 300//提示框偏移
         });
+      },
+      //获取加入购物车的商品，公共类
+   getGoods(){
+    this.$axios.get('/api/checkGoods.php')
+    .then(res=>{
+      if(res.data instanceof Object){
+        this.products=res.data;
+      }
+      else{
+      this.products=Time.ToArray(res.data);
       }
 
-  },
+    })
+    .catch(err=>{
+      console.log(err);
+    })
+      }
+  },//methods
   // 对加减商品进行结算监控，获取和设置值
   computed:{
     payment(){
@@ -164,8 +185,10 @@ export default {
         this.all.forEach((item,index)=>{
           // 如果选中，则在选中数组中
           if(this.isSelected.indexOf(item)!=-1){
-              count+=this.products['num'+index];
-              total+=this.products['price'+index]*this.products['num'+index];
+           let num=this.products.num?this.products.num:this.products[index].num;
+           let price=this.products.price?this.products.price:this.products[index].price;
+              count+=num;
+              total+=price*num;
           }
         });
       return{
@@ -176,19 +199,26 @@ export default {
   },
 
   created(){
-    // vuex
-    // this.$store.dispatch('setGoodsList',GoodsTool.getGoodsList());
-    // let goodsList=this.$store.state.goodsList;
-
-    this.products=GoodsTool.getGoodsList();//对象
-    let keys=Object.keys(this.products);//获取对象的所有属性 
-    this.length=keys.length/6;//获取虚拟的数组长度，即最后i的值
-
-    //all数组是进行全选操作的数组控制，dele数组时进行单个翻盖动画效果的控制
-    for(let i=0;i<this.length;i++){
+    // this.getGoods();
+    this.$axios.get('/api/checkGoods.php')
+    .then(res=>{
+      if(res.data instanceof Object){
+        this.products=res.data;
+        this.products.length=1;//对象没有长度，对后面的all数组undefined,所以要赋值
+      }
+      else{
+      this.products=Time.ToArray(res.data);
+      }
+        //all数组是进行全选操作的数组控制，dele数组时进行单个翻盖动画效果的控制(axios是异步请求，会在create其他事件操作完才执行，所以依赖这个就要放在执行体里面)
+    for(let i=0;i<this.products.length;i++){
       this.all.push(i);
       this.dele.push(false);//创建数组元素，是所有的垃圾盖动画类fan先隐藏，当点击时，才触发单个
+      // 对于加减操作的立即实现
     }
+    })
+    .catch(err=>{
+      console.log(err);
+    })
   }
 
 };

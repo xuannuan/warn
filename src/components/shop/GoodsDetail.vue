@@ -124,8 +124,6 @@
 </template>
 
 <script>
-// 载入js
-import GoodsTool from '@/router/GoodsTool'
 export default {
 
   name: 'GoodsDetail',
@@ -165,18 +163,23 @@ export default {
        if(parseInt(this.num)!=0){
       //触发bus绑定的事件，给App.vue的购物数量传值
        // this.$bus.$emit('sendPickNum',parseInt(this.num));
+       //刷新会清空
        this.$store.dispatch('addGoodsNum',this.num);
 
-       //调用js添加到购物车页面的数据，保存到本地数据方法
-       // id:this.goods.item.itemId,
-       GoodsTool.addGoods({
+       this.$axios.post('/api/insertGoods.php',
+       {goods_id:this.$route.query.id,
         title:this.goods.item.title,
-        price:this.goods.item.priceRange,
-        id:this.$route.query.id,
-        num:parseInt(parseInt(this.num)),//因为number类型的input返回值是string
+        category:this.changeTitle,//更新的名字
         img:this.changeUrl,//更新的图片
-        category:this.changeTitle//更新的名字
-       });
+        price:this.goods.item.priceRange,
+        num:parseInt(parseInt(this.num))//因为number类型的input返回值是string
+       })
+       .then(res=>{
+        console.log(res.data);
+       })
+       .catch(err=>{
+        console.log(err);
+       })
 
       //提示加入购物车成功
       this.$toast({
@@ -213,7 +216,7 @@ export default {
     //https://api03.6bqb.com/taobao/detail?apikey=5F3779A028E404694FC192684E80B7C3&itemid=’+${id}
     .then((res)=>{
        this.goods=res.data.data;// 是一个对象
-       //动态添加操作表的参数actions数组中[{name:'',method:''}]
+    //动态添加操作表的参数actions数组中[{name:'',method:''}]
     this.actions=this.goods.item.consumerProtection.serviceProtection.basicService.services;
     let that=this;
     this.actions.forEach((item1,index)=>{
@@ -265,6 +268,9 @@ export default {
 .bpic,.category,.buy{
   overflow: hidden;
   margin: 10px;
+}
+.buy{
+  margin-top: -10px;
 }
 .category ul li{
 float:left;

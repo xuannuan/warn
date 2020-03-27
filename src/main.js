@@ -25,11 +25,6 @@ import ElementUI from 'element-ui';
 Vue.use(ElementUI);
 import 'element-ui/lib/theme-chalk/index.css';
 
-// 引入bootstrap
-// import $ from 'jquery' ;
-// import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
-// import '../node_modules/bootstrap/dist/js/bootstrap.min.js';
-
 //引入图片查看器，查看放大图
 import VuePreview from 'vue2-preview'
 Vue.use(VuePreview);//内部会运行Vue.component('vue2-preview',{})的组件
@@ -70,7 +65,6 @@ Axios.interceptors.request.use(function (config) {
     Mint.Indicator.open({
       text: 'Loading...'
     });
-
     return config;
   }, function (error) {
     // 对请求错误做些什么
@@ -78,7 +72,7 @@ Axios.interceptors.request.use(function (config) {
   });
 
 // 添加响应拦截器
-Axios.interceptors.response.use(function (response) {
+var myInterceptor =Axios.interceptors.response.use(function (response) {
     // 对响应数据做点什么
     //关闭加载框
     Mint.Indicator.close();
@@ -87,6 +81,8 @@ Axios.interceptors.response.use(function (response) {
     // 对响应错误做点什么
     return Promise.reject(error);
   });
+//移除拦截器
+// Axios.interceptors.request.eject(myInterceptor);
 
 //引入自己写的全局css样式
 import '../static/css/global.css'
@@ -120,6 +116,29 @@ Vue.config.productionTip = false
 import EventBus from './router/EventBus'
 Vue.prototype.$bus=EventBus;
 
+import Time from '@/router/time'
+import UserTool from '@/router/UserTool'
+//注册全局路由守卫，进行路由权限控制
+router.beforeEach((to,from,next)=>{
+      //判断是否登录,在index.js的path中设置meta:{auto:true}
+      if(to.meta.auto){
+          if(sessionStorage.getItem('User')){
+            next();//如果本地存储有用户信息放行,UserTool.getUser()
+            // console.log(UserTool.getUser());
+          }
+          else{
+            next({
+              path:'/login',
+              query: { redirect: to.fullPath }
+            })
+
+          }
+      }//meta为false，就是已经登陆，就不需要跳转登陆页面
+      else{//必须有else
+        //必須要有next（）方法進行放行
+          next();
+      }
+  });
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

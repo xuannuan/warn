@@ -9,11 +9,8 @@ export default new Vuex.Store({
     goodsList:{},//加入购物车商品的详情对象
     //用户登录的信息
     userMessage:{},//用户信息以对象方式存入
-    // userId:'',
-    // userName:'',
-    // userTele:'',
-    // userPassWord:'',
-    // userImg:''
+    lifeCurrentIndex:0,//对图文分享分类关键词的高亮
+    goodsCurrentIndex:0,//对商品分类关键词的高亮
   },
   getters:{
     getGoodsNum:(state)=>{
@@ -25,6 +22,12 @@ export default new Vuex.Store({
     getUserMessage:(state)=>{
       return state.userMessage;//对象
     },
+    getLifeCurrentIndex:(state)=>{
+      return state.lifeCurrentIndex;
+    },
+    getGoodsCurrentIndex:(state)=>{
+      return state.goodsCurrentIndex;
+    }
 
   },
   mutations:{
@@ -40,6 +43,12 @@ export default new Vuex.Store({
     setUserMessage:(state,obj)=>{
       state.userMessage=obj;//把传入的用户对象赋值
     },
+    setLifeCurrentIndex:(state,num)=>{
+      state.lifeCurrentIndex=num;
+    },
+    setGoodsCurrentIndex:(state,num)=>{
+      state.goodsCurrentIndex=num;
+    }
 
   },
   actions:{
@@ -55,6 +64,12 @@ export default new Vuex.Store({
     setUserMessage:({commit},obj)=>{
       commit('setUserMessage',obj);
     },
+    setLifeCurrentIndex:({commit},num)=>{
+      commit('setLifeCurrentIndex',num);
+    },
+    setGoodsCurrentIndex:({commit},num)=>{
+      commit('setGoodsCurrentIndex',num);
+    }
 
   }
 })

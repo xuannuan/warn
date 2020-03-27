@@ -1,8 +1,10 @@
 <template>
   <!-- 全局的导航栏子组件 -->
   <div class="topbar">
-    <h2 @click='Goback' class="icon"><&nbsp;&nbsp;</h2>
+    <mt-button class="el-icon-arrow-left" @click='Goback' style="background-color: #fff;border:none"></mt-button>
+    <!-- <router-link :to="{name:people}"> -->
     <img :src="srcURL" height="40px">
+    <!-- </router-link> -->
     <span class="desc_title">
       <!-- 父子组件传值 （父-》子）-->
       &nbsp;&nbsp;{{title}}
@@ -29,13 +31,12 @@ export default {
 </script>
 
 <style lang="css" scoped>
-
-.topbar span{
+.topbar span,button{
   font-size: 16px;
   vertical-align: top;
+  line-height: 40px;
 }
-.topbar .icon{
-  float:left;
+img{
+  border-radius: 50%;
 }
-
 </style>

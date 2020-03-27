@@ -25,6 +25,7 @@
     <!-- vue的动画效果 mode="out-in"前面一个过渡完在进行下一个-->
     <div class="con">
       <transition name="slide-fade" mode="out-in">
+        <!-- 保留状态，避免重新渲染 -->
          <router-view />
          <!-- 加key属性进行路由改变页面改变，防止页面缓存无法加载跳转 -->
         <!-- <router-view :key="this.$route.path"></router-view> -->
@@ -51,7 +52,7 @@
 <script>
 //命名路由要用对象表达式
 var bar=[
-{id:1,title:'言.享',routerName:{name:'life',params:{categoryTitle:'旅行'}}},
+{id:1,title:'言.享',routerName:{name:'life',params:{categoryTitle:'最新发布'}}},
 {id:2,title:'勤.学',routerName:{name:'technology'}},
 {id:3,title:'',routerName:{name:'publish'}},
 {id:4,title:'碎.巷',routerName:{name:'shop',params:{categoryTitle:'手表',page:1}}},
@@ -61,6 +62,7 @@ var bar=[
 import GoodsTool from '@/router/GoodsTool'
 import UserTool from '@/router/UserTool'
 import {mapState} from 'vuex'
+
 export default {
   name: 'App',
   data(){
@@ -92,7 +94,6 @@ export default {
       myself:UserTool.getUser().userMyself,
       star:UserTool.getUser().userStar
     });
-     // console.log("app"+this.userMessage);
 
     }
   },
@@ -120,13 +121,11 @@ export default {
       myself:UserTool.getUser().userMyself,
       star:UserTool.getUser().userStar
     });
-     // console.log("appCreated"+this.userMessage);
   },
   mounted(){
 
+  },
 
-
-  }
 };
 </script>
 

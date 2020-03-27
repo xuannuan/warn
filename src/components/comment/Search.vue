@@ -25,6 +25,7 @@ export default {
       };
     },
     props:['geta'],//json格式的对象数组,且对象中必须有value属性
+
     methods: {
       querySearch(queryString, cb) {
         var restaurants = this.geta;
@@ -46,11 +47,11 @@ export default {
         if(item.id){//如果有id属性，就是图文分享模块的
           this.$router.push({name:'life',params:{categoryTitle:this.state}});
         // 如果是photolist对象的话，传入现在的id，进行对应分类的高亮效果
-        this.$bus.$emit('sendNowIndex',item.id);
+        this.$store.dispatch('setLifeCurrentIndex',item.id);
         }
         else if(item.catId){
           this.$router.push({name:'shop',params:{categoryTitle:item.value,page:1}});
-          this.$bus.$emit('sendIndex',item.catId);
+          this.$store.dispatch('setGoodsCurrentIndex',item.catId);
         }
         else{
           console.log("暂无内容");

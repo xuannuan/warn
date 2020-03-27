@@ -25,7 +25,6 @@ export default {
     .then((res)=>{
       //res.data.data.item具体商品详情
       this.imgs=res.data.data.item||res.data.data;
-      // console.log(this.imgs.images_list||this.imgs);
       //图片分享详情地址有点，自己的json不行，后面的数据api可以
     })
     .catch((err)=>{

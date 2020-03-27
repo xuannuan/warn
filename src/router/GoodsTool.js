@@ -110,3 +110,15 @@ obj.getTotalCount=function(){
 
 //抛出去obj对象
 export default obj;
+
+//在GoodsDetail.vue中的购入购物车事件中，
+//调用js添加到购物车页面的数据，保存到本地数据方法
+       // id:this.goods.item.itemId,
+       // GoodsTool.addGoods({
+       //  title:this.goods.item.title,
+       //  price:this.goods.item.priceRange,
+       //  id:this.$route.query.id,
+       //  num:parseInt(parseInt(this.num)),//因为number类型的input返回值是string
+       //  img:this.changeUrl,//更新的图片
+       //  category:this.changeTitle//更新的名字
+       // });

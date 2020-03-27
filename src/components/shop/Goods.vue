@@ -7,7 +7,7 @@
         <div class="category_left_box">
             <ul>
                 <li v-for="(item,index) in goods" :key="index" @click="getKeyWord(item.catName,index)">
-                  <a href="javascript:void(0);" :class='{active:item.catId==currentIndex}' >{{item.catName}}</a>
+                  <a href="javascript:void(0);" :class='{active:item.catId==goodsCurrentIndex}' >{{item.catName}}</a>
                 </li>
             </ul>
         </div>
@@ -31,9 +31,6 @@
              </ul>
                 <!-- 加载更多 -->
                 <mt-button @click.native="LoadMore" class="mint_button" v-if="loadding">
-                 <!--  <svg class="icon" aria-hidden="true" style="width: 30px;height: 40px" slot="icon">
-                    <use xlink:href='#icon-plant-4'></use>
-                </svg> -->
                 More
                 </mt-button>
             </div>
@@ -47,6 +44,7 @@
 
 <script>
 import Vue from 'vue';
+import {mapState} from 'vuex'
 import GoodsTool from '../../router/GoodsTool'
 export default {
 
@@ -60,29 +58,55 @@ export default {
       key:'',
       page:1,
       allLoaded:false,
-      currentIndex:'',//判断当前内容关键字，触发高亮显示
       loadding:true//当商品无法加载就隐藏加载更多的按钮
     }
   },
+  computed:mapState([
+    'goodsCurrentIndex'//获取分类词的下标
+    ]),
   methods:{
     // 点击分类列表获取商品列表,且关键词高亮显示
     getKeyWord(item,index){
       this.category=item;
-      this.currentIndex=index;
-      //动态路由匹配,改变路由从而触发watch监听请求数据
-      this.$router.push({name:'shop',params:{categoryTitle:item,page:1}});//当点击分类时路由会切换
+      this.$store.dispatch('setGoodsCurrentIndex',index);
+        // this.key=this.$route.params.categoryTitle;
+        this.page=this.$route.params.page;//作用1：把路由的page参数传进去更改对应的内容
+        // 作用2：给getKeyWord(item)传进去第一个page=1，不能再方法里面写，因为在加载第二页会调用，防止不被覆盖
+         this.$axios.get('../../../static/data/商品'+item+this.page+'.json')
+           .then((res)=>{
+               this.products=res.data.data;
+               this.$router.push({name:'shop',params:{categoryTitle:item}});
+           })
+           .catch((err)=>{
+             console.log("商品加载失败",err);
+             this.products=[];//请求失败，内容清空
+             this.$router.push({name:'shop',params:{categoryTitle:item}});
+             this.loadding=false;
+             this.$toast({
+              message:"暂无商品",
+              iconClass:'iconfont icon-plant-18'
+            })
+          });
     },
     // 上拉加载更多
     LoadMore(){
       this.key=this.$route.params.categoryTitle;
       this.page=this.$route.params.page;
       this.page++;//从当前路由的page数增
-      this.getKeyWord(this.key);//调用上述方法请求第二页的数据，因为有关键字，所以只能这样
+      this.getKeyWord(this.key,this.goodsCurrentIndex);//调用上述方法请求第二页的数据，因为有关键字，所以只能这样
        //动态路由匹配，再次改变路由
       this.$router.push({name:'shop',params:{categoryTitle:this.key,page:this.page}});
     }
   },
-
+  beforeRouteEnter(to,from,next){
+    next(vm=>{
+     vm.getKeyWord(to.params.categoryTitle);
+    })
+  },
+  beforeRouteUpdate(to,from,next){
+    this.getKeyWord(to.params.categoryTitle,this.goodsCurrtentIndex);
+    next();
+  },
   created(){
     this.$axios.get('../../../static/data/商品分类.json')
     .then((res)=>{
@@ -96,25 +120,8 @@ export default {
     .catch((err)=>{
       console.log("商品分类加载失败",err);
     });
-    this.$bus.$on('sendIndex',(data)=>{
-      this.currentIndex=data;
-    });
 
-        this.key=this.$route.params.categoryTitle;
-        this.page=this.$route.params.page;//作用1：把路由的page参数传进去更改对应的内容
-        // 作用2：给getKeyWord(item)传进去第一个page=1，不能再方法里面写，因为在加载第二页会调用，防止不被覆盖
-         this.$axios.get('../../../static/data/商品'+this.key+this.page+'.json')
-           .then((res)=>{
-               this.products=res.data.data;
-           })
-           .catch((err)=>{
-             console.log("商品加载失败",err);
-             this.loadding=false;
-            this.$toast({
-              message:"暂无商品",
-              iconClass:'iconfont icon-plant-18'
-            })
-          });
+
     }
 
 };

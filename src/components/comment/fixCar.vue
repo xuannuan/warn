@@ -8,14 +8,14 @@
 </template>
 
 <script>
-import GoodsTool from '../../router/GoodsTool'
+import Time from '../../router/time'
 export default {
 
   name: 'fixCar',
 
   data () {
     return {
-      num:''
+      num:'',
     }
   },
   computed:{
@@ -23,19 +23,32 @@ export default {
       return this.$store.state.goodsNum;
     }
   },
-  methods:{
-    changeGoodsNum(){
-      this.$store.dispatch('changeGoodsNum',num);
-    }
-  },
+  // methods:{
+    // changeGoodsNum(){
+    //   this.$store.dispatch('changeGoodsNum',num);
+    // },
   created(){
-     //使用bus绑定购物数量事件，接受从加入购物车的值
-    // this.$bus.$on('sendPickNum',(data)=>{
-    //   this.pickNum+=data;
-    // });
-     // 当页面进行刷新，商品数量保留，调用GoodsTool.getTotalCount()方法获取总数量
-    this.$store.dispatch('changeGoodsNum',GoodsTool.getTotalCount());
-
+     let products=[];
+     var num=0;
+    this.$axios.get('/api/checkGoods.php')
+    .then(res=>{
+      if(res.data instanceof Object){
+        products=res.data;
+        num=products.num;
+        // 当页面进行刷新，商品数量保留，调用获取总数量
+      this.$store.dispatch('changeGoodsNum',num);
+      }
+      else{
+        products=Time.ToArray(res.data);
+        products.forEach((item,index)=>{
+          num+=parseInt(item.num);
+        })
+          this.$store.dispatch('changeGoodsNum',num);
+      }
+      })
+    .catch(err=>{
+      console.log(err);
+    })
 
   }
 };
@@ -43,7 +56,7 @@ export default {
 
 <style lang="css" scoped>
 /*购物车图标*/
-div.car{
+.car{
     width: 50px;
     height: 50px;
     position: fixed;

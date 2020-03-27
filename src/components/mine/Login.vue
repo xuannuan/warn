@@ -19,7 +19,6 @@
        <el-button  type="danger"  @click="login" class="btn">登录</el-button>
     </form>
 
-    <!-- <div>反馈：{{errorTip}}</div> -->
   </div>
 </template>
 
@@ -46,6 +45,7 @@ export default {
           return;
          }
        //使用自编写的PHP后端语言连接数据库，打开地址http://localhost:8085/ToUser/checkUser.php(首先要打开wampserver服务器)
+       //获取用户账号信息和获取用户个人信息
         this.$axios.post('/api/checkUser.php',{
           Name:this.name,
           userPwd:this.password
@@ -64,7 +64,13 @@ export default {
              password:user.password,
              id:user.id,
              img:user.img,
-             logintip:user.status//登录提示，成功=1.否则=0
+             logintip:user.status,//登录提示，成功=1.否则=0
+              sex:user.radio,
+              birthday:user.date,
+              star:user.star,
+              interest:user.interest,
+              work:user.work,
+              myself:user.myself
            });
 
             this.$router.push({name:'mine'});//跳转页面
@@ -73,8 +79,9 @@ export default {
            this.errorTip='登录失败';
          }
         })
-        }
-  }
+        },//login
+
+  }//methods
 };
 </script>
 
