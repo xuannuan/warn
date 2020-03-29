@@ -155,20 +155,6 @@ export default {
     actionSheet(){
       this.sheetVisible=true;
     },
-     //提取公共的删除和修改商品的PHP连接操作
-      commen(cz,id,number){
-        this.$axios.post('/api/deleteGoods.php',{
-          caozuo:cz,
-          goods_id:id,
-          num:number
-        })
-        .then(res=>{
-          console.log(res.data);
-        })
-        .catch(err=>{
-          console.log(err);
-        })
-      },
     //小球进入之后隐藏
     afterEnter(){
       this.isExist=false;
@@ -194,7 +180,7 @@ export default {
       //否则就是型号和id都已经存在
       else{
         //就进行修改加入购物车的数量
-      this.commen("change",this.$route.query.id,parseInt(this.num));
+      Time.updateShop("change",this.$route.query.id,parseInt(this.num));
       //修改购物车小图标总数量
       Time.getGoodsNum();
      }

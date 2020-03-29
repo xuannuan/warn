@@ -85,10 +85,37 @@ time.getGoodsNum=function(){
     .catch(err=>{
       console.log(err);
     })
-
 }
 
+time.updateStar=function(noteId,caoZuo,ad){
+   //提取共同连接PHP，点赞与收藏数+或-1(photosdetail.vue)
+       Vue.prototype.$axios.post('/api/updateNoteLike.php',{
+        note_id:noteId,
+        caozuo:caoZuo,
+        AD:ad
+      })
+      .then(res=>{
+        console.log(res.data);
+      })
+      .catch(err=>{
+        console.log("修改点赞数失败",err);
+      })
+}
 
+//提取公共的删除和修改商品的PHP连接操作(goodsdetail.vue)
+      time.updateShop=function(cz,id,number){
+        this.$axios.post('/api/deleteGoods.php',{
+          caozuo:cz,
+          goods_id:id,
+          num:number
+        })
+        .then(res=>{
+          console.log(res.data);
+        })
+        .catch(err=>{
+          console.log(err);
+        })
+      }
 
 // time.geto=function(num){
 //     return num<0?'0'+num:num;

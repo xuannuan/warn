@@ -12,22 +12,26 @@
         <keep-alive> <!-- 保留状态，避免重新渲染 -->
 
     <div class="photo_list">
-      <ul>
-      <li v-for="(item,index) in pic" :key="item.id" >
+      <!-- 要实现滚动加载的列表上上添加v-infinite-scroll，并赋值相应的加载方法，实现滚动到底部时自动执行加载方法 -->
+      <ul class="list"
+      v-infinite-scroll="load"
+      infinite-scroll-disabled="disabled">
+      <li v-for="(item,index) in pic" :key="item.id" class="list-item">
         <router-link :to="{name:'photos.detail',params:{categoryTitle:choosetitle},query:{id:item.id||item.note_id}}">
-          <!-- 如果v-if="item.content"，有content属性的就是最新发布的 -->
-            <img :src="note_img[index]" width="100%" height="400px" v-if="item.content">
+          <!-- 如果v-if="item.content"，有content属性的就是最新发布的，不可以用||拼接？ -->
            <!-- mint-ui 懒加载 ,看一张加载一张-->
+            <img v-lazy="note_img[index]" width="100%" height="400px" v-if="item.content">
            <img v-lazy="item.image_info.original" width="100%" height="400px" v-else>
           </router-link>
           <p>
             <span>{{item.title}}</span><br/>
             <span v-if="item.content">{{item.content|Tolength(30)}}</span>
             <span v-else>{{item.desc}} </span>
-
           </p>
         </li>
       </ul>
+    <p v-if="loading">加载中...</p>
+    <p v-if="noMore">没有更多了</p>
     </div>
   </keep-alive>
   </div>
@@ -45,16 +49,44 @@ export default {
     return {
       category:[],
       pic:[],
+      pages:1,
       note:[],//用户新发布的笔记
       note_img:[],//用户新发布的图片
       currentIndex:0,
       getData:[],//传给search组件的对象数组
       choosetitle:'',//目前获取的分类关键词
+      loading:false
     }
   },
-  computed:mapState([
-    'lifeCurrentIndex']),
+   computed:{
+    noMore () {
+        return this.pages >= 2
+      },
+      disabled () {
+        return this.loading || this.noMore
+      },
+      lifeCurrentIndex(){
+        return this.$store.state.lifeCurrentIndex;
+      }
+    },
+
   methods:{
+    load () {
+       this.loading = true
+        setTimeout(() => {
+        this.pages +=1;
+         console.log(this.pages);
+         if(this.choosetitle!=="最新发布"){
+            this.$axios.get('../../../static/data/图片'+this.choosetitle+this.pages+'.json')
+           .then(res=>{
+             this.pic=this.pic.concat(res.data.data);
+           })
+         }
+          this.loading = false
+        }, 2000)
+
+      },
+
     // 小转弯，再点击相应分类后再发起图片的跨域请求
     getCategoryTitle(title,index){
     this.choosetitle=title;
@@ -76,10 +108,8 @@ export default {
     })
     }//if
     else{
-      this.$axios.get('../../../static/data/图片'+title+'.json')
-      // https://api03.6bqb.com/xhs/notes/search?apikey=69330CA8CE3088F90BED27B6012BB0D9&keyword='+title
+      this.$axios.get('../../../static/data/图片'+title+1+'.json')
       .then(res=>{
-         //动态路由匹配,不管有没有内容请求，都先跳转路由
       this.$router.push({name:'life',params:{categoryTitle:title}});
         this.pic=res.data.data;
       })
@@ -115,6 +145,7 @@ export default {
     //动态路由匹配,不管有没有内容请求，都先跳转路由
     next();
   },
+
 
   //在生命周期开始之前就要发起跨域ajax请求
   //自定义写json，图片分享分类，获取请求
@@ -164,8 +195,9 @@ ul li{
     float: left;
 }
 
+
 .photo_list ul li{
-  position:relative;
+  position: relative;
   padding-bottom:10px;
 }
 

@@ -126,20 +126,7 @@ export default {
     'userMessage'
     ]),
   methods:{
-    //提取共同连接PHP，点赞与收藏数+或-1,放在time.js会post报错
-    connect(noteId,caoZuo,ad){
-       this.$axios.post('/api/updateNoteLike.php',{
-        note_id:noteId,
-        caozuo:caoZuo,
-        AD:ad
-      })
-      .then(res=>{
-        console.log(res.data);
-      })
-      .catch(err=>{
-        console.log("修改点赞数失败",err);
-      })
-    },
+
     //收藏操作
     Tostar(){
       console.log(this.checked);
@@ -152,7 +139,7 @@ export default {
       .then(res=>{
         console.log(res.data);
          if(this.note_like>0){//点赞数不能为负数
-      this.connect(this.id,"star","-");
+      Time.updateStar(this.id,"star","-");
       this.note_star--;
       }
       })
@@ -170,7 +157,7 @@ export default {
       .then(res=>{
         console.log(res.data);
         //如果插入成功，收藏数加1
-      this.connect(this.id,"star","+");
+      Time.updateStar(this.id,"star","+");
       this.note_star++;
       })
       .catch(err=>{
@@ -181,11 +168,11 @@ export default {
     //笔记点赞操作
     ToLike(){
       if(this.checkedLike===true){
-     this.connect(this.id,"like","+");
+     Time.updateStar(this.id,"like","+");
      this.note_like++;
    }else{
       if(this.note_like>0){//点赞数不能为负数
-      this.connect(this.id,"like","-");
+      Time.updateStar(this.id,"like","-");
      this.note_like--;
       }
    }
@@ -279,7 +266,7 @@ export default {
         this.getNewPublic();
       }
       else{
-        this.$axios.get('../../../static/data/图片'+key+'.json')
+        this.$axios.get('../../../static/data/图片'+key+'1.json')
       .then(res=>{
           let that=this;
           //因为具体的商品详情与商品分类同一个json数据,所以要获取数组中的一个元素才是具体的商品详情
@@ -288,6 +275,7 @@ export default {
           this.imgs=res.data.data[i];//数组中的一个元素
           console.log(this.imgs);
           this.note_like=this.imgs.liked_count;
+          this.note_star=this.note_like;
           this.imgs.images_list.forEach((item,index)=>{
             that.imgsList.push(item.original);
           })
@@ -349,16 +337,7 @@ export default {
   },
     created(){
       this.id=this.$route.query.id;
-    //因为现在调用笔记详情api要钱~现在就用自己艰辛抠出来的数据
-      // this.$axios.get('https://api03.6bqb.com/xhs/notes/detail?apikey=69330CA8CE3088F90BED27B6012BB0D9&itemId='+id)
-      // .then(res=>{
-      //   this.imgs=res.data.data;
-      //   this.title=this.imgs.user.nickname;//用在topbar组件传值（父->子）
-      //   this.srcURL=this.imgs.user.images;
-      // })
-      // .catch(err=>{
-      //    console.log("获取相对应分类的图片失败",err);
-      // });
+
       let key=this.$route.params.categoryTitle;
       this.getKeyWord(key);
       //加载评论
@@ -394,6 +373,10 @@ export default {
 
 .content{
   margin: 25px 10px;
+}
+.content p{
+line-height: 30px;
+    font-size: 15px;
 }
 .comment{
   padding-left: 10px;
@@ -461,7 +444,7 @@ color:#8cc5ff;
 .control button,.control label{
     height: 30px;
     line-height: 0px;
-    width: 15%;
+    width: 18%;;
     border: none;
     float: right;
     padding: 0;

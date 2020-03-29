@@ -55,7 +55,8 @@ export default new Router({
       component: Publish,
       meta:{auto:true,keepAlive:true}//路由元信息
     }, {
-      path: '/shop/:categoryTitle/:page',
+      // path: '/shop/:categoryTitle/:page',
+      path: '/shop/:categoryTitle',
       name: 'shop',//命名路由
       component: Shop,
       meta:{keepAlive:true}

@@ -1,40 +1,31 @@
 <template>
   <div class="goods">
     <Search :geta="geta"/>
- <!-- <TopBar :title="category" class="fix" /> -->
- <!-- <div class="category"> -->
     <div class="category_left">
-        <!-- <div class="category_left_box"> -->
             <ul>
                 <li v-for="(item,index) in goods" :key="index" @click="getKeyWord(item.catName,index)">
                   <a href="javascript:void(0);" :class='{active:item.catId==goodsCurrentIndex}' >{{item.catName}}</a>
                 </li>
             </ul>
-        <!-- </div> -->
     </div>
     <div class="category_right">
-          <!-- <div class="r_product"> -->
-            <!-- 底部上拉加载更多 -->
-            <ul>
-               <li v-for="(item,index) in products" :key="index">
-                   <router-link :to="{name:'goods.detail',query:{id:item.id}}">
-
+      <ul class="list"
+      v-infinite-scroll="load"
+      infinite-scroll-disabled="disabled">
+        <li v-for="(item,index) in products" :key="index" class="list-item">
+             <router-link :to="{name:'goods.detail',query:{id:item.id}}">
                     <!-- mint-ui 懒加载 ,看一张加载一张-->
-                    <img v-lazy="item.imageUrls[0]" width="100%" height="110px" >
-                 </router-link>
-                 <!-- 过滤器控制显示个数,不然有些li会出现大片空白 -->
+               <img v-lazy="item.imageUrls[0]" width="100%" height="110px" >
+             </router-link>
+             <!-- 过滤器控制显示个数,不然有些li会出现大片空白 -->
                      <p >{{item.title | Tolength(10)}}</p>
 
                     <span style="color:red;font-size:13px">￥{{item.price}}</span>
                      <span style="font-size:12px">{{item.sales}}</span>
                   </li>
              </ul>
-                <!-- 加载更多 -->
-                <mt-button @click.native="LoadMore" class="mint_button" v-if="loadding">
-                More
-                </mt-button>
-            <!-- </div> -->
-    <!-- </div> -->
+              <p v-if="loading" class="loading">加载中...</p>
+              <p v-if="noMore" class="noMore">没有更多了</p>
         <!-- 这个是购物车的图标 -->
     <fixCar/>
 </div>
@@ -57,21 +48,28 @@ export default {
       key:'',
       page:1,
       allLoaded:false,
-      loadding:true//当商品无法加载就隐藏加载更多的按钮
+      loading:false,//加载更多
     }
   },
-  computed:mapState([
-    'goodsCurrentIndex'//获取分类词的下标
-    ]),
+  computed:{
+    noMore () {
+        return this.pages >= 2
+      },
+      disabled () {
+        return this.loading || this.noMore
+      },
+      goodsCurrentIndex(){
+        return this.$store.state.goodsCurrentIndex;//获取分类词的下标
+      }
+    },
+
   methods:{
     // 点击分类列表获取商品列表,且关键词高亮显示
     getKeyWord(item,index){
       this.category=item;
       this.$store.dispatch('setGoodsCurrentIndex',index);
-        // this.key=this.$route.params.categoryTitle;
-        this.page=this.$route.params.page;//作用1：把路由的page参数传进去更改对应的内容
-        // 作用2：给getKeyWord(item)传进去第一个page=1，不能再方法里面写，因为在加载第二页会调用，防止不被覆盖
-         this.$axios.get('../../../static/data/商品'+item+this.page+'.json')
+        this.key=this.$route.params.categoryTitle;
+         this.$axios.get('../../../static/data/商品'+item+1+'.json')
            .then((res)=>{
                this.products=res.data.data;
                this.$router.push({name:'shop',params:{categoryTitle:item}});
@@ -80,22 +78,28 @@ export default {
              console.log("商品加载失败",err);
              this.products=[];//请求失败，内容清空
              this.$router.push({name:'shop',params:{categoryTitle:item}});
-             this.loadding=false;
              this.$toast({
               message:"暂无商品",
               iconClass:'iconfont icon-plant-18'
             })
           });
     },
-    // 上拉加载更多
-    LoadMore(){
-      this.key=this.$route.params.categoryTitle;
-      this.page=this.$route.params.page;
-      this.page++;//从当前路由的page数增
-      this.getKeyWord(this.key,this.goodsCurrentIndex);//调用上述方法请求第二页的数据，因为有关键字，所以只能这样
-       //动态路由匹配，再次改变路由
-      this.$router.push({name:'shop',params:{categoryTitle:this.key,page:this.page}});
-    }
+    // 加载更多
+     load () {
+       this.loading = true
+        setTimeout(() => {
+        this.page +=1;
+         console.log(this.page);
+        this.$axios.get('../../../static/data/商品'+this.key+this.page+'.json')
+       .then((res)=>{
+         this.products=this.products.concat(res.data.data);
+           })
+       console.log(this.products);
+        this.loading = false
+        }, 2000)
+
+      },
+
   },
   beforeRouteEnter(to,from,next){
     next(vm=>{
@@ -130,6 +134,9 @@ export default {
 .search{
       padding-left: 30px;
 }
+/*.loading,.noMore{
+  margin: 300px aoto;
+}*/
 
 .mint_button{
   position: relative;
