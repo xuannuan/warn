@@ -155,16 +155,26 @@ export default {
     actionSheet(){
       this.sheetVisible=true;
     },
+     //提取公共的删除和修改商品的PHP连接操作
+      commen(cz,id,number){
+        this.$axios.post('/api/deleteGoods.php',{
+          caozuo:cz,
+          goods_id:id,
+          num:number
+        })
+        .then(res=>{
+          console.log(res.data);
+        })
+        .catch(err=>{
+          console.log(err);
+        })
+      },
     //小球进入之后隐藏
     afterEnter(){
       this.isExist=false;
       this.tobuy=false;//让购物车页面隐藏
        // 当数量为0时就不触发提示加入购物车成功动画
        if(parseInt(this.num)!=0){
-      //触发bus绑定的事件，给App.vue的购物数量传值
-       // this.$bus.$emit('sendPickNum',parseInt(this.num));
-       //刷新会清空
-       this.$store.dispatch('addGoodsNum',this.num);
 
        this.$axios.post('/api/insertGoods.php',
        {goods_id:this.$route.query.id,
@@ -172,10 +182,23 @@ export default {
         category:this.changeTitle,//更新的名字
         img:this.changeUrl,//更新的图片
         price:this.goods.item.priceRange,
-        num:parseInt(parseInt(this.num))//因为number类型的input返回值是string
+        num:parseInt(this.num)//因为number类型的input返回值是string
        })
        .then(res=>{
         console.log(res.data);
+        //插入成功数量才增加
+      if(res.data.status=="1"){
+        //给App.vue的购物数量传值，
+       this.$store.dispatch('addGoodsNum',this.num);
+      }
+      //否则就是型号和id都已经存在
+      else{
+        //就进行修改加入购物车的数量
+      this.commen("change",this.$route.query.id,parseInt(this.num));
+      //修改购物车小图标总数量
+      Time.getGoodsNum();
+     }
+
        })
        .catch(err=>{
         console.log(err);
@@ -235,7 +258,6 @@ export default {
 
     this.changeUrl=this.color[0].image;//初始化加入购物车页面的大图和名字
     this.changeTitle=this.color[0].name;
-    // console.log(this.color);
 
     })
     .catch((err=>{

@@ -21,15 +21,19 @@
       </mt-button>
     </mt-header>
 
-    <!-- 内容展示模块 -->
-    <!-- vue的动画效果 mode="out-in"前面一个过渡完在进行下一个-->
+    <!-- 内容展示模块,因为fixed占了底部，所以要把子组件的底页面 -->
     <div class="con">
+
+    <!-- vue的动画效果 mode="out-in"前面一个过渡完在进行下一个-->
       <transition name="slide-fade" mode="out-in">
-        <!-- 保留状态，避免重新渲染 -->
-         <router-view />
-         <!-- 加key属性进行路由改变页面改变，防止页面缓存无法加载跳转 -->
-        <!-- <router-view :key="this.$route.path"></router-view> -->
+           <!-- 需要缓存的视图组件 -->
+         <router-view></router-view>
+        <!-- 不需要缓存的视图组件 -->
+<!-- <router-view v-if="!$route.meta.keepAlive"></router-view> -->
+    <!-- 加key属性进行路由改变页面改变，防止页面缓存无法加载跳转 -->
+   <!-- <router-view :key="this.$route.path"></router-view> -->
       </transition>
+
     </div>
 
 

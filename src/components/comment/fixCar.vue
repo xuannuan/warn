@@ -23,33 +23,10 @@ export default {
       return this.$store.state.goodsNum;
     }
   },
-  // methods:{
-    // changeGoodsNum(){
-    //   this.$store.dispatch('changeGoodsNum',num);
-    // },
-  created(){
-     let products=[];
-     var num=0;
-    this.$axios.get('/api/checkGoods.php')
-    .then(res=>{
-      if(res.data instanceof Object){
-        products=res.data;
-        num=products.num;
-        // 当页面进行刷新，商品数量保留，调用获取总数量
-      this.$store.dispatch('changeGoodsNum',num);
-      }
-      else{
-        products=Time.ToArray(res.data);
-        products.forEach((item,index)=>{
-          num+=parseInt(item.num);
-        })
-          this.$store.dispatch('changeGoodsNum',num);
-      }
-      })
-    .catch(err=>{
-      console.log(err);
-    })
 
+  created(){
+    //当页面进行刷新会清空，要想商品数量保留则调用获取总数量重新赋值
+   Time.getGoodsNum();
   }
 };
 </script>

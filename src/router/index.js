@@ -42,20 +42,23 @@ export default new Router({
       //动态路由匹配
       path: '/life/:categoryTitle',
       name: 'life',//命名路由
-      component: Life
+      component: Life,
+      meta:{keepAlive:true}//需要缓存的视图组件
     }, {
       path: '/technology',
       name: 'technology',//命名路由
-      component:Technology
+      component:Technology,
+      meta:{keepAlive:true}
     }, {
       path: '/publish',
       name: 'publish',//命名路由
       component: Publish,
-      meta:{auto:true}//路由元信息
+      meta:{auto:true,keepAlive:true}//路由元信息
     }, {
       path: '/shop/:categoryTitle/:page',
       name: 'shop',//命名路由
-      component: Shop
+      component: Shop,
+      meta:{keepAlive:true}
     },
      {
       path: '/mine',
@@ -81,7 +84,8 @@ export default new Router({
       //query,?id=
       path:'/goods/detail',
       name:'goods.detail',
-      component:GoodsDetail
+      component:GoodsDetail,
+      meta:{keepAlive:true}
     },
     {
       //query,?id=
@@ -93,7 +97,8 @@ export default new Router({
     {
        path:'/shop/car',
       name:'shop.car',
-      component:Car
+      component:Car,
+      meta:{keepAlive:true}
     },
     //用户信息
     {

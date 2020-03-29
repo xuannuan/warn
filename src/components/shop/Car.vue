@@ -106,19 +106,7 @@ export default {
           iconClass:'iconfont icon-plant-1'
         })
       },
-      //提取公共的删除和修改商品的PHP连接操作
-      commen(cz,id){
-        this.$axios.post('/api/deleteGoods.php',{
-          caozuo:cz,
-          goods_id:id
-        })
-        .then(res=>{
-          console.log(res.data);
-        })
-        .catch(err=>{
-          console.log(err);
-        })
-      },
+
       // 确定删除元素结点，应该以哪一个元素作为标志进行删除？
       com(){
         // 使弹出框隐藏
@@ -128,7 +116,8 @@ export default {
         // 删除商品数据存储，进行删除商品
         // GoodsTool.deleteGoods(this.index);
         let goods_id=this.products.goods_id?this.products.goods_id:this.products[this.index].goods_id;
-        this.commen("delete",goods_id);
+        let category=this.products.category?this.products.category:this.products[this.index].category;
+        Time.updateGoods("delete",goods_id,category);
         //删除元素，因为v-model绑定的是all,所以要改变数组all，
          this.all.splice(this.index,1);
       },
@@ -137,18 +126,20 @@ export default {
         //因为数据处理不好，所以有一条数据与多条数据
         let cnum=this.products.num?this.products.num:this.products[index].num;
         let goods_id=this.products.goods_id?this.products.goods_id:this.products[index].goods_id;
+        let category=this.products.category?this.products.category:this.products[index].category;
         if(cnum>1){
           // vuex传值给App.vue组件的购物车数量，
           this.$store.dispatch('addGoodsNum',-1);
-          this.commen("jian",goods_id);
+          Time.updateGoods("jian",goods_id,category);
           this.getGoods();//修改后的数据显示，双向数据绑定
         }
       },
       add(index){
         //let作用在该块级作用域内
         let goods_id=this.products.goods_id?this.products.goods_id:this.products[index].goods_id;
+        let category=this.products.category?this.products.category:this.products[index].category;
         this.$store.dispatch('addGoodsNum',1);
-        this.commen("add",goods_id);
+        Time.updateGoods("add",goods_id,category);
         this.getGoods();
       },
       //提交后触发的
@@ -159,22 +150,22 @@ export default {
           offset: 300//提示框偏移
         });
       },
-      //获取加入购物车的商品，公共类
-   getGoods(){
+ //获取加入购物车的商品,提取在加减数量中调用(car.vue)
+    getGoods(){
     this.$axios.get('/api/checkGoods.php')
     .then(res=>{
       if(res.data instanceof Object){
-        this.products=res.data;
+       this.products=res.data;
       }
       else{
-      this.products=Time.ToArray(res.data);
+       this.products=Time.ToArray(res.data);
       }
-
     })
     .catch(err=>{
       console.log(err);
     })
-      }
+   }
+
   },//methods
   // 对加减商品进行结算监控，获取和设置值
   computed:{
@@ -187,7 +178,7 @@ export default {
           if(this.isSelected.indexOf(item)!=-1){
            let num=this.products.num?this.products.num:this.products[index].num;
            let price=this.products.price?this.products.price:this.products[index].price;
-              count+=num;
+              count+=parseInt(num);
               total+=price*num;
           }
         });
@@ -199,7 +190,7 @@ export default {
   },
 
   created(){
-    // this.getGoods();
+
     this.$axios.get('/api/checkGoods.php')
     .then(res=>{
       if(res.data instanceof Object){
@@ -209,17 +200,26 @@ export default {
       else{
       this.products=Time.ToArray(res.data);
       }
-        //all数组是进行全选操作的数组控制，dele数组时进行单个翻盖动画效果的控制(axios是异步请求，会在create其他事件操作完才执行，所以依赖这个就要放在执行体里面)
+        //all数组是进行全选操作的数组控制，
+        //dele数组时进行单个翻盖动画效果的控制
+        //(axios是异步请求，会在create其他事件操作完才执行，所以依赖这个就要放在执行体里面)
     for(let i=0;i<this.products.length;i++){
       this.all.push(i);
-      this.dele.push(false);//创建数组元素，是所有的垃圾盖动画类fan先隐藏，当点击时，才触发单个
-      // 对于加减操作的立即实现
+      this.dele.push(false);
+      //创建数组元素，是所有的垃圾盖动画类fan先隐藏，当点击时，才触发单个
     }
     })
     .catch(err=>{
       console.log(err);
     })
-  }
+  },
+  // mounted(){
+  //   for(let i=0;i<this.products.length;i++){
+  //     this.all.push(i);
+  //     this.dele.push(false);
+  // //创建数组元素，是所有的垃圾盖动画类fan先隐藏，当点击时才触发单个
+  //   }
+  // }
 
 };
 </script>

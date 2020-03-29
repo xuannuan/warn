@@ -79,7 +79,6 @@
         </li>
       </ul>
     </el-tab-pane>
-    <el-tab-pane label="关注" name="third">关注</el-tab-pane>
   </el-tabs>
 
   </div>

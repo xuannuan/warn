@@ -1,16 +1,11 @@
 import Vue from "vue"
-let time={};
+import Axios from 'axios'
+import store from '@/store'
+// 配置axios,每一个文件对axios发起请求，要挂载到vue实例化对象上
+Vue.prototype.$axios=Axios
 
-// time.geto=function(num){
-//     return num<0?'0'+num:num;
-// }
-//转换时间格式符合数据库datetime格式，用momentjs.cn库代替了
-// time.changeTime=function(){
-//    const date=new Date();
-//    const ymd=date.getFullYear()+'-'+this.geto(date.getMonth()+1)+'-'+this.geto(date.getDate());
-//    const time=this.geto(date.getHours())+':'+this.geto(date.getMinutes())+':'+this.geto(date.getSeconds());
-//    return ymd.concat('-',time);
-// }
+
+let time={};
 
 //php取出来的是一个个对象，需要转换成对象数组
 //缺点：对于只有一条数据，无法进行转换
@@ -30,7 +25,7 @@ time.ToArray=function(objs){
     }
 
 
-    //用于笔记的封面列表，获取单张图片作为封面
+//用于笔记的封面列表，获取单张图片作为封面
 time.hasImgs=function(objs){
     //将多个对象转化为数组
      let note=this.ToArray(objs);
@@ -46,9 +41,65 @@ time.hasImgs=function(objs){
         }
        })
         return note_img;
+}
+
+//提取公共的删除和修改加入购物车商品的PHP连接操作(car.vue)
+time.updateGoods=function(cz,id,c){
+        Vue.prototype.$axios.post('/api/updateGoods.php',{
+          caozuo:cz,
+          goods_id:id,
+          category:c
+        })
+        .then(res=>{
+          console.log(res.data);
+        })
+        .catch(err=>{
+          console.log(err);
+        })
+  }
+
+
+
+//对于购物车小图标的小球里面的数量(fixcar.vue和goodsdetail.vue)
+time.getGoodsNum=function(){
+     let products=[];
+     var num=0;
+     // this.$axios这里的this错误
+    Vue.prototype.$axios.get('/api/checkGoods.php')
+    .then(res=>{
+      if(res.data instanceof Object){
+        products=res.data;
+        num=products.num;
+
+      }
+      else{
+        products=this.ToArray(res.data);
+        products.forEach((item,index)=>{
+          num+=parseInt(item.num);
+        })
+      }
+    //当页面进行刷新会清空，要想商品数量保留则调用action(vuex)获取总数量重新赋值
+    // 同样，this.$store的this也错误，正确的是store
+      store.dispatch('changeGoodsNum',num);
+      })
+    .catch(err=>{
+      console.log(err);
+    })
 
 }
 
+
+
+// time.geto=function(num){
+//     return num<0?'0'+num:num;
+// }
+//转换时间格式符合数据库datetime格式，用momentjs.cn库代替了
+// time.changeTime=function(){
+//    const date=new Date();
+//    const ymd=date.getFullYear()+'-'+this.geto(date.getMonth()+1)+'-'+this.geto(date.getDate());
+//    const time=this.geto(date.getHours())+':'+this.geto(date.getMinutes())+':'+this.geto(date.getSeconds());
+//    return ymd.concat('-',time);
+// }
 
 //抛出去obj对象
 export default time;

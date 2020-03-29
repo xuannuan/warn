@@ -9,6 +9,8 @@
         </li>
       </ul>
     </div>
+        <keep-alive> <!-- 保留状态，避免重新渲染 -->
+
     <div class="photo_list">
       <ul>
       <li v-for="(item,index) in pic" :key="item.id" >
@@ -27,6 +29,7 @@
         </li>
       </ul>
     </div>
+  </keep-alive>
   </div>
 </template>
 
@@ -87,7 +90,8 @@ export default {
         this.pic=[];
         this.$toast({//因为已经Vue.use(Mint),所以可以this使用加载动漫
           message: '图片加载完毕',
-          iconClass: 'iconfont icon-plant-1'//以Font Class引入字体图标
+          iconClass: 'iconfont icon-plant-1'
+          //以Font Class引入字体图标
       // iconfont +字体图标类名.记得在main.js中引入import '../static/css/font_1629701_ou9lsu8m4r.css'
         });
       })
@@ -139,10 +143,17 @@ export default {
 </script>
 
 <style lang="css" scoped>
+/*.search,.banner{
+  position: fixed;
+}*/
 .banner{
   /*横向滚动条*/
   overflow-x:scroll;
   width: 375px;
+  position: relative;
+  /*Z-index 仅能在定位元素上奏效*/
+  z-index:2002;
+  /*不然拦截器的loading图标加载无法点击切换分类*/
 }
  .banner ul{
   padding:10px;

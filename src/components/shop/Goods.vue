@@ -2,18 +2,18 @@
   <div class="goods">
     <Search :geta="geta"/>
  <!-- <TopBar :title="category" class="fix" /> -->
- <div class="category">
+ <!-- <div class="category"> -->
     <div class="category_left">
-        <div class="category_left_box">
+        <!-- <div class="category_left_box"> -->
             <ul>
                 <li v-for="(item,index) in goods" :key="index" @click="getKeyWord(item.catName,index)">
                   <a href="javascript:void(0);" :class='{active:item.catId==goodsCurrentIndex}' >{{item.catName}}</a>
                 </li>
             </ul>
-        </div>
+        <!-- </div> -->
     </div>
     <div class="category_right">
-          <div class="r_product">
+          <!-- <div class="r_product"> -->
             <!-- 底部上拉加载更多 -->
             <ul>
                <li v-for="(item,index) in products" :key="index">
@@ -33,12 +33,11 @@
                 <mt-button @click.native="LoadMore" class="mint_button" v-if="loadding">
                 More
                 </mt-button>
-            </div>
-    </div>
+            <!-- </div> -->
+    <!-- </div> -->
         <!-- 这个是购物车的图标 -->
     <fixCar/>
 </div>
-
 </div>
 </template>
 
@@ -128,13 +127,9 @@ export default {
 </script>
 
 <style lang="css" scoped>
-.forCover{
-  width: 100%;height: 158px;
-  position: relative;
-  bottom: 0;left: 0;
-  background-color: #fff;
+.search{
+      padding-left: 30px;
 }
-
 
 .mint_button{
   position: relative;
@@ -143,60 +138,37 @@ export default {
  /*margin-left:calc(50%-45px);*/
  /*calc()函数用于动态计算长度值*/
 }
-.fix{
-  position: fixed;
-  z-index:1000;
-  background-color: #f3f4f6;
-  width: 100%;
 
-}
-
-/*商品分类铺满屏幕*/
-.category{
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-}
 .category_left{
     width: 20%;
-    height: 100%;
+    height: 88%;
     position: absolute;
     top: 0;
     left: 0;
-    padding-top: 83px;
-    padding-bottom: 54px;
-    z-index:999;
+    margin-top: 40px;
+    z-index:2002;
+    overflow: scroll;
+
 }
 .category_right{
-    width: 100%;
-    height: 100%;
-    padding-bottom: 58px;
-    margin-top: 43px;
+    width: 80%;
+    height: 80%;
+    margin-top: 83px;
     /*定位是为了滚动条不在滑出顶部栏组件上面*/
     position: absolute;
-    top: 40px;
+    top: 0;
     right: 0;
     overflow: scroll;
-}
-.r_product{
-  padding-left: 20%;
+    z-index:2002;
 }
 
-.category_left_box{
-    width: 100%;
-    height: 100%;
-    overflow: scroll;
-}
-.category_left_box ul{
-    width: 100%;
-}
-.category_left_box ul li{
+.category_left ul li{
     width: 100%;
     height: 50px;
     float: left;
     background: #f3f4f6;
 }
-.category_left_box ul li a{
+.category_left ul li a{
     display: block;
     width: 100%;
     height: 50px;
@@ -207,22 +179,19 @@ export default {
     font-size: 12px;
     font-family: inherit;
 }
-.category_left_box ul li a:hover,.active{
+.category_left ul li a:hover,.active{
   background-color: #b3d8ff;
   color: #fff;
   font-size: 14px;
 }
 
 
-.category_right .r_product li{
+.category_right li{
     float: left;
     width: 47%;
     text-align: center;
     margin: 0 0 5px 5px;
-    /*border:1px solid gray;*/
     border-radius: 5px;
-    overflow: hidden;
     background-color: #f3f4f6;
-
 }
 </style>
