@@ -9,20 +9,14 @@
       </el-image>
     <div class="me">
       <!-- 上传头像 -->
-      <router-link :to="{name:'login'}" v-if="userMessage.logintip!=1">
-       <el-avatar shape="square" :size="100" fit="cover" :src="userMessage.img" class="headimg"></el-avatar>
+      <router-link :to="{name:'login'}" v-if="userMessage.logintip!=1" class="headimg">
+       <el-avatar shape="square" :size="100" fit="cover" :src="userMessage.img" ></el-avatar>
      </router-link>
-     <router-link :to="{name:'install.message'}" v-else>
-       <el-avatar shape="square" :size="100" fit="cover" :src="userMessage.img" class="headimg"></el-avatar>
+     <router-link :to="{name:'install.message'}" v-else class="headimg">
+       <el-avatar shape="square" :size="100" fit="cover" :src="userMessage.img" ></el-avatar>
      </router-link>
       <h3 v-if="userMessage.logintip">{{userMessage.name}}</h3>
-     <el-button type="danger" class="share" >
-      <router-link :to="{name:'publish'}">
-     分享瞬间
-   </router-link>
-   </el-button>
-
-    <el-button size="mini" round class="intruduce">
+    <el-button size="mini" round class="share">
         <router-link :to="{name:'login'}" v-if="userMessage.logintip!=1">
           加入岁月间？
         </router-link>
@@ -59,23 +53,33 @@
     </el-tab-pane>
     <el-tab-pane label="收藏" name="second">
        <ul class="note">
+        <!-- 当今有一条收藏 -->
         <li v-if="obj">
           <router-link :to="{name:'photos.detail',params:{categoryTitle:'最新发布'},query:{id:starNote.note_id}}">
             <img :src="starNote_img[0]" width="100%" height="200px">
           </router-link>
           <p>
-            <span style="font-size: 16px">{{starNote.title}}</span><br/>
-            <span>{{starNote.content | Tolength(10)}}</span>
+            <span style="font-size: 16px">{{starNote.title | Tolength(10)}}}</span><br/>
           </p>
         </li>
+        <!-- 有多条用户发布笔记的收藏 -->
         <li v-for="(item,index) in starNote" :key="item.id" v-else>
           <router-link :to="{name:'photos.detail',params:{categoryTitle:'最新发布'},query:{id:item.note_id}}">
             <img :src="starNote_img[index]" width="100%" height="200px">
           </router-link>
           <p>
-            <span style="font-size: 16px">{{item.title}}</span><br/>
-            <span>{{item.content | Tolength(10)}}</span>
+            <span style="font-size: 16px">{{item.title | Tolength(10)}}</span><br/>
           </p>
+        </li>
+        <!-- 数据api收藏的笔记 -->
+        <li v-for="(item,index) in no" :key="item.id">
+          <router-link :to="{name:'photos.detail',params:{categoryTitle:'旅行'},query:{id:item.id}}">
+            <img v-lazy="item.image_info.original" width="100%" height="200px">
+          </router-link>
+          <p>
+            <span style="font-size: 16px">{{item.title | Tolength(10)}}</span><br/>
+          </p>
+
         </li>
       </ul>
     </el-tab-pane>
@@ -99,6 +103,7 @@ export default {
       note:[],//发布的笔记
       note_img:[],
       starNote:[],//收藏的笔记
+      no:[],//数据API收藏的笔记
       starNote_img:[],
       obj:'',
       objp:''
@@ -123,7 +128,6 @@ export default {
       caozuo:"tele"
     })
     .then(res=>{
-      //只收藏了一条笔记
       if(res.data instanceof Object){
         this.objp=true;
           this.note=res.data;
@@ -135,14 +139,12 @@ export default {
           this.note_img.push(this.note.img);
         }
       }
-      //收藏多条笔记
       else{
         this.objp=false;
        //将多个对象转化为数组
         this.note=Time.ToArray(res.data);
        //处理图片格式，有的是一张，有的是多张
       this.note_img=Time.hasImgs(res.data);
-       //处理图片格式，有的是一张，有的是多张
       }
     })
     .catch(err=>{
@@ -157,8 +159,8 @@ export default {
       //只收藏了一条笔记
       if(res.data instanceof Object){
         this.obj=true;
-          this.starNote=res.data;
-          let reg=/[-]{3}/;
+        this.starNote=res.data;
+        let reg=/[-]{3}/;
         if(reg.test(this.starNote.img)){
         this.starNote_img=this.starNote.img.split("---");
         }
@@ -177,6 +179,32 @@ export default {
       console.log(err);
     })
 
+    this.$axios.post('/api/checkApiStar.php',{
+      tele:this.userMessage.tele
+      })
+    .then(res=>{
+      let ids=Time.ToArray(res.data);//对象数组形式的note_id列表
+      let a=[];
+      ids.forEach((item,index)=>{
+        a.push(item.note_id);
+      })
+      for(let k=0;k<3;k++){
+      this.$axios.get('../../../static/data/图片旅行'+k+'.json')
+      .then(r=>{
+        for (var i = 0; i < r.data.data.length; i++) {
+          if(a.indexOf(r.data.data[i].id)!=-1){
+            this.no.push(r.data.data[i]);
+          }
+        }
+
+      })
+    }
+
+    })//then
+
+    .catch(err=>{
+      console.log(err);
+    })
 
   }//created
 };
@@ -185,6 +213,8 @@ export default {
 <style lang="css" scoped>
 .me{
   position: relative;
+  height: 80px;
+  /*让下面tab栏上移动*/
 }
 .me h3{
     position: absolute;
@@ -201,16 +231,8 @@ export default {
 
   .share{
     position: absolute;
-    right: 20px;
-    top: 10px;
-  }
-  .intruduce{
-  background-color: #cccccc40;
-  /*margin:0px 10px;*/
-  position: absolute;
-  left: -7px;
-  /*因为button自带padding:7px*/
-  bottom: 0px;
+    left:130px;
+    top: 30px;
   }
 
   .note li{

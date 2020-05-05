@@ -63,9 +63,11 @@
   <div class="category">
     <ul>
       <li v-for="(item,index) in color" :key="index">
-        <a href="javascript:void(0)" @click="choose(item.image,item.name)">
+        <a href="javascript:void(0)" @click="choose(item.image,item.skuName)">
+          <!-- item.name -->
         <img :src="item.image" width="50px" height="50px" style="float:left">
-        {{item.name}}
+        {{item.skuName}}
+        <!-- item.name -->
         </a>
       </li>
     </ul>
@@ -124,6 +126,8 @@
 </template>
 
 <script>
+import Time from '@/router/time'
+import {mapState} from 'vuex'
 export default {
 
   name: 'GoodsDetail',
@@ -141,11 +145,14 @@ export default {
       num:0,//加入购物车的单个商品数量
       changeUrl:'',
       changeTitle:'',
-      url:'../../../static/data/满天星手表.json',//轮播图组件传值
+      url:'../../../static/data/红裙.json',//轮播图组件传值
       isExist:false,//默认动态小球隐藏
       // pickNum:0,//购物车所有商品的数量
     }
   },
+  computed:mapState([
+    'userMessage'
+    ]),
   methods: {
     //点击选中物品，更新大图和名字
     choose(image,name){
@@ -161,9 +168,9 @@ export default {
       this.tobuy=false;//让购物车页面隐藏
        // 当数量为0时就不触发提示加入购物车成功动画
        if(parseInt(this.num)!=0){
-
        this.$axios.post('/api/insertGoods.php',
-       {goods_id:this.$route.query.id,
+       {user_id:this.userMessage.tele,
+        goods_id:this.$route.query.id,
         title:this.goods.item.title,
         category:this.changeTitle,//更新的名字
         img:this.changeUrl,//更新的图片
@@ -171,7 +178,6 @@ export default {
         num:parseInt(this.num)//因为number类型的input返回值是string
        })
        .then(res=>{
-        console.log(res.data);
         //插入成功数量才增加
       if(res.data.status=="1"){
         //给App.vue的购物数量传值，
@@ -199,13 +205,22 @@ export default {
     },
     // 点击确定加入购物车后
     SureBuy(){
-      // 当数量为0时就不触发动画，但就不会触发afterEnter就不会关闭页面,所以加上else情况
-        if(parseInt(this.num)!=0){
-         this. isExist=true;//小球显示
-         this.index++;
-       }else{
-         this.tobuy=false;//让购物车页面隐藏
-       }
+      //登录提示
+      if(this.userMessage.name){
+          // 当数量为0时就不触发动画，但就不会触发afterEnter就不会关闭页面,所以加上else情况
+          if(parseInt(this.num)!=0){
+           this. isExist=true;//小球显示
+           this.index++;
+         }else{
+           this.tobuy=false;//让购物车页面隐藏
+         }
+         }
+      else{//如果没有登录
+         this.$message({
+          message: '您还没有登录呢，请先登录吧',
+          type: 'warning'
+        });
+      }
     },
 
     jian(){
@@ -221,7 +236,7 @@ export default {
     }
   },
   created(){
-    this.$axios.get('../../../static/data/满天星手表.json')
+    this.$axios.get(this.url)
     //https://api03.6bqb.com/taobao/detail?apikey=5F3779A028E404694FC192684E80B7C3&itemid=’+${id}
     .then((res)=>{
        this.goods=res.data.data;// 是一个对象
@@ -240,10 +255,11 @@ export default {
     //产品参数
     this.gridData=this.goods.item.groupProps[0].基本信息;
     //加入购物车,颜色分类
-    this.color=this.goods.item.props[0].values;
-
+    // this.color=this.goods.item.props[0].values;//手表
+    this.color=this.goods.item.sku;//裙子
     this.changeUrl=this.color[0].image;//初始化加入购物车页面的大图和名字
-    this.changeTitle=this.color[0].name;
+    // this.changeTitle=this.color[0].name;
+    this.changeTitle=this.color[0].skuName;//裙子
 
     })
     .catch((err=>{
@@ -269,7 +285,7 @@ export default {
 }
 .sure{
   width: 100%;
-  position: absolute;
+  position: fixed;
   bottom: 5px;
   height: 40px;
 }
@@ -278,7 +294,7 @@ export default {
   margin: 10px;
 }
 .buy{
-  margin-top: -10px;
+  margin-bottom: 60px;
 }
 .category ul li{
 float:left;

@@ -51,7 +51,7 @@ export default {
   },
   created(){
     let id=this.$route.query.id;//区别this.$router
-    this.$axios.get('../../../static/data/满天星手表评论.json')
+    this.$axios.get('../../../static/data/红裙评论.json')
     // 'https://api03.6bqb.com/taobao/comment?apikey=5F3779A028E404694FC192684E80B7C3&itemId='+$(id)+'&page=1'
     .then(res=>{
         this.comments=res.data.data;

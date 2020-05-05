@@ -122,9 +122,9 @@ import UserTool from '@/router/UserTool'
 router.beforeEach((to,from,next)=>{
       //判断是否登录,在index.js的path中设置meta:{auto:true}
       if(to.meta.auto){
-          if(localStorage.getItem('User')){
+          if(UserTool.getUser().userName){
             next();//如果本地存储有用户信息放行,UserTool.getUser()
-            // console.log(UserTool.getUser());
+            console.log(UserTool.getUser());
           }
           else{
             next({

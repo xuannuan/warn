@@ -17,6 +17,7 @@
       没有账号？去注册
       </router-link>
        <el-button  type="danger"  @click="login" class="btn">登录</el-button>
+      <!-- <input type="checkbox" name="mimi">是否同意隐私政策 -->
     </form>
 
   </div>
@@ -52,7 +53,7 @@ export default {
           })//用户名和密码将转为json传到后台接口
           .then(res => {
             let user = res.data;
-            console.log('login的值'+user);
+            // console.log('login的值'+user);
 
           if(user.status>0){   //res.status=1,显示登录结果
            this.errortip=true;

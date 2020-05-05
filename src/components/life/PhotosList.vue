@@ -16,7 +16,7 @@
       <ul class="list"
       v-infinite-scroll="load"
       infinite-scroll-disabled="disabled">
-      <li v-for="(item,index) in pic" :key="item.id" class="list-item">
+      <li v-for="(item,index) in pic" :key="index" class="list-item">
         <router-link :to="{name:'photos.detail',params:{categoryTitle:choosetitle},query:{id:item.id||item.note_id}}">
           <!-- 如果v-if="item.content"，有content属性的就是最新发布的，不可以用||拼接？ -->
            <!-- mint-ui 懒加载 ,看一张加载一张-->
@@ -26,7 +26,7 @@
           <p>
             <span>{{item.title}}</span><br/>
             <span v-if="item.content">{{item.content|Tolength(30)}}</span>
-            <span v-else>{{item.desc}} </span>
+            <span v-else>{{item.desc | Tolength(30)}} </span>
           </p>
         </li>
       </ul>
@@ -49,7 +49,7 @@ export default {
     return {
       category:[],
       pic:[],
-      pages:1,
+      pages:0,
       note:[],//用户新发布的笔记
       note_img:[],//用户新发布的图片
       currentIndex:0,
@@ -71,11 +71,12 @@ export default {
     },
 
   methods:{
+    //加载更多
     load () {
        this.loading = true
         setTimeout(() => {
         this.pages +=1;
-         console.log(this.pages);
+         // console.log(this.pages);
          if(this.choosetitle!=="最新发布"){
             this.$axios.get('../../../static/data/图片'+this.choosetitle+this.pages+'.json')
            .then(res=>{
@@ -108,7 +109,7 @@ export default {
     })
     }//if
     else{
-      this.$axios.get('../../../static/data/图片'+title+1+'.json')
+      this.$axios.get('../../../static/data/图片'+title+0+'.json')
       .then(res=>{
       this.$router.push({name:'life',params:{categoryTitle:title}});
         this.pic=res.data.data;

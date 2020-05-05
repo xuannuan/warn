@@ -57,7 +57,7 @@
 <script>
 //命名路由要用对象表达式
 var bar=[
-{id:1,title:'言.享',routerName:{name:'life',params:{categoryTitle:'最新发布'}}},
+{id:1,title:'言.享',routerName:{name:'life',params:{categoryTitle:'旅行'}}},
 {id:2,title:'勤.学',routerName:{name:'technology'}},
 {id:3,title:'',routerName:{name:'publish'}},
 {id:4,title:'碎.巷',routerName:{name:'shop',params:{categoryTitle:'手表'}}},

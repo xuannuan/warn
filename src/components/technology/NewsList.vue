@@ -43,6 +43,7 @@ export default {
     //https://api03.6bqb.com/kr/category?apikey=69330CA8CE3088F90BED27B6012BB0D9&category=web_news
     .then(res=>{
       this.newsList=res.data.data;
+      console.log(this.newsList);
       this.imgUrl=this.newsList[1].cover;
     })
     .catch(err=>{

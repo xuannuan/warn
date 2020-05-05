@@ -56,9 +56,6 @@ export default {
         else{
           console.log("暂无内容");
         }
-
-        // console.log(item);//当前输入搜索的对象
-
       }
     }
   };

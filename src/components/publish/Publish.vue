@@ -2,10 +2,10 @@
   <div class="search">
     <el-form ref="form" :model="form"  :rules="rules">
        <el-form-item prop="name">
-         <el-input v-model="form.name" class="title" placeholder="笔记标题"></el-input>
+         <el-input v-model="form.name" class="title" placeholder="笔记标题(不可为空)"></el-input>
        </el-form-item>
       <el-form-item prop="content">
-      <el-input type="textarea" placeholder="正文内容"  v-model="form.content" >
+      <el-input type="textarea" placeholder="正文内容(写写吧~)"  v-model="form.content" >
       </el-input>
     </el-form-item>
     <!-- 上传图片 -->

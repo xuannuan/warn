@@ -1,0 +1,430 @@
+{
+  "dataType": "comment",
+  "appCode": "taobaoComment",
+  "version": "1.0",
+  "retcode": "0000",
+  "hasNext": true,
+  "page": "1",
+  "data": [{
+    "structTagList": [{
+      "id": "65627",
+      "title": "整体评价",
+      "content": "版型穿了少女感十足 搭配运动鞋穿哦 白色本身就很纯洁的 好看 太有夏天的味道了 夏天真的很美好 整体不错 "
+    }, {
+      "id": "65630",
+      "title": "我的身高体重",
+      "content": "168体重98 很合身哦"
+    }, {
+      "id": "65629",
+      "title": "版型风格",
+      "content": "淑女少女的风格质感也不错哦"
+    }],
+    "userStar": "9",
+    "userStarPic": "//img.alicdn.com/tfscom/TB1rHplIVXXXXcMaXXXflIA9VXX-102-20.png",
+    "images": ["//img.alicdn.com/imgextra/i1/0/O1CN01koIlZL1zd8UdjW10D_!!0-rate.jpg", "//img.alicdn.com/imgextra/i1/0/O1CN01qMugql1zd8Ue6gtOw_!!0-rate.jpg", "//img.alicdn.com/imgextra/i2/0/O1CN01gszY6p1zd8Uj4ujHx_!!0-rate.jpg", "//img.alicdn.com/imgextra/i4/0/O1CN01fWqVdC1zd8UkOyJjT_!!0-rate.jpg", "//img.alicdn.com/imgextra/i4/0/O1CN01VLzL9Z1zd8UkiexVW_!!0-rate.jpg"],
+    "interactInfo": {
+      "likeCount": "5",
+      "readCount": "4174",
+      "alreadyLike": "false",
+      "commentCount": "0"
+    },
+    "userAvatar": "http://wwc.alicdn.com/avatar/getAvatar.do?userIdStrV2=__yk9wY9w7adfkoL2Qu*tNTT&type=taobao",
+    "skuMap": {
+      "颜色分类": "天真白色（预售3.31发）",
+      "尺码": "M"
+    },
+    "content": "整体评价：版型穿了少女感十足 搭配运动鞋穿哦 白色本身就很纯洁的 好看 太有夏天的味道了 夏天真的很美好 整体不错  我的身高体重：168体重98 很合身哦 版型风格：淑女少女的风格质感也不错哦 ",
+    "userNick": "s**姐",
+    "commentDate": "2020-04-16",
+    "id": "1081181018224",
+    "reply": "",
+    "skuId": "4308859704538"
+  }, {
+    "userStar": "2",
+    "userStarPic": "//img.alicdn.com/tfscom/TB14ipwIVXXXXXJXpXXPHp.HXXX-50-20.png",
+    "images": ["//img.alicdn.com/imgextra/i4/0/O1CN015fP1651flZTJ2dxoV_!!0-rate.jpg"],
+    "interactInfo": {
+      "likeCount": "18",
+      "readCount": "10063",
+      "alreadyLike": "false",
+      "commentCount": "4"
+    },
+    "userNick": "t**4",
+    "commentDate": "2020-04-10",
+    "userAvatar": "http://wwc.alicdn.com/avatar/getAvatar.do?userIdStrV2=6DYn5yRSgMZWsM1MzYsRaWTT&type=taobao",
+    "skuMap": {
+      "颜色分类": "天真白色（预售4.1发）",
+      "尺码": "M"
+    },
+    "id": "1080405518522",
+    "reply": "",
+    "content": "不要犹豫了，女生真的要拥有一条白色初恋裙，我已经开始期待这个夏天了，价格稍微有点小贵，不过打折凑一起买就还好啦。（身高165，体重52kg，供参考哟） ",
+    "skuId": "4308859704538"
+  }, {
+    "userStar": "8",
+    "userStarPic": "//img.alicdn.com/tfscom/TB1AMXwIVXXXXadXpXXULRDIVXX-76-20.png",
+    "images": ["//img.alicdn.com/imgextra/i4/0/O1CN017JfipW1llT4u8Njk7_!!0-rate.jpg", "//img.alicdn.com/imgextra/i1/0/O1CN01Zx9eI51llT4wS8moa_!!0-rate.jpg", "//img.alicdn.com/imgextra/i2/0/O1CN01Xsdp5q1llT4wS8qyX_!!0-rate.jpg", "//img.alicdn.com/imgextra/i3/0/O1CN01nooBQo1llT4xrGI4X_!!0-rate.jpg", "//img.alicdn.com/imgextra/i1/0/O1CN01dR4YL61llT4ytaLrC_!!0-rate.jpg"],
+    "appendComment": {
+      "images": ["//img.alicdn.com/imgextra/i4/0/O1CN01qXjlUH1llT4vbnVGO_!!0-rate.jpg", "//img.alicdn.com/imgextra/i1/0/O1CN01bTS5QS1llT4wCGWgb_!!0-rate.jpg", "//img.alicdn.com/imgextra/i2/0/O1CN01jLFHM41llT4xrLWnV_!!0-rate.jpg"],
+      "intervalDay": "2",
+      "content": "真心喜欢 下水洗过了 不变形不缩水 面料也很舒适很透气"
+    },
+    "interactInfo": {
+      "likeCount": "18",
+      "readCount": "5121",
+      "alreadyLike": "false",
+      "commentCount": "0"
+    },
+    "userAvatar": "http://wwc.alicdn.com/avatar/getAvatar.do?userIdStrV2=d48YAyYMNDgGo3ekEDe-_gTT&type=taobao",
+    "skuMap": {
+      "颜色分类": "天真白色（预售3.31发）",
+      "尺码": "M"
+    },
+    "content": "连衣裙挺好看的，面料做工显档次，蕾丝镂空面料挺精致的，款式简洁大气，版型也很收腰很显瘦，上身挺显气质的，喜欢 ",
+    "userNick": "y**n",
+    "commentDate": "2020-04-15",
+    "id": "1080787045304",
+    "reply": "",
+    "skuId": "4308859704538"
+  }, {
+    "userStar": "4",
+    "userStarPic": "//img.alicdn.com/tfscom/TB1ckhvIVXXXXaJXpXXflIA9VXX-102-20.png",
+    "interactInfo": {
+      "likeCount": "0",
+      "readCount": "5",
+      "alreadyLike": "false",
+      "commentCount": "0"
+    },
+    "userNick": "妞**7",
+    "commentDate": "2020-04-14",
+    "userAvatar": "http://wwc.alicdn.com/avatar/getAvatar.do?userIdStrV2=QwS6L_SManSyCMPEIJcVIQTT&type=taobao",
+    "skuMap": {
+      "颜色分类": "天真白色（预售4.1发）",
+      "尺码": "L"
+    },
+    "id": "1080606377459",
+    "reply": "",
+    "content": "这套裙裙不错，便宜，穿上不错，面料不错，是棉滴，没骗人",
+    "skuId": "4308859704539"
+  }, {
+    "userStar": "6",
+    "userStarPic": "//img.alicdn.com/tfscom/TB1zG0qIVXXXXczXFXX2BeMFFXX-24-20.png",
+    "interactInfo": {
+      "likeCount": "0",
+      "readCount": "18",
+      "alreadyLike": "false",
+      "commentCount": "0"
+    },
+    "userNick": "y**7",
+    "commentDate": "2020-04-11",
+    "userAvatar": "http://img.alicdn.com/tps/TB1l6dkOXXXXXXEXVXXXXXXXXXX-210-210.png_70x70.jpg",
+    "skuMap": {
+      "颜色分类": "天真白色（预售4.1发）",
+      "尺码": "M"
+    },
+    "id": "1079926912500",
+    "reply": "",
+    "content": "美丽精致巨无敌好看！！！有点点小性感 又很优雅 特别显高",
+    "skuId": "4308859704538"
+  }, {
+    "userStar": "5",
+    "userStarPic": "//gw.alicdn.com/tfs/TB1G5k0n6DpK1RjSZFrXXa78VXa-128-20.png",
+    "interactInfo": {
+      "likeCount": "0",
+      "readCount": "4",
+      "alreadyLike": "false",
+      "commentCount": "0"
+    },
+    "userNick": "s**5",
+    "commentDate": "2020-04-15",
+    "userAvatar": "http://img.alicdn.com/tps/TB1l6dkOXXXXXXEXVXXXXXXXXXX-210-210.png_70x70.jpg",
+    "skuMap": {
+      "颜色分类": "天真白色（预售4.1发）",
+      "尺码": "M"
+    },
+    "id": "1081296375067",
+    "reply": "",
+    "content": "线头太多太多，廉价的衣服，廉价的做工",
+    "skuId": "4308859704538"
+  }, {
+    "userStar": "7",
+    "userStarPic": "//img.alicdn.com/tfscom/TB1_KhfIVXXXXbBXFXXPHp.HXXX-50-20.png",
+    "interactInfo": {
+      "likeCount": "0",
+      "readCount": "1",
+      "alreadyLike": "false",
+      "commentCount": "0"
+    },
+    "userNick": "t**2",
+    "commentDate": "2020-04-17",
+    "userAvatar": "http://wwc.alicdn.com/avatar/getAvatar.do?userIdStrV2=qQmgt0CY5q6if7bsigsSjgTT&type=taobao",
+    "skuMap": {
+      "颜色分类": "天真白色",
+      "尺码": "L"
+    },
+    "id": "1081627475846",
+    "reply": "",
+    "content": "建议拍大一码，我平时M，这个穿L袖子还有点紧",
+    "skuId": "4308859704539"
+  }, {
+    "userStar": "6",
+    "userStarPic": "//img.alicdn.com/tfscom/TB1zG0qIVXXXXczXFXX2BeMFFXX-24-20.png",
+    "interactInfo": {
+      "likeCount": "0",
+      "readCount": "6",
+      "alreadyLike": "false",
+      "commentCount": "0"
+    },
+    "userNick": "h**0",
+    "commentDate": "2020-04-14",
+    "userAvatar": "http://img.alicdn.com/tps/TB1l6dkOXXXXXXEXVXXXXXXXXXX-210-210.png_70x70.jpg",
+    "skuMap": {
+      "颜色分类": "天真白色",
+      "尺码": "XL"
+    },
+    "id": "1080660913595",
+    "reply": "",
+    "content": "样式中规中矩，胳膊袖子一般，挺显瘦 ",
+    "skuId": "4308859704540"
+  }, {
+    "userStar": "5",
+    "userStarPic": "//gw.alicdn.com/tfs/TB1G5k0n6DpK1RjSZFrXXa78VXa-128-20.png",
+    "interactInfo": {
+      "likeCount": "0",
+      "readCount": "96",
+      "alreadyLike": "false",
+      "commentCount": "2"
+    },
+    "userNick": "m**a",
+    "commentDate": "2020-04-09",
+    "userAvatar": "http://wwc.alicdn.com/avatar/getAvatar.do?userIdStrV2=cNigG0Vn0ZxKjaqdhi242NTT&type=taobao",
+    "skuMap": {
+      "颜色分类": "天真白色（预售4.1发）",
+      "尺码": "S"
+    },
+    "id": "1080479271109",
+    "reply": "",
+    "content": "衣服不干净，有黑点，还有点脏洗的水都是脏水，难道是样品，洗洗还行。就是黑点洗不掉。 ",
+    "skuId": "4308859704537"
+  }, {
+    "userStar": "5",
+    "userStarPic": "//gw.alicdn.com/tfs/TB1G5k0n6DpK1RjSZFrXXa78VXa-128-20.png",
+    "interactInfo": {
+      "likeCount": "0",
+      "readCount": "1",
+      "alreadyLike": "false",
+      "commentCount": "0"
+    },
+    "userNick": "c**望",
+    "commentDate": "2020-04-14",
+    "userAvatar": "http://wwc.alicdn.com/avatar/getAvatar.do?userIdStrV2=BdUghSiSVccykQfPuF1JqNTT&type=taobao",
+    "skuMap": {
+      "颜色分类": "天真白色（预售4.1发）",
+      "尺码": "M"
+    },
+    "id": "1080698837388",
+    "reply": "",
+    "content": "此用户没有填写评价。",
+    "skuId": "4308859704538"
+  }, {
+    "userStar": "7",
+    "userStarPic": "//img.alicdn.com/tfscom/TB1_KhfIVXXXXbBXFXXPHp.HXXX-50-20.png",
+    "interactInfo": {
+      "likeCount": "0",
+      "readCount": "4",
+      "alreadyLike": "false",
+      "commentCount": "0"
+    },
+    "userNick": "马**炯",
+    "commentDate": "2020-04-14",
+    "userAvatar": "http://wwc.alicdn.com/avatar/getAvatar.do?userIdStrV2=kubu_brwmpCFUIKNfl5g_gTT&type=taobao",
+    "skuMap": {
+      "颜色分类": "天真白色（预售4.1发）",
+      "尺码": "L"
+    },
+    "id": "1081166847542",
+    "reply": "",
+    "content": "此用户没有填写评价。",
+    "skuId": "4308859704539"
+  }, {
+    "userStar": "6",
+    "userStarPic": "//img.alicdn.com/tfscom/TB1zG0qIVXXXXczXFXX2BeMFFXX-24-20.png",
+    "interactInfo": {
+      "likeCount": "0",
+      "readCount": "2",
+      "alreadyLike": "false",
+      "commentCount": "0"
+    },
+    "userNick": "康**桥",
+    "commentDate": "2020-04-20",
+    "userAvatar": "http://wwc.alicdn.com/avatar/getAvatar.do?userIdStrV2=Jn8clij0*Q2N8DBGiv2u9NTT&type=taobao",
+    "skuMap": {
+      "颜色分类": "天真白色",
+      "尺码": "S"
+    },
+    "id": "1081127636167",
+    "reply": "",
+    "content": "此用户没有填写评价。",
+    "skuId": "4308859704537"
+  }, {
+    "userStar": "6",
+    "userStarPic": "//img.alicdn.com/tfscom/TB1zG0qIVXXXXczXFXX2BeMFFXX-24-20.png",
+    "interactInfo": {
+      "likeCount": "0",
+      "readCount": "4",
+      "alreadyLike": "false",
+      "commentCount": "0"
+    },
+    "userNick": "勿**扰",
+    "commentDate": "2020-04-14",
+    "userAvatar": "http://wwc.alicdn.com/avatar/getAvatar.do?userIdStrV2=wnygO5p0vwFRZeGvcN1a0WTT&type=taobao",
+    "skuMap": {
+      "颜色分类": "天真白色（预售3.31发）",
+      "尺码": "S"
+    },
+    "id": "1080649173335",
+    "reply": "",
+    "content": "此用户没有填写评价。",
+    "skuId": "4308859704537"
+  }, {
+    "userStar": "6",
+    "userStarPic": "//img.alicdn.com/tfscom/TB1zG0qIVXXXXczXFXX2BeMFFXX-24-20.png",
+    "interactInfo": {
+      "likeCount": "0",
+      "readCount": "3",
+      "alreadyLike": "false",
+      "commentCount": "0"
+    },
+    "userNick": "d**俊",
+    "commentDate": "2020-04-08",
+    "userAvatar": "http://wwc.alicdn.com/avatar/getAvatar.do?userIdStrV2=YbXCQIqu6oPIUeXHepW_RNTT&type=taobao",
+    "skuMap": {
+      "颜色分类": "天真白色（预售4.1发）",
+      "尺码": "M"
+    },
+    "id": "1080391031238",
+    "reply": "",
+    "content": "此用户没有填写评价。",
+    "skuId": "4308859704538"
+  }, {
+    "userStar": "9",
+    "userStarPic": "//img.alicdn.com/tfscom/TB1rHplIVXXXXcMaXXXflIA9VXX-102-20.png",
+    "interactInfo": {
+      "likeCount": "0",
+      "readCount": "3",
+      "alreadyLike": "false",
+      "commentCount": "0"
+    },
+    "userNick": "小**乐",
+    "commentDate": "2020-04-17",
+    "userAvatar": "http://wwc.alicdn.com/avatar/getAvatar.do?userIdStrV2=vbZjlZhlI730Jpk*cWyFkQTT&type=taobao",
+    "skuMap": {
+      "颜色分类": "天真白色（预售4.13发）",
+      "尺码": "L"
+    },
+    "id": "1081022849931",
+    "reply": "",
+    "content": "此用户没有填写评价。",
+    "skuId": "4308859704539"
+  }, {
+    "userStar": "7",
+    "userStarPic": "//img.alicdn.com/tfscom/TB1_KhfIVXXXXbBXFXXPHp.HXXX-50-20.png",
+    "interactInfo": {
+      "likeCount": "0",
+      "readCount": "3",
+      "alreadyLike": "false",
+      "commentCount": "0"
+    },
+    "userNick": "囚**d",
+    "commentDate": "2020-04-15",
+    "userAvatar": "http://wwc.alicdn.com/avatar/getAvatar.do?userIdStrV2=BrlDxPdr03uu-fen4XjYLNTT&type=taobao",
+    "skuMap": {
+      "颜色分类": "天真白色（预售4.1发）",
+      "尺码": "S"
+    },
+    "id": "1080820081027",
+    "reply": "",
+    "content": "此用户没有填写评价。",
+    "skuId": "4308859704537"
+  }, {
+    "userStar": "9",
+    "userStarPic": "//img.alicdn.com/tfscom/TB1rHplIVXXXXcMaXXXflIA9VXX-102-20.png",
+    "interactInfo": {
+      "likeCount": "0",
+      "readCount": "2",
+      "alreadyLike": "false",
+      "commentCount": "0"
+    },
+    "userNick": "t**8",
+    "commentDate": "2020-04-08",
+    "userAvatar": "http://wwc.alicdn.com/avatar/getAvatar.do?userIdStrV2=Eat30vKQb_rAS6CeGq38HWTT&type=taobao",
+    "skuMap": {
+      "颜色分类": "天真白色（预售3.31发）",
+      "尺码": "L"
+    },
+    "id": "1079580728260",
+    "reply": "",
+    "content": "此用户没有填写评价。",
+    "skuId": "4308859704539"
+  }, {
+    "userStar": "7",
+    "userStarPic": "//img.alicdn.com/tfscom/TB1_KhfIVXXXXbBXFXXPHp.HXXX-50-20.png",
+    "interactInfo": {
+      "likeCount": "0",
+      "readCount": "7",
+      "alreadyLike": "false",
+      "commentCount": "0"
+    },
+    "userNick": "涵**2",
+    "commentDate": "2020-04-09",
+    "userAvatar": "http://wwc.alicdn.com/avatar/getAvatar.do?userIdStrV2=lgZHRoh1-2Ry9MEuwWNiUQTT&type=taobao",
+    "skuMap": {
+      "颜色分类": "天真白色（预售4.13发）",
+      "尺码": "S"
+    },
+    "id": "1079737264518",
+    "reply": "",
+    "content": "此用户没有填写评价。",
+    "skuId": "4308859704537"
+  }, {
+    "userStar": "7",
+    "userStarPic": "//img.alicdn.com/tfscom/TB1_KhfIVXXXXbBXFXXPHp.HXXX-50-20.png",
+    "interactInfo": {
+      "likeCount": "0",
+      "readCount": "0",
+      "alreadyLike": "false",
+      "commentCount": "0"
+    },
+    "userNick": "如**8",
+    "commentDate": "2020-04-15",
+    "userAvatar": "http://wwc.alicdn.com/avatar/getAvatar.do?userIdStrV2=1a6S*RDpwPJS4-cDD4BJyQTT&type=taobao",
+    "skuMap": {
+      "颜色分类": "天真白色（预售4.1发）",
+      "尺码": "M"
+    },
+    "id": "1080536268040",
+    "reply": "",
+    "content": "此用户没有填写评价。",
+    "skuId": "4308859704538"
+  }, {
+    "userStar": "6",
+    "userStarPic": "//img.alicdn.com/tfscom/TB1zG0qIVXXXXczXFXX2BeMFFXX-24-20.png",
+    "interactInfo": {
+      "likeCount": "0",
+      "readCount": "1",
+      "alreadyLike": "false",
+      "commentCount": "0"
+    },
+    "userNick": "l**k",
+    "commentDate": "2020-04-19",
+    "userAvatar": "http://wwc.alicdn.com/avatar/getAvatar.do?userIdStrV2=_n*6ANJFR3*4Su-H8sv3AQTT&type=taobao",
+    "skuMap": {
+      "颜色分类": "天真白色",
+      "尺码": "S"
+    },
+    "id": "1081064000389",
+    "reply": "",
+    "content": "此用户没有填写评价。",
+    "skuId": "4308859704537"
+  }]
+}

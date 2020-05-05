@@ -49,7 +49,7 @@ export default {
         return callback(new Error("请输入密码"))
       }
       else{
-        var rege=/^[a-zA-Z][a-zA-Z0-9_-]{5,19}$/;
+        var rege=/^[a-zA-Z][a-zA-Z0-9_]{5,19}$/;
         if(!rege.test(value)){
           callback(new Error("请设计必须以字母开头，仅包含字母和数字，至少六位数字的密码"));
         }

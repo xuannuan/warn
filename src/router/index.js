@@ -36,7 +36,7 @@ export default new Router({
   routes: [
   {
     path:'/',
-    redirect:'/mine'//将初始页面重定向
+    redirect:'/life/旅行'//将初始页面重定向
   },
     {
       //动态路由匹配
@@ -53,7 +53,7 @@ export default new Router({
       path: '/publish',
       name: 'publish',//命名路由
       component: Publish,
-      meta:{auto:true,keepAlive:true}//路由元信息
+      meta:{auto:true}//路由元信息
     }, {
       // path: '/shop/:categoryTitle/:page',
       path: '/shop/:categoryTitle',
@@ -99,7 +99,7 @@ export default new Router({
        path:'/shop/car',
       name:'shop.car',
       component:Car,
-      meta:{keepAlive:true}
+      meta:{auto:true}
     },
     //用户信息
     {

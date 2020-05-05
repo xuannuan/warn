@@ -15,7 +15,6 @@ export default {
 
   data () {
     return {
-      num:'',
     }
   },
   computed:{
@@ -26,7 +25,7 @@ export default {
 
   created(){
     //当页面进行刷新会清空，要想商品数量保留则调用获取总数量重新赋值
-   Time.getGoodsNum();
+   Time.getGoodsNum(this.$store.state.userMessage.tele);
   }
 };
 </script>

@@ -26,19 +26,20 @@
     </div>
 
     <div class="content" v-if="imgs.title">
-      <h4>{{imgs.title}}</h4>
-    <p>{{imgs.desc}}</p>
+      <!-- <h4>{{imgs.title}}</h4> -->
+    <p v-html="imgs.desc"></p>
+    <!-- 用v-html标签解析内容里面的<br/>标签 -->
   </div>
   <div class="content" v-else>
       <h4>{{note.title}}</h4>
-    <p>{{note.content}}</p>
+    <pre>{{note.content}}</pre>
   </div>
 
 <div class="control">
-  <input type="text" placeholder="请发表评论" width="40%" v-model="talk" @click="drawer = true">
   <el-button @click="drawer = true"><span><i class='el-icon-chat-dot-square'></i>{{count}}</span></el-button>
-   <el-checkbox v-model="checked"><span @click="Tostar"><i class="el-icon-star-off"></i>{{note_star}}</span></el-checkbox>
-   <el-checkbox-button v-model="checkedLike"><span style="top: 0;" @click="ToLike"><i class="el-icon-magic-stick"></i>{{note_like}}</span></el-checkbox-button>
+  <!-- 如果没有登录无法使用多选框，f=true-->
+   <el-checkbox v-model="checked" :disabled="f"><span @click="Tostar"><i class="el-icon-star-off"></i>{{note_star}}</span></el-checkbox>
+   <el-checkbox v-model="checkedLike" :disabled="f"><span @click="ToLike"><i class="el-icon-magic-stick"></i>{{note_like}}</span></el-checkbox>
 </div>
 <el-drawer
   :visible.sync="drawer"
@@ -48,6 +49,7 @@
    <div class="comment">
       <p class="count">共{{count}}条评论</p>
       <input type="text" width="80%" placeholder="发送评论" v-model="talk" id="comment">
+       <!-- :disabled="f"不需要禁用输入，提交功能禁用了 -->
       <button class="el-icon-upload2" @click="sub" :plain="true"></button>
 
     <!-- 对于评论 -->
@@ -103,6 +105,7 @@ export default {
 
   data () {
     return {
+      f:'',//判断点赞多选框能否使用
       checkedLike:true,
       checked:false,
       drawer: false,
@@ -129,7 +132,9 @@ export default {
 
     //收藏操作
     Tostar(){
-      console.log(this.checked);
+      //登录提示
+      if(this.userMessage.name){
+        this.f=false;//如果登录则可以点赞,只需要给点赞设置就好，收藏评论共用f状态
     //为true，会进行删除操作
       if(this.checked===true){
       //在点一下删除
@@ -147,7 +152,7 @@ export default {
         console.log("删除收藏失败",err);
       });
 
-    }//if
+    }//里if
       //false时，会高亮显示
     else{
       this.$axios.post('/api/insertStar.php',{
@@ -164,19 +169,36 @@ export default {
         console.log("收藏失败",err);
       });
      }
+     }//外if
+      else{//如果没有登录
+        this.f=true;//禁用点赞按钮
+         this.$message({
+          message: '您还没有登录呢，请先登录吧',
+          type: 'warning'
+        });
+      }
     },
     //笔记点赞操作
     ToLike(){
-      if(this.checkedLike===true){
-     Time.updateStar(this.id,"like","+");
-     this.note_like++;
-   }else{
-      if(this.note_like>0){//点赞数不能为负数
-      Time.updateStar(this.id,"like","-");
-     this.note_like--;
+      //登录提示
+      if(this.userMessage.name){
+        console.log(this.checkedLike);
+            if(this.checkedLike===true){
+           Time.updateStar(this.id,"like","+");
+           this.note_like++;
+         }else{
+            if(this.note_like>0){//点赞数不能为负数
+            Time.updateStar(this.id,"like","-");
+           this.note_like--;
+            }
+         }
+         }
+      else{//如果没有登录
+         this.$message({
+          message: '您还没有登录呢，请先登录吧',
+          type: 'warning'
+        });
       }
-   }
-     console.log(this.checkedLike);
 
     },
     //评论点赞数
@@ -206,8 +228,8 @@ export default {
           content:this.talk,
           nickname:this.userMessage.name,
           img:this.userMessage.img,
-          // time:Time.changeTime()
-          time:Moment(new Date()).formate("YYYY-MM-DD-HH:mm:ss")
+          time:Time.changeTime()
+          // time:Moment(new Date()).formate("YYYY-MM-DD-HH:mm:ss")
         })
         .then(res=>{
           console.log(res.data);
@@ -266,14 +288,15 @@ export default {
         this.getNewPublic();
       }
       else{
-        this.$axios.get('../../../static/data/图片'+key+'1.json')
+        for(let k=0;k<3;k++){
+        this.$axios.get('../../../static/data/图片'+key+k+'.json')
       .then(res=>{
           let that=this;
           //因为具体的商品详情与商品分类同一个json数据,所以要获取数组中的一个元素才是具体的商品详情
         for (var i = 0; i < res.data.data.length; i++) {
            if(res.data.data[i].id==this.id){
           this.imgs=res.data.data[i];//数组中的一个元素
-          console.log(this.imgs);
+          this.imgs.desc=this.imgs.desc.replace(/\n/g,"<br/>");//将正文内容的换行符\n替换<br/>
           this.note_like=this.imgs.liked_count;
           this.note_star=this.note_like;
           this.imgs.images_list.forEach((item,index)=>{
@@ -288,6 +311,7 @@ export default {
       .catch(err=>{
         console.log("获取相对应分类的图片失败",err);
       })
+    }
       }
     },
     //新发布的评论
@@ -299,7 +323,6 @@ export default {
     //数据api的笔记
     getApiComment() {
       return this.$axios.get('../../../static/data/小诺村评论.json')
-       //暖儿 'https://api03.6bqb.com/xhs/notes/comment?apikey=5F3779A028E404694FC192684E80B7C3&itemId='+id
     },
    //合并请求,如果有一个失败就都失败
    hasComment(){
@@ -307,18 +330,17 @@ export default {
     this.$axios.all([this.getUserComment(), this.getApiComment()])
     .then(this.$axios.spread(function (acct, perms) {
       // 两个请求现在都执行完成
-      //如果没有查询到数据
-      if(acct.data.status=="0"){
-          that.comments=perms.data.data;
-      }
-      else{//正常查询到数据
+        if(that.$route.params.categoryTitle==="最新发布"){
+          that.comments=Time.ToArray(acct.data);
+        }else{//数据api的笔记需要请求且合并
           let talkList=Time.ToArray(acct.data);
           that.comments=perms.data.data;
-         //把新发布的评论数组元素放进数据API评论数组里面，合并
+      //把新发布的评论数组元素放进数据API评论数组里面，合并
          talkList.forEach(item=>{
           that.comments.unshift(item);
             })
         }
+
       // console.log(talkList instanceof Array);//true
 
        let count1=0;
@@ -374,9 +396,9 @@ export default {
 .content{
   margin: 25px 10px;
 }
-.content p{
-line-height: 30px;
-    font-size: 15px;
+.content pre,.content p{
+    font-size: 16px;
+    line-height: 30px;
 }
 .comment{
   padding-left: 10px;
@@ -397,7 +419,7 @@ line-height: 30px;
 .l label{
   display: block;
   margin-left: 60px;
-  margin-right: 20px;
+  margin-right: 35px;
   margin-top: 5px;
   /*评论内容离头像远一点*/
 }
@@ -406,7 +428,7 @@ line-height: 30px;
     width: 5px;
     position: absolute;
     top: 10px;
-    right: 15px;
+    right: 30px;
 }
 .r a{
   color: pink;
@@ -429,10 +451,14 @@ color:#8cc5ff;
   position: fixed;
   bottom:43px;
   left: 0;right: 0;
-  height: 30px;
+  height: 40px;
   width: 100%;
-  background-color: #fff;
+  background-color: #fafafa;
   z-index: 2001;
+}
+.control label .el-checkbox__input{
+    display: none;
+    /*点赞评论取消小白框框*/
 }
 .control input{
   border-radius: 5px;
@@ -442,23 +468,22 @@ color:#8cc5ff;
   float: left;
 }
 .control button,.control label{
-    height: 30px;
-    line-height: 0px;
-    width: 18%;;
+height: 30px;
+    width: 20%;
     border: none;
     float: right;
-    padding: 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
 }
 .control label span{
     position: absolute;
-    top: -1px;
     left: 4.5px;
     z-index: 2001;
 }
-
-
 .control span i{
-  font-size: 25px;
+  font-size: 30px;
+
 }
 
 </style>

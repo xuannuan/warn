@@ -11,7 +11,7 @@ ul{
 }
 /*默认状态lvha*/
 a:link{
-  font-size: 14px;
+  font-size: 15px;
   text-decoration: none;
   color:#000;
 
@@ -50,7 +50,7 @@ body{
 }
 p{
   margin-bottom: 0;
-  font-size:14px;
+  font-size:15px;
 }
 span{
   font-size:14px;

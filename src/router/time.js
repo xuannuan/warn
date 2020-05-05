@@ -61,16 +61,16 @@ time.updateGoods=function(cz,id,c){
 
 
 //对于购物车小图标的小球里面的数量(fixcar.vue和goodsdetail.vue)
-time.getGoodsNum=function(){
+time.getGoodsNum=function(telephone){
      let products=[];
      var num=0;
      // this.$axios这里的this错误
-    Vue.prototype.$axios.get('/api/checkGoods.php')
+    Vue.prototype.$axios.post('/api/checkGoods.php',
+      {tele:telephone})
     .then(res=>{
       if(res.data instanceof Object){
         products=res.data;
-        num=products.num;
-
+        num=parseInt(products.num);
       }
       else{
         products=this.ToArray(res.data);
@@ -104,7 +104,7 @@ time.updateStar=function(noteId,caoZuo,ad){
 
 //提取公共的删除和修改商品的PHP连接操作(goodsdetail.vue)
       time.updateShop=function(cz,id,number){
-        this.$axios.post('/api/deleteGoods.php',{
+        Vue.prototype.$axios.post('/api/deleteGoods.php',{
           caozuo:cz,
           goods_id:id,
           num:number
@@ -117,16 +117,17 @@ time.updateStar=function(noteId,caoZuo,ad){
         })
       }
 
-// time.geto=function(num){
-//     return num<0?'0'+num:num;
-// }
-//转换时间格式符合数据库datetime格式，用momentjs.cn库代替了
-// time.changeTime=function(){
-//    const date=new Date();
-//    const ymd=date.getFullYear()+'-'+this.geto(date.getMonth()+1)+'-'+this.geto(date.getDate());
-//    const time=this.geto(date.getHours())+':'+this.geto(date.getMinutes())+':'+this.geto(date.getSeconds());
-//    return ymd.concat('-',time);
-// }
+
+time.geto=function(num){
+    return num<0?'0'+num:num;
+}
+// 转换时间格式符合数据库datetime格式，用momentjs.cn库代替了
+time.changeTime=function(){
+   const date=new Date();
+   const ymd=date.getFullYear()+'-'+this.geto(date.getMonth()+1)+'-'+this.geto(date.getDate());
+   const time=this.geto(date.getHours())+':'+this.geto(date.getMinutes())+':'+this.geto(date.getSeconds());
+   return ymd.concat('-',time);
+}
 
 //抛出去obj对象
 export default time;

@@ -50,6 +50,7 @@ export default {
     'userMessage'
     ]),
   methods:{
+    //退出登录
     del(){
     UserTool.addUser({});//直接把{}空对象放进去就清空本地存储和vuex仓库
     this.$store.dispatch('setUserMessage',{});

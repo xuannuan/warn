@@ -115,9 +115,9 @@ export default {
         this.dele[this.index]=false;
         // 删除商品数据存储，进行删除商品
         // GoodsTool.deleteGoods(this.index);
-        let goods_id=this.products.goods_id?this.products.goods_id:this.products[this.index].goods_id;
+        let goods=this.products.goods_id?this.products.goods_id:this.products[this.index].goods_id;
         let category=this.products.category?this.products.category:this.products[this.index].category;
-        Time.updateGoods("delete",goods_id,category);
+        Time.updateGoods("delete",goods,category);
         //删除元素，因为v-model绑定的是all,所以要改变数组all，
          this.all.splice(this.index,1);
       },
@@ -125,21 +125,21 @@ export default {
       jian(index){
         //因为数据处理不好，所以有一条数据与多条数据
         let cnum=this.products.num?this.products.num:this.products[index].num;
-        let goods_id=this.products.goods_id?this.products.goods_id:this.products[index].goods_id;
+        let goods=this.products.goods_id?this.products.goods_id:this.products[index].goods_id;
         let category=this.products.category?this.products.category:this.products[index].category;
         if(cnum>1){
           // vuex传值给App.vue组件的购物车数量，
           this.$store.dispatch('addGoodsNum',-1);
-          Time.updateGoods("jian",goods_id,category);
+          Time.updateGoods("jian",goods,category);
           this.getGoods();//修改后的数据显示，双向数据绑定
         }
       },
       add(index){
         //let作用在该块级作用域内
-        let goods_id=this.products.goods_id?this.products.goods_id:this.products[index].goods_id;
+        let goods=this.products.goods_id?this.products.goods_id:this.products[index].goods_id;
         let category=this.products.category?this.products.category:this.products[index].category;
         this.$store.dispatch('addGoodsNum',1);
-        Time.updateGoods("add",goods_id,category);
+        Time.updateGoods("add",goods,category);
         this.getGoods();
       },
       //提交后触发的
@@ -152,7 +152,9 @@ export default {
       },
  //获取加入购物车的商品,提取在加减数量中调用(car.vue)
     getGoods(){
-    this.$axios.get('/api/checkGoods.php')
+    this.$axios.post('/api/checkGoods.php',{
+      tele:this.$store.state.userMessage.tele
+    })
     .then(res=>{
       if(res.data instanceof Object){
        this.products=res.data;
@@ -179,7 +181,7 @@ export default {
            let num=this.products.num?this.products.num:this.products[index].num;
            let price=this.products.price?this.products.price:this.products[index].price;
               count+=parseInt(num);
-              total+=price*num;
+              total+=parseInt(price*num);
           }
         });
       return{
@@ -191,7 +193,9 @@ export default {
 
   created(){
 
-    this.$axios.get('/api/checkGoods.php')
+    this.$axios.post('/api/checkGoods.php',{
+      tele:this.$store.state.userMessage.tele
+    })
     .then(res=>{
       if(res.data instanceof Object){
         this.products=res.data;
@@ -213,13 +217,6 @@ export default {
       console.log(err);
     })
   },
-  // mounted(){
-  //   for(let i=0;i<this.products.length;i++){
-  //     this.all.push(i);
-  //     this.dele.push(false);
-  // //创建数组元素，是所有的垃圾盖动画类fan先隐藏，当点击时才触发单个
-  //   }
-  // }
 
 };
 </script>
@@ -261,7 +258,7 @@ label{
     display: block;
 }
 .goods_con .con_box .small_box{
-    padding-left: 80px;
+    padding-left: 90px;
     padding-right: 10px;
 }
 

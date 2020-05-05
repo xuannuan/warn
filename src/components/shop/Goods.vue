@@ -18,7 +18,7 @@
                <img v-lazy="item.imageUrls[0]" width="100%" height="110px" >
              </router-link>
              <!-- 过滤器控制显示个数,不然有些li会出现大片空白 -->
-                     <p >{{item.title | Tolength(10)}}</p>
+                <p class="t">{{item.title | Tolength(10)}}</p>
 
                     <span style="color:red;font-size:13px">￥{{item.price}}</span>
                      <span style="font-size:12px">{{item.sales}}</span>
@@ -46,7 +46,7 @@ export default {
       products:[],
       geta:[],//组件传值
       key:'',
-      page:1,
+      page:0,
       allLoaded:false,
       loading:false,//加载更多
     }
@@ -69,7 +69,7 @@ export default {
       this.category=item;
       this.$store.dispatch('setGoodsCurrentIndex',index);
         this.key=this.$route.params.categoryTitle;
-         this.$axios.get('../../../static/data/商品'+item+1+'.json')
+         this.$axios.get('../../../static/data/商品'+item+0+'.json')
            .then((res)=>{
                this.products=res.data.data;
                this.$router.push({name:'shop',params:{categoryTitle:item}});
@@ -197,8 +197,12 @@ export default {
     float: left;
     width: 47%;
     text-align: center;
-    margin: 0 0 5px 5px;
+    margin: 0 0 10px 6px;
     border-radius: 5px;
     background-color: #f3f4f6;
+}
+.t{
+  margin: 10px 0;
+  font-size: 13px;
 }
 </style>
